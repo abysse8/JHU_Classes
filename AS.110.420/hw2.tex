@@ -1,1 +1,57 @@
-begin{document}
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\input{$~/git/Undergrad/JHU_Classes/preamble.tex}
+
+\title{AS.110.420 Homework 2}
+\author{LJ Gonzales, Jed's section}
+\date{February 2023}
+
+\begin{document}
+
+\maketitle
+
+\begin{prob}
+Given X styles the shop owner has ${X \choose 3}$ ways to have 3 distinct styles on display. We want this number to at least be equal to 52 so that each week can be assigned such a combination, where having undisplayed combinations at the end of the year is fine. We have $\frac{X!}{(X-3)!3!}\geq52$, which was solved graphically to reveal $X\geq7.8$. The shop owner must have at least 8 different dress styles to accomplish his goal.
+\end{prob}
+
+\begin{prob}
+    In the 8-long sequence $O_1O_2O_3\dots O_8$ there are 8 places to choose where to place the 3 indistinguishable heads. The rest will be tails. Hence ${8 \choose 3}$ or 56 sequences.
+\end{prob}
+
+\begin{prob}
+    \begin{enumerate}
+        \item There are 3 people out of 12 to choose for Task 1, 3 more from the remaining for Task 2, etc.. hence ${12 \choose 3}{9 \choose 3}\dots {3\choose3}=\frac{12!}{3!3!3!3!}=369600$ ways.
+        \item Similarly the first choice only has ${4\choose3}{9\choose3}\dots{3\choose3}=\frac{4!}{3!}\times\frac{9!}{3!3!3!}=6720$ distinct assigments.
+        \item There are $4!$ ways to arrange people a-d, and a further $\frac{9!}{3!3!3!}$ to arrange the rest, for a total of 40320 assignments.
+        \item We can follow a similar assignment to part a but this time the name of the team is irrelevant, effectively overcounting by 4!. We then have $\frac{12!}{3!3!3!3!4!}$.
+        \item Each of a,b,c,d will be on different teams, so everyone else will effectively be on one of "Team A", "Team B", etc>.. Hence $\frac{9!}{3!3!3!}=1680$ teams.
+    \end{enumerate}
+\end{prob}
+
+\begin{prob}
+    \begin{enumerate}
+        \item This is equivalent to a 30-letter anagram of  word containing 10 of each $\{1,2,3\}$, or $\frac{30!}{10!10!10!}$, or about $5.55\times10^{12}$.
+        \item There are 3 ways to choose the digit that is repeated 12 times rather than 9. There are then ${30 \choose 12}$ ways to put that number in the placeholders of the 30-digit number. There are ${18 \choose 9}$ places to put the next number, regardless of what it is. Hence $3\times\frac{30!}{12!9!9!}$, or about $1.26\times10^{13}$.
+    \end{enumerate}
+\end{prob}
+
+\begin{prob}
+    We consider that pizzas are uniquely defined by their topping choices and quantity (for instance, a 3-mushroom 2-pepperoni 1-tomato pizza is the same whether the tomato slice is across or next to the pepperoni). We can then think of this as choosing to put 6 "stars" representing our choices in 21 categories that may hold more than 1 star, giving ${6+21-1 \choose 6}=230230$ possible pizzas.
+\end{prob}
+
+\begin{prob}
+    \begin{enumerate}
+        \item Stars and bars with 3 stars and 5 bars: ${3+5 \choose 3}= 56$.
+        \item Same as a) with stars representing die and 6 boxes representing their outcomes. 56 outcomes.
+        \item Same as a) with stars representing 1's, and 6 containers for each variable. If a variable contains more than one 1 its integer value woulc change with its sum. 56 choices.
+    \end{enumerate}
+\end{prob}
+
+\begin{prob}
+    \begin{enumerate}
+        \item Here our stars represent the 55 electrons to be allocated, and 6 "container" energy levels to place them in. We have ${55+6-! \choose 5}=3478761$ possible arrangements.
+        \item The amount of electrons to be allocated in each energy level sums to 55, so there will be no empty spots. There are ${55 \choose 2}$ ways to have electrons in the first energy level, ${53 \choose 8}$ ways to arrange the rest in the second, etc, for a total of $\frac{55!}{2!8!18!18!8!1!}\approx3.84\times10^{36}$
+    \end{enumerate}
+\end{prob}
+
+\end{document}

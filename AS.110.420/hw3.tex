@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{AS.110.420 HW3}
+\author{LJ Gonzales, Jed's section}
+\date{February 2023}
+\input{~/git/Undergrad/JHU_Classes/preamble.tex}
+\begin{document}
+\maketitle
+
+\begin{prob}
+	%Problem 1
+	We note that $B$ and $B^c$ are mutually exclusive events. Because $A \cap B \subseteq B$ and  $A \cap B^c \subseteq B^c$, $AB$ and $AB^c$ are also mutually exclusive events. By the axiom of subbadditivity, it then holds that $P((A \cap B) \cup (A \cap B^c)) = P(AB^c)+P(AB)$. However, we can equivalently write the left hand side of this statement as $P(A \cup (B \cap B^c))$. However because $B$ and $B^c$ are mutually exlusive, their interesection is the null set, and any set $\cup$ the null set is just that set itself. It follows that $P(A)=P(A-B)+P(AB)$, writing the previous statement in a different way. Rearranging, we have the result. 
+\end{prob}
+
+\begin{prob}
+	%Problem 2
+\begin{enumerate}
+	\item Let D be the event that the market goes down, and T the event that trading exceeds 1 billion shares, such that $P(D)=0.05, P(T)=0.2, P(D \cap T)=0.03$.
+		We want to compute $P(D \cap T^c)$. This is just $P(D)-P(D \cap T)$, or 0.02.
+
+	\item Given the entire population $\Omega$, let T represent the event that a chosen person is under 20 years old, and E the event that they exercise.
+		The given information tells us $P(E|T)=0.75, P(T|E)=0.6, P(E \cup T)=0.1$. We want to compute  $P(E|T^c)$.
+		To do so by Baye's rule requires computing $\frac{P(E \cap T^c)}{P(T^c)}$.
+
+	\item Letting R and W represent the event of rain and wind, We know that $P(R)=0.5, P(W)=3, P(R^c \cap W^c)=0.1$. 
+		By De Morgan's law the latter is equal to $P((R \cup W)^c)=1-P(R \cup W)$. It would then follow that $P(R \cup W)=0.9$.
+		However, this cannot be correct, since the union of two sets is at most equal to their sums, with equality only in the case that the events are disjunct.
+\end{enumerate}	
+\end{prob}
+
+\begin{prob}
+	%Problem 3
+	Our sample space $\Omega$ is the set  $\{H_1H_2, H_1T_2, T_1H_2, T_1T_2\}$, and we seek $P(H_1|(H_1 \cap H_2)=\frac{P(H_1 \cap (H_1 \cap H_2))}{P((H_1 \cap H_2))}$.
+	Note that $H_1 \subset (H_1 \cap H_2)$ so the numerator is just 1/2. The denominator is the probability of any one of three events in the sample space (excluding TT), or 3/4. The answer is $\frac{1}{2}\times\frac{4}{3}=\frac{2}{3}$.
+\end{prob}
+
+\begin{prob}
+	%Problem 4
+	\begin{enumerate}
+		\item For the next 3 questions we let R be the event that the second card drawn is the same rank as the first, and C the event that they are the same color.
+		We want to compute $P(C^c|R)=\frac{P(C^c \cap R)}{P(R)}$. We can write the numerator as $\frac{2}{51}$, as there are 2 cards left of the same rank and different color that could be chosen.
+		The denominator is  $\frac{11}{51}$, as there are 11 cards left of the same suit (one having been removed).
+
+	\item $P(R|C^c)=\frac{P(R \cap C^c)}{P(C^c)}$, where, by a similar argument as the previous, the numerator is $\frac{2}{51}$ and the denominator $\frac{26}{51}$.
+
+	\item $P(R|C)=\frac{P(R \cap C)}{P(C)}=\frac{\frac{1}{51}}{\frac{25}{51}} =\frac{1}{25}$.
+	\end{enumerate}
+\end{prob}
+\begin{prob}
+	
+\end{prob}
+
+\end{document}

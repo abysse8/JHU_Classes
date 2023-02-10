@@ -1,6 +1,19 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
-\input{$~/git/Undergrad/JHU_Classes/preamble.tex}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\newtheoremstyle{mystyle}% name
+  {\topsep}% Space above
+  {\topsep}% Space below
+  {\normalfont}% Body font
+  {}% Indent amount
+  {\bfseries}% Theorem head font
+  {}%Punctuation after theorem head
+  {.5em}%Space after theorem head
+  {}% theorem head spec
+\theoremstyle{mystyle}
+\newtheorem{prob}{Problem}
 
 \title{AS.110.420 Homework 2}
 \author{LJ Gonzales, Jed's section}
@@ -24,7 +37,7 @@ Given X styles the shop owner has ${X \choose 3}$ ways to have 3 distinct styles
         \item Similarly the first choice only has ${4\choose3}{9\choose3}\dots{3\choose3}=\frac{4!}{3!}\times\frac{9!}{3!3!3!}=6720$ distinct assigments.
         \item There are $4!$ ways to arrange people a-d, and a further $\frac{9!}{3!3!3!}$ to arrange the rest, for a total of 40320 assignments.
         \item We can follow a similar assignment to part a but this time the name of the team is irrelevant, effectively overcounting by 4!. We then have $\frac{12!}{3!3!3!3!4!}$.
-        \item Each of a,b,c,d will be on different teams, so everyone else will effectively be on one of "Team A", "Team B", etc>.. Hence $\frac{9!}{3!3!3!}=1680$ teams.
+        \item Each of a,b,c,d will be on different teams, so everyone else will effectively be on one of "Team A", "Team B", etc>.. Hence $\frac{8!}{2!2!2!2!}= 2520$ teams.
     \end{enumerate}
 \end{prob}
 
@@ -54,4 +67,18 @@ Given X styles the shop owner has ${X \choose 3}$ ways to have 3 distinct styles
     \end{enumerate}
 \end{prob}
 
+\begin{prob}
+	\begin{enumerate}
+		\item Without replacement implies this is just ${5 \choose 2}=10$. If instead we care about the order that they come out (AF different from FA), this would be $5*4=20$.
+
+		\item We can think of this as a stars and bars problem, where we have 2 choices to put in some arrangement out of 5 choices, for a total of ${2+5-1 \choose 2}= 15$ possibilities.
+		If we instead decide that the order of outcome is important (but two consecutive letters indistinguishable), we need to split into cases to get 25 possible choices.
+		This is because there are 5 ways to get two of the same letters and $(5)_2=20$ of different pairings.
+
+		\item The number of outcomes (not probability) is now the same than if we were sampling with replacement, since there are sufficient letters to go around. 15/25 depending on your definition of outcome.
+
+		\item Still the same 15/25, only difference in practice is that double letters would come out much more often than usual.
+	\end{enumerate}
+\end{prob}
 \end{document}
+

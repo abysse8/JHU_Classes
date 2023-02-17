@@ -57,14 +57,14 @@
 
 \begin{prob}	
 	%Problem 5 dealt 6 cards prob diam+heart
-	We know that $P(D \cup H)=P(D)+P(H)-P(DH)$, where we want to find $P(DH)$. Note that $P(D \cup H)=1-(P(D^cH^c))$ by the complements rule and De Morgan's law, where the latter is easily computed by $\frac{(26)_6}{(52)_6}$ (if we exclude all diamonds and hearts, we're picking a hand from half the deck).
+	We know that $P(D \cup H)=P(D)+P(H)-P(DH)$, where we want to find $P(DH)$. Note that $P(D \cup H)=1-(P(D^cH^c))$ by De Morgan's law, where the latter is easily computed by $\frac{(26)_6}{(52)_6}$.
 	Likewise, we know that the probability of getting a diamond on any given card is $\frac{1}{4}$, so the probability at least 1 diamond is $1-P(\text{no diamond})=1-(\frac{3}{4})^6$, and likewise for P(H).
-	It follows that our desired probability is $2\times(1-(\frac{3}{4})^6)-(1-\frac{230230}{20358520})$, which evaluates to about 0.655.
+	It follows that our desired probability is $2\times(1-(\frac{3}{4})^6)-(1-\frac{230230}{20358520}). 
 \end{prob}
 
 \begin{prob}
 	%Problem 6 You roll a 6-sided die 7 times. The event A is you roll a 4, 5 or 6; B is you roll an odd number. Compute P (B|A)
-	Note that $P(B|A)=\frac{P(B \cap A)}{P(A)}$. The intersection is is clearly $\frac{1}{3}P(A)$, since only one out of the three outcomes of A also qualify for B. The answer is $\frac{1}{3}$.
+	$P(B|A)=\frac{P(B \cap A)}{P(A)}$. The intersection is is clearly $\frac{1}{3}P(A)$, since only one out of the three outcomes of A also qualify for B. 
 \end{prob}
 
 \begin{prob}
@@ -81,7 +81,7 @@
 \begin{prob}
 	%Problem 8
 	\begin{enumerate}
-		\item By direct application of the exchangeability property, $P(M_i \cap M_j^c)$ is equal to $P(M_1)P(M_2^c)$ with n objects or $\frac{1}{n}\frac{n-2}{n-1}$. Note the intentional placement of the 'matched' with the 'failed matched' event in $M_1M_2^c$. Had they been in the reverse order, independence could not be assumed, since there is a chance that M1 could have failed with M2's number.
+		\item By the exchangeability property, $P(M_i \cap M_j^c)$ is equivalent to the probability that the first position is a match, and the second one is not. Given n objects this is  $\frac{1}{n}\frac{n-2}{n-1}$.
 
 		\item By the conditional property formula, this is $\frac{P(M_i \cap M_j^c)}{P(M_j^c}=\frac{\frac{1}{n}\frac{n-1}{n-2}}{\frac{n-1}{n}}$ or simply $\frac{1}{n-2}$.
 	\end{enumerate}
@@ -89,25 +89,21 @@
 
 \begin{prob}
 	%Problem 9
-	The outcome of the coin flip is mutually exclusive and exhaustive for the sample space, so if we let R represent the event that we roll a 6,
-	we can write $P(R)=P(R \cap H)+P(R \cap T)$, where $P(R \cap H)=P(H)\times P(R|H)=\frac{1}{2}\times\frac{1}{6}$, and $P(R \cap T)=P(T)\times P(R|T)=\frac{1}{2}\times\frac{5}{36}$.
-	Hence the probability of rolling a 6 is given about 0.153 all things considered.
+	The outcome of the coin flip is mutually exclusive and exhaustive for the sample space, so we can write $P(R)=P(R|H)+P(R|T)$, where $P(R|H)=\frac{P(R \cap H)}{P(H)}=\frac{\frac{1}{6}}{\frac{1}{2}}$, and  $P(R|T)=\frac{P(R \cap T)}{P(T)}=\frac{\frac{5}{36}}{\frac{1}{2}}$, for a total of $\frac{22}{36}$
 \end{prob}
 
 \begin{prob}
 	%Problem 10 urn
-	There are only two possible outcomes from the first step of the experiment: either two blue balls are retrieved from one of the urns or one blue and one red, and this is done twice. Call the first event B and the second A, for a total set $\{AA, AB, BB\}$.
+	There are only two possible outcomes from the first step of the experiment: either two blue balls are retrieved or one blue and one red. Call the first event B and the second A, for a total set $\{AA, AB, BB\}$.
 	We can then write the event of drawing a blue ball from urn 3, called event W, as $P(W)=P(W \cap AA)+P(W \cap AB)+P(W \cap BB)$, since the set forms a mutually exclusive and exhaustive partition.
-	From the conditional probability definition, $P(W)$ is then equal to $P(AA)P(W|AA)+P(AB)P(W|AB)+P(BB)P(W|BB)$. We can read them from the problem to get  $(\frac{1}{3})^2\frac{1}{2}+2(\frac{1}{3}\times\frac{2}{3})\frac{3}{4}+(\frac{2}{3})^2\times1$
+	From the conditional probability definition, $P(W)$ is then equal to $P(AA)P(W|AA)+P(AB)P(W|AB)+P(BB)P(W|BB)$. We can read them from the problem to get  $(\frac{1}{3})^2\frac{1}{2}+2(\frac{1}{3}\frac{2}{3})^2\frac{3}{4}+(\frac{2}{3})^21$
 \end{prob}
 
 \begin{prob}
 	%Problem 11
-	The probability of seeing doubles before seven is the probability of seeing double on the first row, +not seeing seven on the first roll and seeing double on the second, and so on.
-	$P(D)=P(D_1)+P((S_1^c \cap D_1^c)\cap D_2)+P((S_1^c \cap D_1^c) \cap (S_2^c \cap D_2^c) \cap D_3) \dots = P(D_1)+P(S_1^c \cap D_1^c)P(D_2)+P(S_1^c \cap D_1^c)P(S_2^c \cap D_2^c)P(D_3) \dots$by independence (different rolls have nothing to do with each other, but cannot say the same for $S_i^c \cap D_i$).
+	We pretend that the event S=seeing sum of 7 terminates the experiment and $S_i$ represents the mutually exclusive and exhaustive partition of the sample space for all $i \geq 1$.
+	It follows that $P(D)=P(\textrm{seeing doubles before 7})=P(D_1 \cap S_2) +\dots = P((\bigcup _{i=1} ^{n}D_i) \cap S_{n+1}i)$.
+	However note that these events are independent (as they're completely different rolls), so $P((\bigcup _{i=1} ^{n}D_i) \cap S_{n+1})=P(\bigcup _{i=1} ^{n}D_i)P(S_{n+1})$, with the left term simply equal to  $1-P(\bigcap _{i=1}^n D_i^c)=1-(\frac{5}{6})^n$ by De Morgan's Theorem.
 
-	Note that the probability of not getting a seven and also not getting a double on the same roll is the same for any given roll i and is equal to the sample space minus ${11,22,33,44,55,66,61,16,52,25,34,43}$ or $\frac{24}{36}=\frac{2}{3}$.
-	Hence we have a geometric series with first term $\frac{1}{6}$ and common ratio $\frac{2}{3}$, which gives a probability of 0.5.
-	This makes sense since S and D are equally likely in the sample space and mutually exclusive on any given roll.
 \end{prob}
 \end{document}

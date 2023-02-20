@@ -31,7 +31,7 @@
 
 \begin{prob}
 	\begin{enumerate}
-		\item We know that $n_i\approx\int_{E_c}^{\infty}g(E)e^{\frac{E-E_{fi}}{kT}}dE$ and $n_d\approx\int_{E_c}^{\infty}g(E)e^{\frac{E-E_{fd}}{kT}}dE$. But now if we just call $E_{fd}=E_{fi}+\Delta E$ where E is just some constant that represents how far the doped fermi level is relative to the intrinsic fermi level, we find that:  
+		\item We know that $n_i\approx\int_{E_c}^{\infty}g(E)e^{\frac{E-E_{fi}}{kT}}dE$ and $n_d\approx\int_{E_c}^{\infty}g(E)e^{\frac{E-E_{fd}}{kT}}dE$. Note we make the assumption that the  energy levels we're integrating over is larger than the fermi level+3kT, which is to be expected. But now if we just call $E_{fd}=E_{fi}+\Delta E$ where E is just some constant that represents how far the doped fermi level is relative to the intrinsic fermi level, we find that:  
 	\[\begin{split} 
 		\frac{n_i}{n_d}=\frac{\int_{E_c}^{\infty}g(E)e^{\frac{E-E_{fi}}{kT}}dE}{\int_{E_c}^{\infty}g(E)e^{\frac{E-(E_{fi}+\Delta E)}{kT}}dE} \\
     =\frac{1}{e^{- \Delta E/kT}}\frac{\int_{E_c}^{\infty}g(E)e^{\frac{E-E_{fi}}{kT}}dE}{\int_{E_c}^{\infty}g(E)e^{\frac{E-E_{fi}}{kT}}dE}=\frac{1}{e^{-\Delta E/kT}} \\

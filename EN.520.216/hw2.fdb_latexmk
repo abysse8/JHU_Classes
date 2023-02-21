@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1676869405 "hw2.tex" "hw2.pdf" "hw2" 1676869407
+["pdflatex"] 1676938939 "hw2.tex" "hw2.pdf" "hw2" 1676938941
   "/etc/texmf/web2c/texmf.cnf" 1675731232 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/lj/git/Undergrad/JHU_Classes/preamble.tex" 1676614844 429 5de2e5872037f208184953c5078094dd ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -130,9 +130,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1675735042 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1675735108 2800652 d91fb7966d91241d844c5473e366004a ""
+  "Capture.PNG" 1676870383 47131 211502badd65437a69329b17792fa0ec ""
+  "diodemodelling.png" 1676938696 2816 a27f9b7f5ea869443397e3b92de103e5 ""
   "graph2.png" 1676856190 23811 817eb6e488f54b012b3e924448e5d4c2 ""
-  "hw2.aux" 1676869406 193 8ee15c1429dff353502db6bd1b0eb8f7 "pdflatex"
-  "hw2.tex" 1676869404 4794 5d650a56dffb86c5c125f176f97e2d65 ""
+  "hw2.aux" 1676938940 341 538e412bf8aa9bee28a18cd11c7634c2 "pdflatex"
+  "hw2.tex" 1676938936 5923 ab9a291c9ddf491cb4251d5aa957606c ""
   (generated)
   "hw2.aux"
   "hw2.log"

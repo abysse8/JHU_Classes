@@ -13,4 +13,4 @@ y_list = [const_part*T*math.log(NAND/(n_i(T)**2))/math.log(math.e) for T in x_li
 
 plt.plot(x_list, y_list, 'ro')
 plt.show()
-print(f"{x_list[4]}, {y_list[4]}")
+print(f"{x_list[50]}, {y_list[50]}")

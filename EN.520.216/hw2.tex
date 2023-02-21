@@ -37,24 +37,29 @@
 \node[right] at (0,-1) {P region};
 \node[left] at (6,-1) {N region};
 	\end{tikzpicture}
-\item 
-\item The contact potential is given by $\Phi \ln{\frac{N_AN_D}{n_i^2}}$ where $\Phi =\frac{kT}{q} \approx 26mV$ at 300K.
+\item We consider that the valence level in the n-type region opposing the junction has 0 energy relative to the rest of the system, and thus an intrinsic fermi level of $\frac{1}{2}(1.1)= 0.55$ eV.
+	We can then use a straight application of the formula $\ln(\frac{n_i}{n_d})=\frac{-\Delta E}{kT}$ with $n\approx N_D=8\times10^{16}$ to find the shift of the fermi energy relative to that intrinsic fermi level. We find this to be 0.38eV.
+	The fermi level is then at 0.93eV. 
+
+\item The contact potential is given by $\Phi \ln{\frac{N_AN_D}{n_i^2}}$ where $\Phi =\frac{kT}{q} \approx 26mV$ at 300K. This means that $V_o$ for this particular junction is about 0.837V.
 	
 \end{enumerate}
 \end{prob}
 \begin{figure}[h]
-	\includegraphics[width =\textwidth]{graph2.png}
+	\includegraphics[width =0.7\textwidth]{graph2.png}
 	\label{grappph}
 	\caption{Temperature vs. built-in voltage}
 \end{figure}
 
 \begin{prob}
 	\begin{enumerate}
-		\item The diode is not always forward biased: for non-zero capacitance, charge accumulates on the positive end of the capacitor which seeks to return through the diode when the voltage source goes negative.
-		\item The diode makes sure that only current in the positive direction goes through the load.
-			The capacitor makes sure that the voltage source fails to pull any current in the opposite direction.
+		\item No, the diode is not always forward biased. For example, when the sinusoid goes negative, the diode is always going to be reversed biased.
 
-	\item We first note that the saturation current of this diode vastly diverges from the one we would expect from a silicon diode so we need to compute its voltage drop before applying the constant drop model.
+		\item The diode makes sure that only current in the positive direction goes through the load.
+			The capacitor makes sure that a positive voltage is at least partially maintained through the load even when the source tries to pull current the other way (where usually there would be no current through the resistor thanks to the diode).
+
+	\item We first note that the saturation current of this diode vastly diverges from the one we would expect from a silicon diode so we can't make a direct assumption about its voltage drop (e.g 0.7V). \\
+		Instead we find the value of R in terms of the abstract $V_{DOn}$ variable and estimate its value with a simple model. \\
 		The circuit can be partitioned in two periods of operation: a) while the diode is in forward conduction (mostly on the rising of the voltage source) and b) when the diode is reversed biased. \\
 		The latter happens not only when the voltage source is in the negative region but also right after it reaches its peak, since the capacitor would have already been charged and discharges through the resistor more slowly than the voltage on the voltage source decreases back down (otherwise, there would be no ripple, just a half-rectified wave). \\
 		Hence, the time period that the capacitor discharges through the load resistor (with no help from the voltage source) is [$\frac{1}{4}T, t_1]$, where T is the period of the sinusoid and $t_1$ is the timestamp at which the diode is back in forward conduction. \\
@@ -65,16 +70,22 @@
 			\int _{t=\frac{1}{4}T}^{\frac{1}{20\pi}\sin ^{-1}(V_{DOn})+\frac{1}{10}}\frac{1}{RC}dt = \int _{1-V_{DOn}-0.5}^{1-V_{DOn}}\frac{1}{V_c(t)}dV_c(t) \\
 			\therefore R= \frac{\frac{1}{20\pi}\sin ^{-1}(V_{DOn})+ \frac{3}{40}}{10\times10^{-6}\ln \big(\frac{1-V_{DOn}}{1-V_{DOn}-0.5}\big)}
 		\end{align*}
-		Just as we did to obtain the 0.7V estimation of the silicon diode, we can set up a voltage source, diode, and resistor in series and solve under the exponential model to get $V_{DOn}$. With a 1V source and 10k$\Omega$ resistor, we have
+		\begin{wrapfigure}{l}{0.4\textwidth}
+			\includegraphics[width = 0.4\textwidth]{diodemodelling.png}
+		\end{wrapfigure}
+
+		Just as we did to obtain the 0.7V estimation of the silicon diode, we can set up a voltage source, diode, and resistor in series and solve under the exponential model to get $V_{DOn}$ (see figure below). With a 1V source and 10k$\Omega$ resistor, we have
 		$1-V_{DOn}-1.8\times10^{-2}(e^{V_{DOn}/\Phi_T}-1)=0$, which gives a $V_{DOn}$ value of 0.103V. Choosing other values of V and R as well neighbors this value.
+				
 		Putting this back in the equation, we get $R\approx9402\Omega$, our final answer. \\
 	\item The maximum output voltage under the constant drop model is given by the max source voltage minus one voltage drop, or about 0.897V
 	
-	\item
-	\end{enumerate}
-\end{prob}
-
-\begin{prob}
+	\item \begin{figure}[h]
+		\includegraphics[width =\textwidth]{Capture.png}
+		\label{ltspice}
+		\caption{LTSpice Simulation}
+	\end{figure}
 	
+	\end{enumerate}
 \end{prob}
 \end{document}

@@ -488,6 +488,16 @@ INPUT ./graph2.png
 OUTPUT hw2.pdf
 INPUT ./graph2.png
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+INPUT ./diodemodelling.png
+INPUT ./diodemodelling.png
+INPUT diodemodelling.png
+INPUT ./diodemodelling.png
+INPUT ./diodemodelling.png
+INPUT ./Capture.PNG
+INPUT ./Capture.PNG
+INPUT Capture.PNG
+INPUT ./Capture.PNG
+INPUT ./Capture.PNG
 INPUT hw2.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb

@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\input{~/git/Undergrad/JHU_Classes/preamble.tex}
+\title{EN.520.216 Homework 3}
+\author{LJ Gonzales}
+\date{February 2023}
+
+\begin{document}
+\maketitle
+\begin{prob}
+	
+\end{prob}
+\begin{prob}
+	We use the fact that the current is expressed by $I_D=\frac{k'W}{2L}((V_{GS}-V_T)V_{DS}-V_{DS}^2)$ in saturation, and see if the resulting $V_O$ makes sense, and if necessary, evaluate the linear mode equation (since $V_{GS}-V_T > 0 \forall$ R).
+\end{prob}
+
+\begin{prob}
+\begin{enumerate}
+\item	$C_1$ removes any potential bias from the ac voltage source that might interfere with the quiescent point of operation.
+	$C_2$ also removes bias at the output such that the only output is the ac amplified signal.
+
+\item At the dc operating point, the gate sees the output of a voltage divider, with value $V_{dd}\frac{R_g}{R_g+R_b}= 0.3V=V_{GS}$.
+	This gives a drain current $I_D=\frac{k'W}{2L}(V_{GS}-V_T)=3.072\mu A$ (we are told that the transistor is in saturation mode). 
+\item $\lambda=0$, therefore it follows that  $\frac{dI_D}{dV_{DS}}=0$ and $r_o$ is reduced to an open circuit.
+	For small signals, we can ground all commons and treat capacitors as wires, as in figure %\ref{smallsignaldraw}.
+	The voltage at the gate is the output of a voltage divider formed by $R_1$ and $R_2||R_G||R_B$, where the former is $2k\Omega$ and the latter $\approx1.66k\Omega$.
+	We write this as $V_{GS}=V_i\frac{1.66}{3.66}$.
+	The transconductance parameter $g_m$ can be derived to be $2\sqrt{K_nI_D}$ where $K_n=\frac{k'W}{2L}=0.48mAV^{-2}$ and $I_d$ is as before, so $g_m=0.0768mAV^{-1}$.
+	The current through $R_D$ is then given by $0.0768v_{gs}$, and $V_o= 46.08v_{gs}$.
+	$\frac{V_o}{V_i}=\frac{v_{gs}46.08}{V_{gs}3.66/1.66} = 20.90$, which is our gain.
+	\end{enumerate}
+\end{prob}
+\end{document}

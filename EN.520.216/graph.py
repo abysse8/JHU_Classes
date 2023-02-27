@@ -12,5 +12,7 @@ const_part = (k_const/q)
 y_list = [const_part*T*math.log(NAND/(n_i(T)**2))/math.log(math.e) for T in x_list]
 
 plt.plot(x_list, y_list, 'ro')
+plt.xlabel("Temperature (K)")
+plt.ylabel("Built-in potential (mV)")
 plt.show()
 print(f"{x_list[50]}, {y_list[50]}")

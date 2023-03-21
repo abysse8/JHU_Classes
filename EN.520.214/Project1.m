@@ -1,52 +1,70 @@
 load ActiveSonar.mat
 load ReceivedSignal1.mat
-%%
+%% PARAMETERS
 code = SonarPing;
+to_plot = true;
+use_fake_code = false; %test with fake or real code
 
+global threshold; global bounds;
+threshold = 0.1; %percentage of max amplitude to be allowed in batch
+bounds = 0.25; %parametrizes how close to middle to evaluate signal
 
-%subplot(1, 2, 1);
-%plot(flatten(custom));
+to_decode = [1 1 0 0 1];
+if use_fake_code
+    message = flatten(makemessage(to_decode, code));
+else
+    message = SonarEcho;
+end
+%%
+if exist("s1")
+    delete(s1); delete(s2); delete(s3);
+end
 
-%message = ReceivedSignal;
-subplot(1, 3, 1);
-to_decode = [1 nan 0 1 1 0 nan];
-message = flatten(makemessage(to_decode, code));
-plot(message);
+if to_plot
+    s1 = subplot(1, 3, 1); subtitle("Received Signal")
+    plot(message); xlim([0 length(message)])
+end
 
-subplot(1, 3, 2);
-convolved = convolve(message, code);
-plot(convolved);
+convolved = convolve(flatten(message), code);
+if to_plot
+    s2 = subplot(1, 3, 2);
+    plot(convolved); xlim([0 length(message)])
+end
 
-subplot(1, 3, 3);
 translated = evaluate(convolved, code);
-plot(flatten(makemessage(translated, code)));
+if to_plot
+    s3 = subplot(1, 3, 3);
+    plot(flatten(makemessage(translated, code))); xlim([0 length(message)])
+end
+disp("Translated:"); disp(translated);
 
 
 function bitstring = evaluate(input, code)
-    threshold = 0.75;
-    thresh_level = 0.5*max(abs(input));
+    global threshold; global bounds;
+    r = threshold; x = bounds;
+    thresh_level = r*max(abs(input));
 
     input = pad(input, code);
 
     dim = size(input);
-    delim = floor(dim(1)/2);
     input = reshape(input, [length(code), dim(2)/length(code)]);
-    
+
     dim = size(input);
-    delim = floor(dim(1)/2);
+    halfway = floor(dim(1)/2);
+    delim = floor(dim(1)*bounds);
     bitstring = [];
     for itr=1:dim(2)
         if ~( any(abs(input(:, itr)) > thresh_level))
             bitstring = [bitstring nan];
             continue
         end
-        first_half = mode(sign(input(delim:end, itr)));
-        second_half = mode(sign(input(1:delim, itr)));
-        if first_half ~= second_half
-            bitstring = [bitstring first_half];
-            continue
-        end
-        bitstring = [bitstring nan];
+        %first_half = mode(sign(input(delim:end, itr)));
+        %second_half = mode(sign(input(1:delim, itr)));
+        %if first_half ~= second_half
+        %    bitstring = [bitstring first_half];
+        %    continue
+        %end
+        bitstring = [bitstring mode(sign(input(halfway-delim:halfway+delim, itr)))];
     end
     bitstring = zerofy(bitstring);
 end
@@ -70,9 +88,7 @@ end
 function convolved = convolve(input, code)
     %turn to vectors
     input = flatten(input); code = flatten(code);
-    convolved = conv(input, code);
-    crp = floor(length(code)/2);
-    convolved = convolved(crp:length(convolved)-crp);
+    convolved = conv(input, code, 'same');
 end
 
 function flattened = flatten(input)
@@ -81,7 +97,7 @@ function flattened = flatten(input)
 end
 
 function custom_message = makemessage(input, code)
-    custom_message = zeros(length(code), length(input));
+    custom_message = zeros([length(code), length(input)]);
     zero_one = [code.', fliplr(code).'];
     for iii=1:length(input)
         if isnan(input(iii))

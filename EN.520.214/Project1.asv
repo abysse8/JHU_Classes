@@ -27,11 +27,9 @@ function bitstring = evaluate(input, code)
     thresh_level = 0.5*max(abs(input));
 
     input = pad(input, code);
-
     dim = size(input);
     delim = floor(dim(1)/2);
     input = reshape(input, [length(code), dim(2)/length(code)]);
-    
     dim = size(input);
     delim = floor(dim(1)/2);
     bitstring = [];
@@ -58,10 +56,8 @@ end
 function padded = pad(signal, code)
     signal = flatten(signal);
     len_to_pad = length(code)- mod(length(signal), length(code));
-    if mod(len_to_pad, length(code)) == 0
-        padded = signal.';
-        return
-    end
+    if mod(len_to_pad, length_code) == 0
+        
     before_pad = zeros(1, floor(len_to_pad/2));
     after_pad = zeros(1, len_to_pad-floor(len_to_pad/2));
     padded = [before_pad signal.' after_pad];

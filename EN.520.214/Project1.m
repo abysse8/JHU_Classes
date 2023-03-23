@@ -6,10 +6,10 @@ to_plot = true;
 use_fake_code = false; %test with fake or real code
 
 global threshold; global bounds;
-threshold = 0.1; %percentage of max amplitude to be allowed in batch
+threshold = 0.75; %percentage of max amplitude to be allowed in batch
 bounds = 0.25; %parametrizes how close to middle to evaluate signal
 
-to_decode = [1 1 0 0 1];
+to_decode = [1 0];
 if use_fake_code
     message = flatten(makemessage(to_decode, code));
 else
@@ -87,7 +87,7 @@ end
 
 function convolved = convolve(input, code)
     %turn to vectors
-    input = flatten(input); code = flatten(code);
+    input = flatten(input); code = flatten(fliplr(code));
     convolved = conv(input, code, 'same');
 end
 

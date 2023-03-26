@@ -7,7 +7,7 @@ use_fake_code = false; %test with fake or real code
 noise_factor = 0;
 
 global threshold; global bounds;
-threshold = 0.7; %percentage of max amplitude to be allowed in batch
+threshold = 0.5; %percentage of max amplitude to be allowed in batch
 
 to_decode = [0 1 0 1 1];
 if use_fake_code
@@ -43,15 +43,11 @@ if to_plot
 end
 disp("Translated:"); disp(translated);
 
-distance = getdistance(received_index);
-disp("Distance:"); disp(distance);
+distance = getdistance(received_index)
 
-function distance = getdistance(received_index)
+function distance = getdistance(received_index):
     samples_per_second = 100;
-    speed = 5000; %feet per second
-    seconds_per_sample = 1/samples_per_second;
-    time = received_index*seconds_per_sample;
-    distance = time*speed;
+    seconds_per_sample = 1/samples_per_second
 end
 
 function bitstring = evaluate(inputs, code)

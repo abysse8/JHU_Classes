@@ -1,21 +1,23 @@
 load ActiveSonar.mat
-load ReceivedSignal2.mat
+load ReceivedSignal1.mat
 %% PARAMETERS
-code = SonarPing;
+code = maketriangle(0.5, 100);
 to_plot = true;
-use_fake_code = false; %test with fake or real code
+use_fake_code = true; %test with fake or real code
 noise_factor = 0;
+global bipolar_method;
+bipolar_method = 'i'; %invert or flip
 
 global threshold; global bounds;
-threshold = 0.7; %percentage of max amplitude to be allowed in batch
+threshold = 0.3; %percentage of max amplitude to be allowed in batch
 
-to_decode = [0 1 0 1 1];
+to_decode = [0 1 1 0 0 0 1];
 if use_fake_code
     message = flatten(makemessage(to_decode, code));
     noise = noise_factor*randn(length(message), 1);
     message = message+noise;
 else
-    message = SonarEcho;
+    message = ReceivedSignal;
 end
 %%
 if exist("s1")
@@ -46,6 +48,19 @@ disp("Translated:"); disp(translated);
 distance = getdistance(received_index);
 disp("Distance:"); disp(distance);
 
+function inverted = invertmessage(message)
+    global bipolar_method;
+    if bipolar_method == 'i'
+        inverted = -message;
+    elseif bipolar_method == 'f'
+        inverted = fliplr(message);
+    end
+end
+
+function triangle = maketriangle(duration, samp_per_sec)
+    triangle = [0:1/samp_per_sec:duration];
+end
+
 function distance = getdistance(received_index)
     samples_per_second = 100;
     speed = 5000; %feet per second
@@ -61,14 +76,16 @@ function bitstring = evaluate(inputs, code)
     m = find(inputs>thresh_level);
     m = m(1);
     dim = size(inputs);
-    inputs = reshape(inputs, [length(code), dim(2)/length(code)]);
+    inputs = reshape(inputs, [length(code), dim(2)/length(code)])
 
     bitstring = zeros([1, dim(2)/length(code)]);
-
+    halfway = floor(length(code)/2);
     for iii=1:length(bitstring)
-        if inputs(1, iii) > thresh_level
+        inputs(:, iii)
+        inputs(halfway, iii)
+        if inputs(halfway, iii) > thresh_level
             bitstring(iii) = 1;
-        elseif inputs(1, iii) < -thresh_level
+        elseif inputs(halfway, iii) < -thresh_level
             bitstring(iii) = 0;
         else
             bitstring(iii) = nan;
@@ -93,6 +110,8 @@ function convolved = convolve(inputs, code)
     %turn to vectors
     inputs = flatten(inputs); code = flatten(fliplr(code));
     convolved = conv(inputs, code, 'same');
+    inputs
+    code
 end
 
 function flattened = flatten(inputs)
@@ -101,8 +120,10 @@ function flattened = flatten(inputs)
 end
 
 function custom_message = makemessage(inputs, code)
+    anticode = invertmessage(code);
+
     custom_message = zeros([length(code), length(inputs)]);
-    zero_one = [fliplr(code).', code.'];
+    zero_one = [anticode.', code.'];
 
     for iii=1:length(inputs)
         if isnan(inputs(iii))

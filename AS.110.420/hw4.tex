@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\input{~/git/Undergrad/preamble.tex} %preamble
+\title{AS.110.420 Homework 4}
+\author{LJ Gonzales, Jed's Section}
+\date{March 2023}
+
+\begin{document}
+\maketitle
+
+\begin{prob}
+	Writing the event $X=X_i \leq x$ in shorthand, by law of total probability $P(X)=P(X \cap A_1)+P(X \cap A_2)=P(A_1)P(X|A_1)+P(A_2)P(X|A_2)$. However, notice that $P(X|A_1)$ is exactly how we defined $P(X_1)$, and likewise with 2.
+	We then have $F(x)=aF_1(x)+(1-a)F_2(x)$. In other words the "weighted percentage" rule we used to compute direct probability will also apply for distributions
+\end{prob}
+
+\begin{prob}
+	\begin{enumerate}
+		\item $g_1(x)$ is positive on its entire support if $c_1$ is chosen positive: check.
+		We also need $\int_{-1}^{1}c_1(x-1)^2=1$ for the function to qualify as a pdf.
+		By u-substitution on $x-1$ we find that $c_1(0+\frac{8}{3})=1$, in other words $c_1=\frac{3}{8}$.
+		This makes $g_1$ valid as a pdf.
+	\item $\text{sign}(c_2(-1))\neq\text{sign}(c_2(1))$ for any choice of $c_2$.
+		Because we cannot allow negative density values inside the pdf, $g_2$ cannot be valid.
+	\item For choice of negative $c_3$, $g_3$ has the potential to be a pdf.
+		We need $\int_{-1}^{1}c_3(x-1)dx=1$. Meaning, $c_3(0-2)=1$, or $c_3=\frac{-1}{2}$.
+		With this choice $g_3$ is a valid pdf.
+	\end{enumerate}
+\end{prob}
+
+\begin{prob}
+	\begin{enumerate}
+		\item Because $\alpha > 0$, $x > 0$, the fraction is greater than 0 for all x in the support.
+		This satisfies our first condition for a pdf.
+		The second is we need $\alpha\int_{1}^{\infty}\frac{1}{x^{\alpha +1}}=1$. We can safely include 1 in the integral because the variable is continuous, so the probability at any particular point is irrelevant.
+		We then $\int_{1}^{\infty}x^{-\alpha -1}dx= \alpha \big[\frac{-1}{\alpha}x^{-\alpha} \big|^{\infty}_{1}=\alpha(\frac{1}{\alpha})=1$. The claim checks out.
+	\item The CDF $P(X \leq x)$ can be computed directly from the integral $\int_{1}^{x}\frac{\alpha}{x^{\alpha +1}}dx=\frac{-\alpha}{\alpha}\big[x^{-\alpha}\big|^{x}_{1}=-x^{\alpha}+1$.
+	\item We can compute $E(X)$ directly by $\int_{0}^{\infty}x\frac{\alpha}{x^{\alpha +1}}dx= \int^{\infty}_{0}\alpha x^{-\alpha}=\frac{\alpha}{-\alpha +1}\big[x^{-\alpha +1}\big|^{\infty}_{0}=\frac{\alpha}{-\alpha +1}(0-1)=\frac{\alpha}{\alpha -1}$.
+		This expression will only evaluate to a finite value if $\alpha>1$, (because for alpha less than or equal to 1 the integrand will be a positive power or a natural log, both of which do not converge).
+	
+	\item We can first compute $E(X^2)=\alpha \int_{0}^{\infty} x^2x^{-\alpha-1}dx= \alpha \int_{0}^{\infty}x^{-\alpha +1}dx = \alpha\big[\frac{1}{-\alpha+2}x^{-\alpha+2}\big|^{\infty}_{0}=\frac{\alpha}{\alpha-2}$.
+	For this to be true we also need to ask that $-\alpha+1 < -1$, or $\alpha>2$.
+	If this is true, then $Var(X)=E(X^2)-E(X)^2=\frac{\alpha}{\alpha-2}-(\frac{\alpha}{\alpha -1})^2=$
+
+	\end{enumerate}
+\end{prob}
+
+\begin{prob}
+	\begin{enumerate}
+		\item We note that the Bernoulli distribution has a distribution $p^x(1-p)^{1-x}$ for $x=0,1$.
+			It follows that $E((\frac{X-\mu}{\sigma})^3)=\frac{1}{\sigma^3}E((X-\mu)^3)=\frac{1}{\sigma^3}\big[E(X^3)-3E(X^2)E(X)+3E(X)E(X)^2-E(X)^3\big]$.
+		However the kth moment of a Bernoulli distribution is given by $\sum_{x=0}^{1}x^kp^x(1-p)^{1-x}$, which is p for all k.
+		From this, it follows that $\sigma^2$ is given by $E(X^2)-E(X)^2=p-p^2=p(1-p)$.
+		We can then simplify our expression to $\frac{p-3p^2+3p^3-p^3}{p(1-p)(p(1-p))^{1/2}}=\frac{2p^3-3p^2+p}{p(1-p)(p(1-p))^{1/2}}=\frac{p(2p-1)(p-1)}{p(p-1)(p(1-p))^{1/2}}=\frac{(2p-1)}{(p(1-p))^{1/2}}$. The denominator is always positive for any choice of p between 0 and 1.
+		We note that for $p >\frac{1}{2}$ this is positive (and the distribution is negatively skewed) and negative for $p <\frac{1}{2}$, where it is positively skewed.
+		at $p=\frac{1}{2}$, the distribution has no skewness.
+
+	\item By a similar method as above, $E((\frac{X-\mu}{\sigma})^4)= \frac{1}{p^2(1-p)^2}(E(X^4)-4E(X^3)E(X)+6E(X^2)E(X)^2)-4E(X)E(X)^3+E(X)^4)=\frac{p-4p^2+6p^3-4p^4+p^4}{(p^2(1-p)^2)}$.
+		We note that numerator(0)=numerator(1)=0 by inspection so we can reduce to $\frac{-p(p-1)(3p^2-3p+1)}{p^2(1-p)^2}=\frac{3p^2-3p+1}{p(1-p)}$. We want this $\geq3$ so $3p^2-3p+1 \geq 3p(1-p)$.
+	Completing the square on $6p^2-6p+1 \geq 0$, we get $6(p-\frac{1}{2})^2 \geq\frac{1}{2}$, or $(p-\frac{1}{2})^2 \geq\frac{1}{12}$.
+	The square root function is monotonically increasing on its domain so we can write $|p-\frac{1}{2}| \geq\sqrt{\frac{1}{12}}$ for our condition.
+	This is equivalent to $p-\frac{1}{2} \geq \sqrt{\frac{1}{12}}$, $p-\frac{1}{2} \leq -\sqrt{\frac{1}{12}}$.
+	It follows that $p \geq\frac{1}{2}+ \sqrt{\frac{1}{12}}$, $p \leq\frac{1}{2}- \sqrt{\frac{1}{12}}$ are the two bounds which satisfy this.
+	\end{enumerate}
+\end{prob}
+
+\begin{prob}
+	\begin{enumerate}
+		\item We write $P(X>t)=1-P(X \leq t)$. $exp(\lambda)$ has distribution $\lambda e^{-\lambda x}$, so it follows that the CDF is $\int^{x}_{0}\lambda e^{-\lambda y}dy=-e^{-\lambda y}\big|^{x}_{0}=-e^{-\lambda x}+1$.
+		It follows that $P(X>t)=1-(1-e^{-\lambda x})= e^{-lambda x}$, as sought.
+
+	\item By direct application of the conditional probability expression $P(X>s+t|X>s)=\frac{P(X>s+t \cap X>s)}{P(X>s)}$.
+		Notice that for $t>0$, $X>s+t \subset X>s$, thus  $=\frac{P(X>s+t)}{P(X>s)}=\frac{e^{-\lambda (s+t)}}{e^{-\lambda s}}=e^{-\lambda t}$.
+	Of course this is identically $P(X>t)$, as we sought to prove.
+	\end{enumerate}
+\end{prob}
+
+\begin{prob}
+	We just have to make sure that the expected value of Prof. Torcaso's loss is equal to the expected value of his gain.
+	We know that a binomial distribution has expected value $np$, so the average amount of throws made is $10*0.25 =2.5$.
+	The expected value of throws missed must then be 7.5.
+	We impose $7.5*5=2.5*c$, such that c must be 15\$ for the game to be fair.
+\end{prob}
+
+\begin{prob}
+	$\int_{0}^{\infty}\frac{e^{-x/2}}{\sqrt{x}}dx= \int^{\infty}_{0}x^{-1/2}e^{-x/2}dx$.
+	We apply a change of bases with $u=\frac{x}{2}$ such that $dx=2du$, $x^{-1/2}=2*2^{-1/2}u^{-1/2}=\sqrt{2}u^{-1/2}$  and the integral is $\sqrt{2}\int^{\infty}_{0}u^{-1/2}e^{-u}$.
+	At this point we notice that the integrand is in the form of the gamma function, specifically, $\Gamma(\frac{1}{2})=\sqrt{\pi}$.
+We then have $\sqrt{2\pi}$.
+\end{prob}
+
+\begin{prob}
+	\begin{enumerate}
+		\item I would expect $E(X^4)=\alpha(\alpha+1)(\alpha+2)(\alpha+3)\beta^4$, and by the same token $E(X^k)=\frac{(\alpha+k-1)!}{(\alpha-1)!}\beta^k$. 
+
+		\item $\frac{1}{X}=X^{-1}$ so by blind application of the formula above, $E(Y)$ would equal $\frac{(\alpha -2)!}{(\alpha-1)}\beta^{-1}=\frac{1}{\beta (\alpha-1)}$.
+		To do this however, we need to have $\alpha \geq 2$, since we have not defined the factorial operation for negative numbers, and also $\beta \neq 0$, because we don't like division by 0.
+	\end{enumerate}
+\end{prob}
+
+\begin{prob}
+	As suggested, we can write $E(X)= \sum^{\infty}_{0}xP(X=x)= \sum^{x}_{\sigma=0}\sum_{x=0}^{\infty})P(X=x)$.
+	We can now apply a change of bounds in the calculus sense, where if x goes from 0 to infinity, and sigma goes from x to infinity, this is the same as sigma going from 0 to infinity, and x going from sigma to infinity.
+	 $\sum^{\infty}_{\sigma=0}\sum_{x=\sigma}^{\infty}P(X=x)$.We notice that the inner integrand is identically $P(X>\sigma)$.
+	 Simplifying to $\sum_{\sigma = 0}^{\infty}P(X>\sigma)$. Keeping in mind that $P(X>n)=P(X \geq n)$ for continuous variable, we have shown the result.
+\end{prob}
+
+\end{document}

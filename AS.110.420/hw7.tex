@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\input{~/git/Undergrad/preamble.tex} %preamble
+\title{AS.110.420 Problem Set 7}
+\author{LJ Gonzales, Jed's Section}
+\date{March 2023}
+
+\begin{document}
+\maketitle
+
+\begin{prob}
+Given X has pdf $\frac{x^{\alpha-1}e^{-x/\beta}}{\beta ^\alpha \Gamma(\alpha)}$, we have that $Y=cX$ has pdf  $\frac{(cx)^{\alpha-1}e^{-(cx)/\beta}}{\beta ^\alpha \Gamma(\alpha)}=\frac{c^{\alpha-1}}{c^\alpha}\frac{x^{\alpha-1}e^{-x(\frac{c}{\beta})}}{\frac{\beta}{c}^\alpha \Gamma(\alpha)} =\frac{1}{c}\text{Gamma}(\alpha,\frac{\beta}{c})$. \\
+On the other hand, the event $Z=cX+d$ does not have a Gamma distribution, because expanding the numerator $(cx)^{\alpha-1}$ in the binomial sense will give the first term looking like a Gamma distribution, but for $\alpha \neq 1$ there will be additional terms which cannot be reduced in the same way.
+\end{prob}
+
+\begin{prob}
+	$P(X > x)=1-P(X \leq x) = 1- \int^{x}_{0}\tau^{\alpha-1}e^{\frac{-\tau}{\beta}}$.
+	Because the limit of the quotient is the quotient of the limit, we can first compute $lim_{x \to \infty}m(x) = lim_{x \to \infty}\frac{1- \int^{x}_{0}\tau^{\alpha-1}e^{\frac{-\tau}{\beta}}}{x^{\alpha-1}e^{-\alpha/\beta}}$.
+	Applying L'Hopital's rule we this limit is equivalently $lim_{x \to \infty}\frac{-x^{\alpha -1}e^{-\alpha/\beta}}{(\alpha-1)e^{-\alpha/\beta}+x^{\alpha-2}+x^{\alpha-1}(\frac{1}{\beta})e^{-x/\beta}} = lim_{x \to \infty}\frac{x^{\alpha-1}e^{-x/\beta}(-1)}{x^{\alpha-1}e^{-x/\beta}\big[(\alpha-1)x^{-1}-\frac{1}{\beta}\big]}$.
+	Multiplying both numerator and denominator by x we arrive at the result $m(x)=lim_{x \to \infty}\frac{-x}{(\alpha-1)-\frac{x}{\beta}}=\lim_{x \to \infty}\frac{x}{\frac{x}{\beta}-(\alpha-1)}$.
+	The result does hold.
+\end{prob}
+
+\begin{prob}
+	\begin{enumerate}
+	\item $y(\theta):= ln(M(\theta))$. We can apply the chain rule with $f(\theta)=\ln(\theta), g(\theta)=M(\theta)$ such that $y'(\theta)=\frac{M'(\theta)}{M(\theta)}$, where $M(0)=1, M'(0)=\mu$. It does follow that $y'(0)=\mu$.
+	Likewise, using the quotient rule on the newfound $y'$, we have $y''(\theta)=\frac{M(\theta)M''(\theta)-M'(\theta)M'(\theta)}{M(\theta)^2}=\frac{E(X^2)-E(X)^2}{1^2}=Var(X)$, as sought.
+
+\item We can derive the moment generating function of X to be $M(\theta)=(1-\beta\theta)^{-\alpha}$, and y is defined as above $y(\theta)=ln[(1-\beta\theta^{-\alpha})]=-\alpha ln(1-\beta\theta)$.
+	By iterative application of the chain rule we have $y'(\theta)=-\alpha\frac{1}{1-\beta\theta}(-\beta)$, $y''(\theta)=\alpha\beta\frac{d}{d\theta}(\frac{1}{1-\beta\theta})= \alpha\beta(\frac{\beta}{(1-\beta\theta)^2})$.
+	We indeed have $y'(0)=\alpha\beta$, $y''(0)=\alpha\beta^2$, as sought.
+	\end{enumerate}
+\end{prob}
+
+\begin{prob}
+	 $X~\text{unif}(a,b)=\frac{1}{b-a}$ and has pdf $\int_{a}^{x}\frac{1}{b-a}$ for $a \geq x < b$.
+	 $P(Y<y)=P(cX+d<y)=P(X<\frac{y-d}{c})$, for c>0.
+	 For c<0, we will have $P(X>\frac{y-d}{c})$, the complement of the previous.
+	 We then have $\int_{a}^{\frac{y-d}{c}}\frac{1}{b-a}dx= \big[\frac{x}{b-a}\big|_{a}^{\frac{y-d}{c}} =\frac{y-d}{c(b-a)}-\frac{a}{b-a}$, which is the pdf of Y.
+	The result would be 1 minus that if c<0.
+\end{prob}
+
+\begin{prob}
+	We have $P(X \leq x)=F(X)$, and $P(Y \leq y)=P(F(X) \leq y)$.
+	At this point we should check that $F(X)$ has an inverse if we want to write $P(X \leq F^{-1}(y))=F(F^{-1}(y))=y$.
+	F is a CDF: because we cannot have a probability of an outcome being two numbers at once, F is surjective. Hence it has an inverse, and the above is valid.
+	Note that a uniform(1,0) distribution has CDF $\int^{y}_{0}\frac{1}{1-0}dx=y-0=y$. This is the same as found previously, thus Y has the same uniform distribution.
+\end{prob}
+
+\begin{prob}
+	$E(X)= \int xf(x)dx= \int_{0}^{1}\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}x^{\alpha}(1-x)^{\beta -1}=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\times\frac{\Gamma(\alpha+1)\Gamma(\beta)}{\Gamma(\alpha+\beta+1)}\text{Beta}(\alpha+1, \beta)$, where we noticed that the integrand looked like a Beta distribution with parameters alpha+1, beta, and only needed to multiply and divide by its constant parameter to make it go to 1.
+	Simplifying, we have $E(X)=\frac{\Gamma(\alpha+\beta)(\alpha+1)\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha)\Gamma(\beta)(\alpha+\beta+1)\Gamma(\alpha+\beta)}=\frac{(\alpha+1)}{(\alpha+\beta+1)}$.
+
+	Likewise, $E(X^2)=\int^{1}_{0}x^2f(x)dx= \int^{1}_{0}x^{\alpha+1}(1-x)^{\beta}dx$. The integrand looks close to a $\text{Beta}(\alpha+2, \beta)$ distribution, if we just multiply and divide by $\frac{\Gamma(\alpha+\beta+2)}{\Gamma(\alpha+2)\Gamma(\beta)}$.
+	Making the integrand go to one as in part a, we have $E(X^2)=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\times\frac{(\alpha+2)(\alpha+1)\Gamma(\alpha)\Gamma(\beta)}{(\alpha+\beta+2)(\alpha+\beta+1)\Gamma(\alpha+\beta)}=\frac{(\alpha+1)(\alpha+2)}{(\alpha+\beta+2)(\alpha+\beta+1)}$.
+\end{prob}
+\begin{prob}
+	$P(Y=y)=P(-ln(X)=y)=P(X=e^{-y})= \frac{1}{e^{-y}-0}dx=\frac{1}{e^{-y}}=e^y=\frac{1}{x}$.
+\end{prob}
+\begin{prob}
+	\begin{enumerate}
+		\item $P(Z<1.27)=0.8980$ 
+		\item $P(Z>2.17)= 1-P(Z<2.17)= 0.015$
+		\item $P(Z>-1.27)=1-P(Z<-1.27)=0.898$ 
+		\item $=P(Z \leq 2.17)- P(Z \leq 1.27)= 0.087$
+		\item $=P(Z < 2.17)-P(Z<-1.27)= 0.748$
+	\item For the remaining exercises, we let Y be the event $\frac{X-20}{100}$, which is normalized to have a distro $N(0,1)$. We'll then have $P(X=x)=P(Y=\frac{x-20}{100})$, by a property of the normal distribution.
+		$P(Y \leq 0.127)\approx P(Y \leq 0.13)$. If precision is important, we could also linearly extrapolate from the table, but $\approx0.5517$.
+	\item $P(Y >\frac{21.7}{100})\approx1-P(Y<0.22)=0.4129$.
+	\item $P(Y>\frac{-21.7}{100})\approx1-P(Y<-0.02)=0.508$.
+	\item $=P(X\leq 41.7)-P(X \leq 32.7)=0.0354$.
+	\item $=P(X \leq 41.7)-P(X \leq 32.7)= 0.0354$.
+	\end{enumerate}
+\end{prob}
+
+\end{document}

@@ -1,0 +1,84 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\input{~/git/Undergrad/preamble.tex} %preamble
+\title{Notes Week 9}
+\author{LJ Gonzales}
+\date{March 2023}
+
+\begin{document}
+\maketitle
+
+CT x(t), harmonically related $x(t)= \sum_{k=-\infty}^{\infty}a_ke^{jkw_ot}$ 
+
+In CT we use continuous omega $\int_{-\infty}^{\infty}x(t)e^{-j\omega t}dt$
+
+Change to the time doamin x(t) --> X(w) by the synthesis equation
+$X(\omega)= \int_{-\infty}^{\infty}x(t)e^{-j\omega t}dt$ 
+and the Fourier Transform
+$x(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}X(\omega)e^{-j\omega t}$ \\
+
+Our textbook uses X(jw) instead of X(w) to emphasize that it is a special classs of the Laplace transform. They are equivalent though (included in the equation).
+
+$X(\omega)$ can be complex regarless of x(t). We usually plot $|X(\omega)|$ and the phase separately (magnitude and phase spectrum).
+
+If X is real-valued, called the amplitude spectrum.
+
+Example:
+\[
+ x(t)=e^{-3t}u(t)
+ X(\omega)= \int_{-\infty}^{\infty}e^{-3t}u(t)e^{-j\omega t}dt=
+ \\
+\int_{0}^{\infty}e^{t(-3-j\omega)}dt
+.\] and we solve.
+
+Example:
+\[
+x(t) = 1 \\
+X(\omega) = \int_{-\infty}^{\infty}x(t)e^{-j\omega t}dt = \int_{\infty}e^{-j\omega t}dt = 2\pi \delta(\omega)
+.\] 
+
+In genegral, if the continous is broad, then the frequency domain is narrow, and vice versa
+
+\emph{Fouier transform for periodic signals} \\
+$X(\omega)= \sum_{k=-\infty}^{\infty}a_k \delta(\omega-k\omega_o))$
+Example:
+\[
+x(t)=cos(\omega_o t)=\frac{1}{2}e^{j\omega_o t}+\frac{1}{2}e^{j \omega_o t}
+.\] 
+\[
+X(\omega)=\pi \delta(\omega - \omega_o) + \pi\delta(\omega - \omega_o)
+.\]
+\\
+
+\emph{Properties of the Fourier Transform} \\
+
+\begin{enumerate}
+	\item Linearity: scaling a signal scales its transform, adding signals adds the transforms
+	\item Time Shifting: $x(t+t_o)=e^{-j\omega t_o}X(\omega)$
+	\item Time Scaling: $x(at)=\frac{1}{|a|}X(\frac{\omega}{a})$
+	\item Convolution property: convolution in time is multiplication of transforms. We define $H(\omega)$ to be the \emph{frequency response} of the system, which is identically the Fourier Transform of the impulse response $h(t)$.
+\end{enumerate} 
+
+\emph{Distortion-less systems} \\
+$y(t)=ax(t-t_o)$ 
+Then $Y(\omega)=ae^{-j\omega_o t}X(\omega)$.
+Then system frequency response $H(\omega)=\frac{Y(\omega)}{X(\omega)}=ae^{-j \omega_o t}$ 
+
+Example: Designing a tuner for audio applications (low-pass filter for bass control, high pass for treble control).
+Want to transmit frequencies of interest with no distortion
+Low pass filter has $H(\omega)=e^{-j\omega t}$ for $|\omega| \leq \omega_c$, 0 otherwise.
+Can show that $h(t)=\frac{1}{2\pi}\text{sinc}$, which is \emph{not} causal.
+\\
+Another property: Multiplication in time is convolution of transforms, scaled by  $\frac{1}{2\pi}$.
+
+Let be given a signal $m(t)$, band-limited by $w_m$ (which is the case in AM Radio), meaning frequencies have bounds $w_m$.
+
+We create a new signal $x(t)=m(t)cos(w_c t)$, where the cosine is called the carrier signal, and $x(t)$ is the amplitude modulated signal. \\
+
+Multiplying two signals means convolving their frequency domain equivqlents, so 
+\[
+m(t)cos(w_c t) \rightarrow \frac{1}{2\pi}C(\omega)\star M(\omega) =\frac{1}{2}M(\omega-\omega_c)+\frac{1}{2}M(\omega+\omega_c).
+.\]
+Now we can send multiple radios' channels at the same time because multiplying them by different cosines sends them to different places in the frequency domain. This is why it is necessary to have band limited channels so as to not make them bleed into one another \\
+FM radio instead uses $cos(\omega_c t + m(t))$
+\end{document}

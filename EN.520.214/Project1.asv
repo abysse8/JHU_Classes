@@ -14,26 +14,13 @@ plot_things = true;
 % fake message either in the form [0 1 1 0 0 0 1]
 % or bitstring2arr(string2bitstring('string like this'))
 
-string_to_check = 'mic check mic check'
+string_to_check = 'mic check mic check';
 fake_message = bitstring2arr(string2bitstring(string_to_check));
-
 % 's' for sinusoidal, 'q' for square, 't' for triangle, 'w' for whatever the last
 % one is supposed to be
 code_type = 'w';
 noise_factor = 0;
-to_iterate = ['s', 'q', 't', 'w'];
-for iii=1:length(to_iterate)
-    code_type=to_iterate(iii);
-    code = get_code(code_type);
-    noise_factor = 0;
-    bipolar_method = bipolar_lookup(code_type);
-    message = flatten(makemessage(fake_message, code));
-    noise = noise_factor*randn(length(message), 1);
-    message = message+noise;
-    if decode(message, code) == string_to_check
-        disp(strjoin([code_type ' passed the vibe check']))
-    end
-end
+
 %% SUPERPARAMETER AUTOMATIC SETUP
 if use_fake_message
         code = get_code(code_type);
@@ -54,8 +41,9 @@ elseif ~use_fake_message %use recorded files
 end
 %% RUN: Plots message, convolved, and reconstructed
 decode(message, code);
+comparesignals(['s', 'q', 't', 'w'], ['mic check mic check']);
 
-%% Decoded
+%% Decode
 function reconstructed = decode(message, code)
     global plot_things;
     if plot_things
@@ -82,6 +70,37 @@ function reconstructed = decode(message, code)
     
     distance = getdistance(received_index);
     disp("Distance:"); disp(distance);
+end
+
+%% Robustness evaluator
+function valuations=comparesignals(signals_to_compare, the_message)
+    fake_message = the_message;
+    noise_factor = 0;
+    to_iterate = signals_to_compare;
+    ref = to_iterate;
+    
+    accuracy_thresholds = []
+    while length(to_iterate) > 0
+        new_to_iterate = to_iterate;
+        for iii=1:length(to_iterate)
+            code_type=to_iterate(iii);
+            code = get_code(code_type);
+            bipolar_method = bipolar_lookup(code_type);
+            message = flatten(makemessage(fake_message, code));
+            noise = noise_factor*randn(length(message), 1);
+            message = message+noise;
+            decoded = decode(message, code);
+            disp([string(code_type) noise_factor ": " string(decoded) ";;; " string(any(decoded ~= string_to_check))])
+            if any(decoded ~= string_to_check)
+                accuracy_thresholds(find(code_type==ref)) = noise_factor;
+                new_to_iterate = new_to_iterate(new_to_iterate~=code_type);
+                continue;
+            end
+        end
+        to_iterate = new_to_iterate;
+        noise_factor = noise_factor+1;
+    end
+    valuations = [to_iterate accuracy_thesholds];
 end
 
 %% PART 1 Helpers

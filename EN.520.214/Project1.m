@@ -14,30 +14,13 @@ plot_things = true;
 % fake message either in the form [0 1 1 0 0 0 1]
 % or bitstring2arr(string2bitstring('string like this'))
 
-string_to_check = 'mic check mic check'
+string_to_check = 'mic check mic check';
 fake_message = bitstring2arr(string2bitstring(string_to_check));
-
 % 's' for sinusoidal, 'q' for square, 't' for triangle, 'w' for whatever the last
 % one is supposed to be
 code_type = 'w';
 noise_factor = 0;
-to_iterate = ['s', 'q', 't', 'w'];
-accuracy_thresholds = []
-while length(to_iterate) > 0
-    for iii=1:length(to_iterate)
-        code_type=to_iterate(iii);
-        code = get_code(code_type);
-        bipolar_method = bipolar_lookup(code_type);
-        message = flatten(makemessage(fake_message, code));
-        noise = noise_factor*randn(length(message), 1);
-        message = message+noise;
-        if decode(message, code) ~= string_to_check
-            accuracy_thresholds(iii) = noise_factor
-            to_iterate = to_iterate(to_iterate~=code_type);
-        end
-    end
-    noise_factor = noise_factor+0.1;
-end
+
 %% SUPERPARAMETER AUTOMATIC SETUP
 if use_fake_message
         code = get_code(code_type);
@@ -58,8 +41,9 @@ elseif ~use_fake_message %use recorded files
 end
 %% RUN: Plots message, convolved, and reconstructed
 decode(message, code);
+comparesignals(['s', 'q', 't', 'w'], ['mic check mic check']);
 
-%% Decoded
+%% Decode
 function reconstructed = decode(message, code)
     global plot_things;
     if plot_things
@@ -86,6 +70,40 @@ function reconstructed = decode(message, code)
     
     distance = getdistance(received_index);
     disp("Distance:"); disp(distance);
+end
+
+%% Robustness evaluator
+function valuations=comparesignals(signals_to_compare, the_message)
+    fake_message = bitstring2arr(string2bitstring(the_message))
+    noise_factor = 0;
+    to_iterate = signals_to_compare;
+    ref = to_iterate;
+    
+    accuracy_thresholds = []
+    while length(to_iterate) > 0
+        new_to_iterate = to_iterate;
+        for iii=1:length(to_iterate)
+            code_type=to_iterate(iii);
+            code = get_code(code_type);
+            bipolar_method = bipolar_lookup(code_type);
+            message = flatten(makemessage(fake_message, code));
+            noise = noise_factor*randn(length(message), 1);
+            message = message+noise;
+            decoded = decode(message, code);
+            disp([string(code_type) noise_factor ": " string(decoded) ";;; " string(any(decoded ~= the_message))])
+            if any(decoded ~= the_message)
+                accuracy_thresholds(find(code_type==ref)) = noise_factor;
+                new_to_iterate = new_to_iterate(new_to_iterate~=code_type);
+                continue;
+            end
+        end
+        to_iterate = new_to_iterate;
+        noise_factor = noise_factor+0.01;
+    end
+    valuations = [string(accuracy_thresholds)];
+    for jjj=1:length(signals_to_compare)
+        valuations(2,jjj) = signals_to_compare(jjj);
+    end
 end
 
 %% PART 1 Helpers
@@ -158,16 +176,16 @@ end
 function the_code = get_code(code_type)
     global samp_per_second;
     if code_type == 't'
-        the_code = [0:1/samp_per_second:0.5];
+        the_code = [0:1/samp_per_second:0.49];
     elseif code_type == 's'
-        the_code = sin((2*pi/0.5)*[0:1/samp_per_second:0.5]);
+        the_code = sin((2*pi/0.5)*[0:1/samp_per_second:0.49]);
     elseif code_type == 'q'
-        the_code = ones(1, samp_per_second);
+        the_code = ones(1, samp_per_second/2);
     elseif code_type == 'w'
         tb = ones(1, samp_per_second/10);
         thb = ones(1, samp_per_second/20);
         ths = zeros(1, samp_per_second/20);
-        the_code = [tb ths thb ths tb tb ths thb ths tb tb ths thb ths thb]; 
+        the_code = [tb ths thb ths tb tb ths]; 
     end
 end
 

@@ -2,23 +2,22 @@ clear
 load ActiveSonar.mat
 load ReceivedSignal1.mat
 global bipolar_method;
-global plot_things;
 global samp_per_second
 samp_per_second = 100;
-%% HYPERPARAMETERS
+%% HYPERPARAMETERS- TO BE SET BY USER
 use_fake_message = true; %test with fake or real code
 real_message = "ReceivedSignal"; %ReceivedSignal or SonarEcho string
-plot_things = true;
 
-% For fake messages only
+% For fake messages/robustness check only
 % fake message either in the form [0 1 1 0 0 0 1]
 % or bitstring2arr(string2bitstring('string like this'))
-
 string_to_check = 'mic check mic check';
 fake_message = bitstring2arr(string2bitstring(string_to_check));
 % 's' for sinusoidal, 'q' for square, 't' for triangle, 'w' for whatever the last
 % one is supposed to be
 code_type = 'w';
+
+% ignore this for robustness check
 noise_factor = 0;
 
 %% SUPERPARAMETER AUTOMATIC SETUP
@@ -40,19 +39,29 @@ elseif ~use_fake_message %use recorded files
     end
 end
 %% RUN: Plots message, convolved, and reconstructed
-decode(message, code);
-comparesignals(['s', 'q', 't', 'w'], ['mic check mic check']);
+decode(message, code, true);
+to_analyse = ['s', 'q', 't', 'w'];
+comparesignals(to_analyse, ['mic check mic check']);
+show_codes(to_analyse); %%Uncomment to show original codes at the end
+
+function null = show_codes(to_plot)
+    global bipolar_method;
+    for iii=1:length(to_plot)
+        the_code = get_code(to_plot(iii));
+        bipolar_method = bipolar_lookup(to_plot(iii));
+        subplot(1, 4, iii); plot([the_code invertmessage(the_code)]);
+    end
+end
 
 %% Decode
-function reconstructed = decode(message, code)
-    global plot_things;
-    if plot_things
+function reconstructed = decode(message, code, show_things)
+    if show_things
         s1 = subplot(1, 3, 1); subtitle("Received Signal");
         plot(message); xlim([0 length(message)])
     end
 
     convolved = convolve(flatten(message), code);
-    if plot_things
+    if show_things
         s2 = subplot(1, 3, 2);
         plot(convolved); xlim([0 length(message)]);
     end
@@ -60,21 +69,21 @@ function reconstructed = decode(message, code)
     evaled = evaluate(convolved, code);
     translated = evaled(1:length(evaled)-1);
     received_index = evaled(end);
-    if plot_things
+    if show_things
         s3 = subplot(1, 3, 3);
         plot(flatten(makemessage(translated, code))); xlim([0 length(message)]);
     end
-    disp("Translated:"); 
     reconstructed = translatebitstring(translated);
-    disp(reconstructed);
-    
     distance = getdistance(received_index);
-    disp("Distance:"); disp(distance);
+    if show_things
+        disp("Translated:"); disp(reconstructed);
+        disp("Distance:"); disp(distance);
+    end
 end
 
 %% Robustness evaluator
 function valuations=comparesignals(signals_to_compare, the_message)
-    fake_message = bitstring2arr(string2bitstring(the_message))
+    fake_message = bitstring2arr(string2bitstring(the_message));
     noise_factor = 0;
     to_iterate = signals_to_compare;
     ref = to_iterate;
@@ -89,8 +98,8 @@ function valuations=comparesignals(signals_to_compare, the_message)
             message = flatten(makemessage(fake_message, code));
             noise = noise_factor*randn(length(message), 1);
             message = message+noise;
-            decoded = decode(message, code);
-            disp([string(code_type) noise_factor ": " string(decoded) ";;; " string(any(decoded ~= the_message))])
+            decoded = decode(message, code, false);
+            disp([string(code_type) noise_factor ": " string(decoded) "; " string(any(decoded ~= the_message))])
             if any(decoded ~= the_message)
                 accuracy_thresholds(find(code_type==ref)) = noise_factor;
                 new_to_iterate = new_to_iterate(new_to_iterate~=code_type);

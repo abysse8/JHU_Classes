@@ -21,14 +21,15 @@ global tolerance; tolerance = 1;
 % or bitstring2arr(string2bitstring('string like this'))
 string_to_check = 'mic check mic check';
 fake_message = bitstring2arr(string2bitstring(string_to_check));
+fake_message = [1 0 0 1 0 1 1 1]
 % 's' for sinusoidal, 'q' for square, 't' for triangle, 'w' for whatever the last
 % one is supposed to be
-code_type = 't';
+code_type = 's';
 to_analyse = ['s', 'q', 't', 'w'];
 run_signal_comparison = false;
 
 % ignore this for robustness check
-noise_factor = 0.5;
+noise_factor = 0.1;
 
 %% SUPERPARAMETER AUTOMATIC SETUP
 if use_fake_message
@@ -87,7 +88,7 @@ function reconstructed = decode(message, code, show_things)
     translated = evaled(1:length(evaled)-1);
     received_index = evaled(end);
     translated = pad(translated, zeros(1, 8));
-    if show_things
+    if show_things && ~echo
         s3 = subplot(1, 3, 3); plot(flatten(makemessage(translated, code)));
         xlim([0,length(message)]); subtitle("Translated");
         xlabel("Time (s)"); ylabel("Sound pressure (dB)");

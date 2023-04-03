@@ -1,12 +1,20 @@
+
+%%Make sure to read mini-documentation at the beginning of the submitted
+%%report!!! Guide to setting hyperparameters for all 3 parts.
 clear
 load ActiveSonar.mat
 load ReceivedSignal1.mat
 global bipolar_method;
-global samp_per_second
+global samp_per_second;
 samp_per_second = 100;
+global echo;
 %% HYPERPARAMETERS- TO BE SET BY USER
-use_fake_message = true; %test with fake or real code
+use_fake_message = false; %test with fake or real code
 real_message = "ReceivedSignal"; %ReceivedSignal or SonarEcho string
+echo = false;
+% make sure to set tolerance to 0 for parts II and III, otherwise the match
+% filter criterion will be too strict. Set to 1 for part I
+global tolerance; tolerance = 0;
 
 % For fake messages/robustness check only
 % fake message either in the form [0 1 1 0 0 0 1]
@@ -15,7 +23,9 @@ string_to_check = 'mic check mic check';
 fake_message = bitstring2arr(string2bitstring(string_to_check));
 % 's' for sinusoidal, 'q' for square, 't' for triangle, 'w' for whatever the last
 % one is supposed to be
-code_type = 'w';
+code_type = 't';
+to_analyse = ['s', 'q', 't', 'w'];
+run_signal_comparison = false;
 
 % ignore this for robustness check
 noise_factor = 0;
@@ -29,7 +39,7 @@ if use_fake_message
         message = message+noise;
 elseif ~use_fake_message %use recorded files
     if real_message == "ReceivedSignal"
-        code = [0:1/samp_per_sec:duration];
+        code = [0:1/samp_per_second:0.5];
         bipolar_method = 'i';
         message = ReceivedSignal;
     elseif real_message == "SonarEcho"
@@ -37,12 +47,15 @@ elseif ~use_fake_message %use recorded files
         bipolar_method = 'f';
         message = SonarEcho;
     end
+    %message = message-mean(message);
 end
 %% RUN: Plots message, convolved, and reconstructed
 decode(message, code, true);
-to_analyse = ['s', 'q', 't', 'w'];
-comparesignals(to_analyse, ['mic check mic check']);
-show_codes(to_analyse); %%Uncomment to show original codes at the end
+if run_signal_comparison
+    results = comparesignals(to_analyse, string_to_check);
+    disp(results)
+end
+%show_codes(to_analyse); %%Uncomment to show original codes at the end
 
 function null = show_codes(to_plot)
     global bipolar_method;
@@ -55,29 +68,39 @@ end
 
 %% Decode
 function reconstructed = decode(message, code, show_things)
+    global echo; global use_fake_message;
     if show_things
-        s1 = subplot(1, 3, 1); subtitle("Received Signal");
-        plot(message); xlim([0 length(message)])
+        s1 = subplot(1, 3, 1);
+        plot(message); xlim([0, length(message)]); subtitle("Received Signal");
     end
 
     convolved = convolve(flatten(message), code);
     if show_things
         s2 = subplot(1, 3, 2);
-        plot(convolved); xlim([0 length(message)]);
+        plot(convolved); xlim([0,length(message)]); subtitle("Convolved")
     end
 
     evaled = evaluate(convolved, code);
     translated = evaled(1:length(evaled)-1);
     received_index = evaled(end);
+    translated = pad(translated, zeros(1, 8));
     if show_things
-        s3 = subplot(1, 3, 3);
-        plot(flatten(makemessage(translated, code))); xlim([0 length(message)]);
+        s3 = subplot(1, 3, 3); plot(flatten(makemessage(translated, code)));
+        xlim([0,length(message)]); subtitle("Translated");
     end
-    reconstructed = translatebitstring(translated);
-    distance = getdistance(received_index);
-    if show_things
-        disp("Translated:"); disp(reconstructed);
-        disp("Distance:"); disp(distance);
+
+    %if locating distance to object, show distance. else, attempt to
+    %translate
+    if (echo == true) && (use_fake_message == false)
+        if show_things
+            distance = getdistance(received_index);
+            disp("Distance:"); disp(distance);
+        end
+    else
+        reconstructed = translatebitstring(translated);
+        if show_things
+            disp("Translated:"); disp(reconstructed);
+        end
     end
 end
 
@@ -134,10 +157,17 @@ end
 function bitstring = evaluate(inputs, code)
 %Takes in convolved message and returns [translated_message] eg [1 0 0 1]
 % **with index of first peak appended to the end**
-    thresh_level = 0;
+    global tolerance; global echo;
+    thresh_level = 0.3*max(abs(inputs));
     inputs = pad(inputs, code);
-    m = find(inputs>thresh_level);
-    m = m(1);
+
+    if (echo==true)
+        m = find(inputs>=tolerance*max(inputs));
+        m = m(1);
+    else
+        m = 0;
+    end
+
     dim = size(inputs);
     inputs = reshape(inputs, [length(code), dim(2)/length(code)]);
 
@@ -149,7 +179,7 @@ function bitstring = evaluate(inputs, code)
         elseif inputs(halfway, iii) < -thresh_level
             bitstring(iii) = 0;
         else
-            bitstring(iii) = nan;
+            bitstring(iii) = (max(inputs(:, iii))>-min(inputs(:, iii)));
         end
     end
     bitstring = [bitstring m];
@@ -158,7 +188,7 @@ end
 function message = translatebitstring(raw_bitstring)
     %take bitstring from evaluate method and return letter message
     sentences = string(reshape(raw_bitstring, [8, length(raw_bitstring)/8]));
-    sentences = sentences(2:end, :).';
+    sentences = sentences.';
     message = zeros(1, length(sentences(:, 1)));
     for iii=1:length(message)
         to_find = bin2dec(strjoin(sentences(iii,:), ''));
@@ -185,7 +215,7 @@ end
 function the_code = get_code(code_type)
     global samp_per_second;
     if code_type == 't'
-        the_code = [0:1/samp_per_second:0.49];
+        the_code = 2*[0:1/samp_per_second:0.49];
     elseif code_type == 's'
         the_code = sin((2*pi/0.5)*[0:1/samp_per_second:0.49]);
     elseif code_type == 'q'
@@ -244,6 +274,16 @@ function inverted_message = invertmessage(message)
     end
 end
 
+function cutted = cut(signal, code)
+% Pads a signal with zeros to make its length integer multiple of given ping
+    signal = flatten(signal);
+    len_to_cut = mod(length(signal), length(code));
+    if len_to_cut == 0
+        cutted = signal.';
+        return
+    end
+    cutted = signal(1:end-len_to_cut).';
+end
 function padded = pad(signal, code)
 % Pads a signal with zeros to make its length integer multiple of given ping
     signal = flatten(signal);

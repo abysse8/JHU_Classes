@@ -9,12 +9,12 @@ global samp_per_second;
 samp_per_second = 100;
 global echo;
 %% HYPERPARAMETERS- TO BE SET BY USER
-use_fake_message = false; %test with fake or real code
-real_message = "ReceivedSignal"; %ReceivedSignal or SonarEcho string
+use_fake_message = true; %test with fake or real code
+real_message = "SonarEcho"; %ReceivedSignal or SonarEcho string
 echo = false;
 % make sure to set tolerance to 0 for parts II and III, otherwise the match
 % filter criterion will be too strict. Set to 1 for part I
-global tolerance; tolerance = 0;
+global tolerance; tolerance = 1;
 
 % For fake messages/robustness check only
 % fake message either in the form [0 1 1 0 0 0 1]
@@ -28,7 +28,7 @@ to_analyse = ['s', 'q', 't', 'w'];
 run_signal_comparison = false;
 
 % ignore this for robustness check
-noise_factor = 0;
+noise_factor = 0.5;
 
 %% SUPERPARAMETER AUTOMATIC SETUP
 if use_fake_message
@@ -63,6 +63,7 @@ function null = show_codes(to_plot)
         the_code = get_code(to_plot(iii));
         bipolar_method = bipolar_lookup(to_plot(iii));
         subplot(1, 4, iii); plot([the_code invertmessage(the_code)]);
+        xlabel("Time (s)"); ylabel("Sound pressure (dB)");
     end
 end
 
@@ -72,12 +73,14 @@ function reconstructed = decode(message, code, show_things)
     if show_things
         s1 = subplot(1, 3, 1);
         plot(message); xlim([0, length(message)]); subtitle("Received Signal");
+        xlabel("Time (s)"); ylabel("Sound pressure (dB)");
     end
 
     convolved = convolve(flatten(message), code);
     if show_things
         s2 = subplot(1, 3, 2);
-        plot(convolved); xlim([0,length(message)]); subtitle("Convolved")
+        plot(convolved); xlim([0,length(message)]); subtitle("Convolved");
+        xlabel("Time (s)"); ylabel("Sound pressure (dB)");
     end
 
     evaled = evaluate(convolved, code);
@@ -87,6 +90,7 @@ function reconstructed = decode(message, code, show_things)
     if show_things
         s3 = subplot(1, 3, 3); plot(flatten(makemessage(translated, code)));
         xlim([0,length(message)]); subtitle("Translated");
+        xlabel("Time (s)"); ylabel("Sound pressure (dB)");
     end
 
     %if locating distance to object, show distance. else, attempt to

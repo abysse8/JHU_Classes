@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.3.28)  26 APR 2023 18:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.3.28)  28 APR 2023 06:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -151,493 +151,60 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-./project2.tex:12: Missing $ inserted.
-<inserted text> 
-                $
-l.12 We then instantiate \emph{x_axis}
-                                      , which represents the timepoints of t...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./project2.tex:12: Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.12 We then instantiate \emph{x_axis}
-                                      , which represents the timepoints of t...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./project2.tex:13: Missing $ inserted.
-<inserted text> 
-                $
-l.13 ...d in seconds), and with step $\frac{1}{fs}
-                                                  $, defaulted to 8000 in He...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./project2.tex:13: Extra }, or forgotten $.
-\frac  #1#2->{\begingroup #1\endgroup \@@over #2}
-                                                 
-l.13 ...d in seconds), and with step $\frac{1}{fs}
-                                                  $, defaulted to 8000 in He...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./project2.tex:14: Missing $ inserted.
-<inserted text> 
-                $
-l.14 ...generated, one by $sin(2\pi f\text{x_axis}
-                                                  )$, where f is the respect...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./project2.tex:14: Extra }, or forgotten $.
-\textdef@ ...th {#1}\let \f@size #2\selectfont #3}
-                                                  }
-l.14 ...generated, one by $sin(2\pi f\text{x_axis}
-                                                  )$, where f is the respect...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./project2.tex:14: Extra }, or forgotten $.
-\textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
-                                                  
-l.14 ...generated, one by $sin(2\pi f\text{x_axis}
-                                                  )$, where f is the respect...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./project2.tex:14: Extra }, or forgotten $.
-\text@ ...e {\textdef@ \displaystyle \f@size {#1}}
-                                                  {\textdef@ \textstyle \f@s...
-l.14 ...generated, one by $sin(2\pi f\text{x_axis}
-                                                  )$, where f is the respect...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./project2.tex:14: Missing $ inserted.
-<inserted text> 
-                $
-l.14 ...generated, one by $sin(2\pi f\text{x_axis}
-                                                  )$, where f is the respect...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./project2.tex:14: Extra }, or forgotten $.
-\textdef@ ...th {#1}\let \f@size #2\selectfont #3}
-                                                  }
-l.14 ...generated, one by $sin(2\pi f\text{x_axis}
-                                                  )$, where f is the respect...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./project2.tex:14: Extra }, or forgotten $.
-\textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
-                                                  
-l.14 ...generated, one by $sin(2\pi f\text{x_axis}
-                                                  )$, where f is the respect...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./project2.tex:14: Extra }, or forgotten $.
-\text@ ...xtstyle \f@size {\firstchoice@false #1}}
-                                                  {\textdef@ \textstyle \sf@...
-l.14 ...generated, one by $sin(2\pi f\text{x_axis}
-                                                  )$, where f is the respect...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./project2.tex:14: Missing $ inserted.
-<inserted text> 
-                $
-l.14 ...generated, one by $sin(2\pi f\text{x_axis}
-                                                  )$, where f is the respect...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./project2.tex:14: Extra }, or forgotten $.
-\textdef@ ...th {#1}\let \f@size #2\selectfont #3}
-                                                  }
-l.14 ...generated, one by $sin(2\pi f\text{x_axis}
-                                                  )$, where f is the respect...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./project2.tex:14: Extra }, or forgotten $.
-\textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
-                                                  
-l.14 ...generated, one by $sin(2\pi f\text{x_axis}
-                                                  )$, where f is the respect...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./project2.tex:14: Extra }, or forgotten $.
-\text@ ...tstyle \sf@size {\firstchoice@false #1}}
-                                                  {\textdef@ \textstyle \ssf...
-l.14 ...generated, one by $sin(2\pi f\text{x_axis}
-                                                  )$, where f is the respect...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./project2.tex:14: Missing $ inserted.
-<inserted text> 
-                $
-l.14 ...generated, one by $sin(2\pi f\text{x_axis}
-                                                  )$, where f is the respect...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./project2.tex:14: Extra }, or forgotten $.
-\textdef@ ...th {#1}\let \f@size #2\selectfont #3}
-                                                  }
-l.14 ...generated, one by $sin(2\pi f\text{x_axis}
-                                                  )$, where f is the respect...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./project2.tex:14: Extra }, or forgotten $.
-\textdef@ ...h {#1}\let \f@size #2\selectfont #3}}
-                                                  
-l.14 ...generated, one by $sin(2\pi f\text{x_axis}
-                                                  )$, where f is the respect...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./project2.tex:14: Extra }, or forgotten $.
-\text@ ...style \ssf@size {\firstchoice@false #1}}
-                                                  \check@mathfonts }
-l.14 ...generated, one by $sin(2\pi f\text{x_axis}
-                                                  )$, where f is the respect...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./project2.tex:14: Extra }, or forgotten $.
-\text@ ...firstchoice@false #1}}\check@mathfonts }
-                                                  
-l.14 ...generated, one by $sin(2\pi f\text{x_axis}
-                                                  )$, where f is the respect...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./project2.tex:18: Missing } inserted.
-<inserted text> 
-                }
-l.18 \section{Part II}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./project2.tex:18: Missing } inserted.
-<inserted text> 
-                }
-l.18 \section{Part II}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./project2.tex:18: Missing $ inserted.
-<inserted text> 
-                $
-l.18 \section{Part II}
-                      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./project2.tex:18: Missing } inserted.
-<inserted text> 
-                }
-l.18 \section{Part II}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./project2.tex:18: Missing } inserted.
-<inserted text> 
-                }
-l.18 \section{Part II}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./project2.tex:18: Missing } inserted.
-<inserted text> 
-                }
-l.18 \section{Part II}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./project2.tex:18: Missing $ inserted.
-<inserted text> 
-                $
-l.18 \section{Part II}
-                      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./project2.tex:18: Missing } inserted.
-<inserted text> 
-                }
-l.18 \section{Part II}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./project2.tex:18: Missing } inserted.
-<inserted text> 
-                }
-l.18 \section{Part II}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./project2.tex:18: Missing } inserted.
-<inserted text> 
-                }
-l.18 \section{Part II}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./project2.tex:18: Missing $ inserted.
-<inserted text> 
-                $
-l.18 \section{Part II}
-                      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./project2.tex:18: Missing } inserted.
-<inserted text> 
-                }
-l.18 \section{Part II}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./project2.tex:18: Missing } inserted.
-<inserted text> 
-                }
-l.18 \section{Part II}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./project2.tex:18: Missing } inserted.
-<inserted text> 
-                }
-l.18 \section{Part II}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./project2.tex:18: Missing $ inserted.
-<inserted text> 
-                $
-l.18 \section{Part II}
-                      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./project2.tex:18: Missing } inserted.
-<inserted text> 
-                }
-l.18 \section{Part II}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./project2.tex:18: Missing { inserted.
-<to be read again> 
-                   $
-l.18 \section{Part II}
-                      
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-./project2.tex:18: Missing } inserted.
-<inserted text> 
-                }
-l.18 \section{Part II}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./project2.tex:18: Missing { inserted.
-<to be read again> 
-                   $
-l.18 \section{Part II}
-                      
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-./project2.tex:18: Missing } inserted.
-<inserted text> 
-                }
-l.18 \section{Part II}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./project2.tex:18: Missing { inserted.
-<to be read again> 
-                   $
-l.18 \section{Part II}
-                      
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-./project2.tex:18: Missing } inserted.
-<inserted text> 
-                }
-l.18 \section{Part II}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./project2.tex:18: Missing } inserted.
-<inserted text> 
-                }
-l.18 \section{Part II}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+<encode.jpg, id=1, 552.0625pt x 428.60126pt>
+File: encode.jpg Graphic file (type jpg)
+<use encode.jpg>
+Package pdftex.def Info: encode.jpg  used on input line 18.
+(pdftex.def)             Requested size: 345.0pt x 267.8555pt.
 
 
-Overfull \hbox (709.09209pt too wide) in paragraph at lines 11--18
-\OT1/cmr/m/it/10 x$[]\OML/cmm/m/it/10 xis; whichrepresentsthetimepointsofthecontinuoussinusoidalthatthediscretizedversionwillrecordassamples:Itisalinspacerangebeginningat\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; endingattheuserparameter[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 defaultedto\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 andmeasuredinseconds\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; andwithstep$\OT1/cmr/m/it/10 1$[]$,
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `normalvssquared' on page 1 undefined on input line 27.
-
-
-LaTeX Warning: Reference `envelopedemonstration' on page 1 undefined on input line 32.
+LaTeX Warning: Reference `normalvssquared' on page 1 undefined on input line 33.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./project2.aux)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+<sequence.jpg, id=15, 562.1pt x 421.575pt>
+File: sequence.jpg Graphic file (type jpg)
+<use sequence.jpg>
+Package pdftex.def Info: sequence.jpg  used on input line 40.
+(pdftex.def)             Requested size: 345.0pt x 258.74924pt.
+ [2 <./encode.jpg>]
+<noisy.jpg, id=20, 552.0625pt x 428.60126pt>
+File: noisy.jpg Graphic file (type jpg)
+<use noisy.jpg>
+Package pdftex.def Info: noisy.jpg  used on input line 54.
+(pdftex.def)             Requested size: 345.0pt x 267.8555pt.
+ [3 <./sequence.jpg>]
+<accuracy.jpg, id=28, 552.0625pt x 428.60126pt>
+File: accuracy.jpg Graphic file (type jpg)
+<use accuracy.jpg>
+Package pdftex.def Info: accuracy.jpg  used on input line 60.
+(pdftex.def)             Requested size: 345.0pt x 267.8555pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4 <./noisy.jpg>] [5 <./accuracy.jpg>] (./project2.aux)
 
 LaTeX Warning: There were undefined references.
 
- )
-(\end occurred inside a group at level 2)
-
-### simple group (level 2) entered at line 13 ({)
-### simple group (level 1) entered at line 12 ({)
-### bottom level 
+ ) 
 Here is how much of TeX's memory you used:
- 2105 strings out of 480247
- 32377 string characters out of 5896151
- 327807 words of memory out of 5000000
- 20054 multiletter control sequences out of 15000+600000
- 475379 words of font info for 49 fonts, out of 8000000 for 9000
+ 2135 strings out of 480247
+ 32816 string characters out of 5896151
+ 325839 words of memory out of 5000000
+ 20080 multiletter control sequences out of 15000+600000
+ 474681 words of font info for 47 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 59i,16n,65p,513b,198s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,7n,65p,632b,228s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on project2.pdf (2 pages, 145887 bytes).
+Output written on project2.pdf (5 pages, 322505 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
+ 89 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

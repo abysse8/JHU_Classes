@@ -17,4 +17,19 @@ function [x,fs] = DTMFencode(key,duration, weight, fs)
         t2 = sin(x_axis*2*pi*high_fre);
         x = [x t1.*weight(1)+t2.*weight(2) zeros(1,fs)];
     end
+
+    %% PLOT TIME AND FREQ DOMAIN
+    o = t1.*weight(1)+t2.*weight(2);
+    subplot(2,1,1); plot(x_axis, o);
+    title(strcat("Time domain representation of ", string(key)))
+    xlabel("Time (s)"); ylabel("Amplitude (intensity)")
+    subplot(2,1,2);
+    ff = fft(o);
+    P2 = abs(ff/length(o));
+    P1 = P2(1:length(o)/2+1);
+    P1(2:end-1) = 2*P1(2:end-1);
+    f = fs*(0:(length(o)/2))/length(o);
+    plot(f,P1)
+    title("Fourier domain representation");
+    xlabel("Frequency (Hz)"); ylabel("Component intensity")
 end

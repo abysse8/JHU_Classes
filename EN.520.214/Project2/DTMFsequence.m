@@ -1,5 +1,4 @@
 function [seq, fs] = DTMFsequence(filename)
-%9, 7?, 6, 5, 4?
     [y,fs] = audioread(filename);
     sound(y,fs)
 
@@ -15,13 +14,9 @@ function [seq, fs] = DTMFsequence(filename)
     for s=1:step:length(y)
         energies(ceil(s/step)) = mean(y(s:min(s+step, length(y))).^2);
     end
-    
-    subplot(2,1,1)
-    plot(energies)
-    subplot(2,1,2)
-    plot(y)
-
-    found = find(energies>0.4*max(energies));
+    energies = energies-min(energies);
+    p2 = energies;
+    found = find(energies>0.1*max(energies));
     delim = 1;
     idxs_end = [];
     idxs_start = [found(1)];
@@ -54,4 +49,23 @@ function [seq, fs] = DTMFsequence(filename)
         [l, idx] = min(abs(lows-low_freq)+abs(highs-high_freq));
         seq = [seq keys(idx)];
     end
+    %% PLOT TIME AND FREQ DOMAIN
+    subplot(3,1,1); plot(y);
+    title("Time domain representation of dtmf")
+    xlabel("Time (s)"); ylabel("Amplitude (intensity)")
+
+    subplot(3,1,2); plot(1:length(y)/length(p2):length(y),p2);
+    title("Envelope of signal")
+    xlabel("Time"); ylabel("Dimensionless");
+
+    subplot(3,1,3);
+    y = y(floor(length(y)*idxs_start(1)/50):floor(length(y)*idxs_end(1)/50));
+    ff = fft(y);
+    P2 = abs(ff/length(y));
+    P1 = P2(1:floor(length(y)/2)+1);
+    P1(2:end-1) = 2*P1(2:end-1);
+    f = fs*(0:floor((length(y)/2)))/length(y);
+    plot(f,P1)
+    title("Fourier domain of first split");
+    xlabel("Frequency (Hz)"); ylabel("Component intensity")
 end

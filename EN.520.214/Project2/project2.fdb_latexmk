@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1682677566 "project2.tex" "project2.pdf" "project2" 1682677567
+["pdflatex"] 1682709397 "project2.tex" "project2.pdf" "project2" 1682709397
   "/etc/texmf/web2c/texmf.cnf" 1680056924 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/lj/git/Classes/preamble.tex" 1682292899 391 f383a1aa2e7a1c375a0d79f99a052ffd ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -57,8 +57,10 @@
   "accuracy.jpg" 1682671775 24727 74ce5a64091e8ca914f644de6655e1f6 ""
   "encode.jpg" 1682672781 59071 d79c900faeee1ad0901172b95ba99f69 ""
   "noisy.jpg" 1682676921 47124 43a87b9d25e356f46082cce2638e808f ""
-  "project2.aux" 1682677567 1229 4b92ff98d77fcc383cc64da19045c57b "pdflatex"
-  "project2.tex" 1682677565 6433 6a5750ac6e37d22b758e6a0a7f775b4f ""
+  "part4envelope.jpg" 1682708441 36731 563e116e996260bd9e234a53c2d6bf47 ""
+  "project2.aux" 1682709397 1841 98e7e361510862656fe4c6a07ad137ff "pdflatex"
+  "project2.tex" 1682709396 7678 2004d4ca5ff43ad14d4985f43b501e99 ""
+  "reverbacc.jpg" 1682707934 24855 971893b638e6808fdd7a8e4e13fcccd6 ""
   "sequence.jpg" 1682674968 49376 054e333fe6ce899758d21518ba294a1e ""
   (generated)
   "project2.aux"

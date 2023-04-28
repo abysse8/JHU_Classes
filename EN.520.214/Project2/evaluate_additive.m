@@ -21,7 +21,7 @@ for noise_factor = 0:0.1:5
       plot(y+noise)
       correct = correct + (right_answer == seq);
       if right_answer ~= seq
-          disp(fullFileName); disp(fs)
+          disp(fullFileName);
           %disp([seq right_answer]);
       end
     end

@@ -2,21 +2,23 @@ myDir = '/home/lj/git/Classes/EN.520.214/Project2/wav files'; %gets directory
 myFiles = dir(fullfile(myDir,'*.wav')); %gets all wav files in struct
 total = length(myFiles);
 accuracies = [];
-reverb = 0:0.1:5;
-for reverb = 2:2
+reverb = 0:0.01:0.1;
+for reverb = 0:0.01:0.1
     correct = 0;
-    for k = 3:3
+    for k = 1:length(myFiles)
       baseFileName = myFiles(k).name;
       fullFileName = fullfile(myDir, baseFileName);
       [y, fs] = audioread(fullFileName);
       m = max(y);
       y = y/m;
-      [y, h, FS] = addreverb(y,fs,reverb);     
-      
+      [y, h, FS] = addreverb(y,fs,reverb);
+      if k==1
+        sound(y, FS)
+      end
       right_answer = split(baseFileName, '_'); right_answer = string(right_answer(2));
       right_answer = split(right_answer, '.'); right_answer = string(right_answer(1));
-      [seq, fs] = DTMFsequencewithArray(y+noise, fs);
-      plot(y+noise)
+      [seq, fs] = DTMFsequencewithArray(y, fs);
+      plot(y)
       correct = correct + (right_answer == seq);
       if right_answer ~= seq
           disp(fullFileName); disp(fs)

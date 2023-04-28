@@ -25,12 +25,14 @@ We verified the output quantitatively by comparing the tone with the ones produc
 Since we are making the assumption that only one digit is pressed per recording, we can also assume that it will have the most salient amplitude in the frequency domain.
 We could relax this requirement a little bit since we know that the keytone will take one of exactly 12 combinations, and thus focus our attention fully on small intervals around those frequencies.
 This should be seriously be taken in consideration for environments that have high frequencies in domains relatively far from DTMF (for example, environments near roads or manufacturing equipment, which can have dominating low noise, or electrical equipment, which can contribute to the high frequency parts of the spectrum).
-Here however, we consider a scenario more akin to the 'cocktail party' problem, where the most dominant noise present is in the same part of the spectra as the desired signal.
+Here however, we consider a scenario like the 'cocktail party' problem, where the most dominant noise present is in the same part of the spectra as the desired signal.
 In this case, we definitely need to make the assumption that the noise is less prevalent than the signal.
 This means we can divide the frequency spectrum into two partitions: the $<1000$Hz partition which will be occupied by the 'row' frequencies of DTMF, and the $>1000$Hz part where the 'column' frequencies will live.
 Within each of these two regions, we can set a "threshold" at 90\% of the global maximum of the parition, and store the positions of all amplitudes which exceed this threshold.
 At this point, the maximum frequencies may not exactly match to the DTMF ones, for a variety of reasons: instead of 1209, they may be 1159, 1212, etc. Instead of finding an exact match, we return the digit which most closely matches (measured as minimum of absolute value 'distance') from the found frequencies.
 We also found that it helped to square all datapoints in the frequency domain: this narrows the spikes as shown in figure \ref{normalvssquared}.
+
+We see that doing so significantly reduces the saliency of frequencies that appear to be noise, leaving only the two main spikes with significant amplitudes. While computing even higher orders 
 
 \section{Part III}
 We first note that Part III is identical to Part II, with the exception that potentially multiple frequencies may be present in the recording. We of course can't apply part II's algorithm directly, at it will only select one (the most salient) frequency.
@@ -61,5 +63,30 @@ The cause of deterioration was not so much the Fourier analysis, but finding the
 	\label{accuracy}
 	\caption{Accuracy vs noise}
 \end{figure}
+
+\section{Part V}
+So far in this investigation, we have assumed that the relative weighting of low and high frequencies are constant thoughout a single sample. In particular, since every tone is composed of exactly one high and one low tone, we expect the amplitude of the signal to be constant across key presses (additive noise nonwithstanding). As is shown clearly in figure \ref{part4enveloper}, this same assumption cannot be made with reverb signals. Figure \ref{reverbacc} shows the accuracy using a naïve implementation, that is, one unmodified from parts I-IV.
+
+There are two primary ways for which the current model is unfit for reverb noise: first, it does not take advantage of the fact that the zeros of the envelope will be very well defined, even at high levels of reverb: this is due to the convolution-based origin of the noise, where 0 convoluted with anything remains 0.
+Second, and related to the first, is the fact that we squared the signal in the time domain to get better a sharper understanding of where the digits occurred. Not only is this not necessary, but it is actually counterproductive here, because the amplitude changes across the signal.\\
+
+We should not expect the Fourier Transform of the algorithm to change; multiplication in the time domain is a convolution in the frequency domain, and assuming that the fourier domain is composed of a sum of deltas, they should (at most) be scaled by some factor. This is a transformation to which our algorithm as described in part II stays robust.
+\begin{figure}[h]
+	\includegraphics[width =\textwidth]{normalvsreverb.jpg}
+	\label{normalvsreverb}
+	\caption{As discussed, reverb noise only affects the fourier domain through rescaling of delta spikes}
+\end{figure}
+
+\begin{figure}[h]
+	\includegraphics[width =\textwidth]{part4envelope.jpg}
+	\label{part4envelope}
+	\caption{Computed Envelope and original signal for reverbed signal with duration 1. The squaring of the amplitude (originally meant to reduce additive noise) exacerbates differences in amplitudes in the signal}
+\end{figure}
+\begin{figure}[h]
+	\includegraphics[width =\textwidth]{reverbacc.jpg}
+	\label{reverbacc}
+	\caption{Naïve model accuracy on the reverbarated dataset.}
+\end{figure}
+
 
 \end{document}

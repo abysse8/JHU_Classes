@@ -18,7 +18,7 @@ function [seq, fs] = DTMFsequencewithArray(y, fs)
     subplot(2,1,2)
     plot(y)
 
-    found = find(energies>0.3*max(energies));
+    found = find(energies>0.5*max(energies));
     delim = 1;
     idxs_end = [];
     idxs_start = [found(1)];
@@ -33,7 +33,11 @@ function [seq, fs] = DTMFsequencewithArray(y, fs)
     
     idxs_end = [idxs_end found(end)];
     idxs_start = [idxs_start];
-  
+    if length(idxs_end) ~= length(idxs_start)
+        idxs_end = [idxs_end zeros(1,length(idxs_end-length(idxs_start)))+batch_size]
+    end
+    disp(idxs_end)
+    disp(idxs_start)
     seq = [];
     for jjj=1:length(idxs_start)
         range = floor(length(y)*idxs_start(jjj)/50):floor(length(y)*idxs_end(jjj)/50);

@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\input{~/git/Undergrad/preamble.tex} %preamble
+\title{Homework 9}
+\author{LJ Gonzales, Jed's section}
+\date{April 2023}
+
+\begin{document}
+\maketitle
+
+\begin{prob}
+	\begin{enumerate}
+	\item For the rvs to be dependent, we need $f_{Y,X}=f_Yf_X$. We can compute the marginals by integrating the joint pdf over the entire support of all other variables. $f_X=\int_{0}^{\infty}xe^{-x(1+y)}dy=xe^{-x}\int_{0}^{\infty}e^{-xy}dy=-e^{-x}\big[e^{-xy}\big|_{0}^{\infty}=e^{-x}I_{(0,\infty)}(x)$.
+	Likewise, $f_Y=\int_{0}^{\infty}xe^{-x(1+y)}dx$. We apply the DI method, with $u=x, u'=1, v'=e^{-x(1+y)}, v=\frac{-1}{1+y}e^{-x(1+y)}$, such that $f_Y=\frac{-x}{1+y}e^{-x(1+y)}\big|^{\infty}_{0}+\frac{1}{1+y}\int^{\infty}_{0}e^{-x(1+y)}dx$.
+	Another application of the DI method and evaluating the lefthand term (we can use L'hopital's rule, or recognize that the exponential in the denominator increases faster than any polynomial), we have $f_Y=\frac{-1}{(1+y)^2}e^{-x(1+y)}\big|^{\infty}_{0}=\frac{1}{(1+y)^2}I_{(0,\infty)(y)}$ 
+	We notice that $f_{Y,X}\neq f_Yf_X$ so the rvs are indeed dependent.
+\item $P(Y\leq1|X\leq1)=\frac{\int_{0}^{1}\int_{0}^{1}f_{Y,X}dxdy}{\int_{0}^{1}f_Xdx}=\frac{\int_{0}^{1}xe^{-x}\int_{0}^{1}e^{-xy}dydx}{\int_{0}^{1}e^{-x}dx}=\frac{\int_{0}^{1}-e^{-x}\big[e^{-x}-1\big]}{\big[-e^{-x}\big|^{1}_{0}}=\frac{\int^{1}_{0}e^{-2x}-e^{-x}dx}{(e^{-1}-1)}=\frac{\frac{-1}{2}[e^{-2x}|^{1}_{0}+[e^{-x}|^{1}_{0}}{e^{-1}-1}=\frac{\frac{-1}{2}e^{-2}+e^{-1}-\frac{1}{2}}{e^{-1}-1}=\frac{-1}{2}\frac{(e^{-1}-1)^2}{e^{-1}-1}=\frac{-1}{2}(e^{-1}-1)$
+
+\item $P(Y\leq1|X=1)=\frac{\int_{0}^{1}f_Ydy}{f_X(1)}=\frac{\int_{0}^{1}\frac{1}{(1+y)^2}}{e^{-1}}$. Use of u-substitution on $1+y$ and further evaluation of the integral gives $=\frac{-[(1+y)^{-1}|^{1}_{0}}{e^{-1}}=\frac{\frac{1}{2}}{e^{-1}} =\frac{e}{2}$
+	\end{enumerate}
+\end{prob}
+
+\begin{prob}
+\begin{enumerate}
+	\item $f_{X|Y}=\frac{f_{X,Y}}{f_Y}$. Evaluating and rearranging we have $f_{X,Y}=\frac{e^{-2y}y^x}{x!}I_{(0,\infty)}(y)$ for $x\in \mathbb{Z}^+$. 
+	\item Integrating over the support of y to get the marginal to x we have:
+	$f_X=\int_{0}^{\infty}\frac{e^{-2y}y^x}{\Gamma(x+1)}dy$. At this point we notice that the integral is like a $\text{Gamma}(x+1,\frac{1}{2})$+ some change.
+	In particular, $f_X=(\frac{1}{2})^{x+1}\int_{0}^{\infty}\frac{e^{-y/(1/2)}y^{(x+1)-1}}{(\frac{1}{2})^{x+1}\Gamma(x+1)}dx$.
+	The integral is now exactly a Gamma distribution integrated over its entire support, or equivalently, 1.
+	Thus $f_X= (\frac{1}{2})^{x+1}$ for x greater than 0, or equivalently $(\frac{1}{2})^x$ for x greater than 1. This is a $\text{Geom}(\frac{1}{2})$ distribution, as we sought to show.
+\item From the conditional probability formula we have $f_{Y|X}=\frac{f_{X,Y}}{f_X}=\frac{e^{-2y}y^x}{x!(\frac{1}{2})^{x+1}}$ for $y>0, x\in \text{supp}(X)$
+\end{prob}
+
+\begin{prob}
+\begin{enumerate}
+	\item We use the convolution method, writing $P(X_1+X_2=n)=P(X_1=n-X-2)=\int_{supp(X_1)}P(X_1=x_1)P(X_2=n-x_1)dx_1=\int_{1}^{n}p(1-p)^{x_1-1}p(1-p)^{n-x_1-1}dx_1=p^2(1-p)^{n-1}\int_{1}^{n}dx_1=(n-1)p^2(1-p)^{n-2}$. At this point we note that $n-1= {n-1 \choose 1}$. This is then exactly equal to the neg.binom(2,p) distribution.
+	\item $p_{X_1|X_1+X_2}(x|m)=\frac{f_{X_1,X_1+X_2(X_1=x, X_1+X_2=m)}}{P(X_1+X_2=m)}=\frac{f_{X_1}(X_1=x)f_{X_2}(X_2=m-x)}{(m-2)p^2(1-p)^m}=\frac{p(1-p)^xp(1-p)^{m-x}}{(m-2)p^2(1-p)^{m}}=\frac{1}{m-2}\sim\text{Unif}(2,m)$.
+
+	\item Let F represent the amount of rolls it takes Fred to see their first 1 or 2, and likewise for G. Clearly they are independent and geometrically distributed with $p=\frac{1}{3}$, since the game does not stop once either of them win.
+		$P(F\geq2G|F+G=12)=\frac{P(F\geq2G, F+G=12)}{P(F+G=12)}=\frac{P(12-G\geq 2G)}{P(F+G=12)}=\frac{P(G\leq4)}{P(F+G=12)}$. To evaluate the denominator we sub in the formula found above, and apply the discrete sum of a geometric pmf over [1,4] to the numerator:
+	$=\frac{1-(2/3)^4}{11(1/3)^2(2/3)^9}$
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+	\begin{enumerate}
+\item $f_X=\int_{supp(Y)}f_{X,Y}(x,y)dy$ where $0<y<x$. Thus $\int_{0}^{x}e^{-x+y}dy=e^{-x}\big[e^{y}\big|^{x}_{0}=e^{-x}(e^x-1)=1-e^{-x}$
+	\item $f_{Y|X}(Y=y|X=x)=\frac{f_{Y,X}(y,x)}{f_X}=\frac{e^{-(x-y)}}{1-e^{-x}}I_{(0,\infty)}(y)I_{(y,\infty)}(x)$
+
+	\item $f_Y=\int_{y}^{\infty}f_{Y,X}dx=e^{y}\int_{y}^{\infty}e^{-x}dx=e^y\big[-e^{-x}\big|^{\infty}_{0}=e^y$
+	\end{enumerate}
+\end{prob}
+
+\begin{prob}
+	By letting $U=Y-X, V=X$, we have $X=V=h_1(u,v), Y=U+V=h_2(u,v)$. Because $\frac{dh_1}{du}=0,\frac{dh_1}{dv}=1,\frac{dh_2}{du}=1,\frac{dh_2}{dv}=1$, it follows that the Jacobian determinant is $1$. Thus $f_{U,V}=f_{X,Y}(h_1, h_2)$, where $y>x$ so $0<u<\infty$ and v is such that $0<v<u+v<\infty$. But u is positive so $v>0$ satisfies this.
+	Now, $f_U=\int_{supp(V)}f_{U,V}dv=\int_{0}^{\infty}e^{-(u+v)}dv=e^{-u}\int_{0}^{\infty}e^{-v}dv=-e^{-u}(0-1)=e^{-u}$.
+\end{prob}
+
+\begin{prob}
+	We select $U=\frac{Z_1}{Z_2}, V=Z_2$ such that $|J|=|v|$, where both v and u are supported over the entire real line.
+	$f_{U,V}=f_{Z_1, Z_2}(uv, v)$. We know the joint pdf of independent events to be the product of the marginals, such that $f_{Z_1, Z_2}=\frac{e^{\frac{-1}{2}(z_1^2+z_2^2)}}{\sqrt{2\pi}}$. Here we use the fact that the standard normal has mean 0 and standard deviation 1.
+	Thus by the method of Jacobians $f_{U,V}=|v|\frac{e^{\frac{-1}{2}((uv)^2+v^2)}}{\sqrt{2\pi}}$
+	We need to then integrate out v to get the marginal of u which we originally saught.
+	$f_U=\int_{-\infty}^{\infty}\frac{e^{\frac{-1}{2}v^2(1+u^2)}}{2\pi}|v|dv$
+	At this point, notice that the function is symmetric around 0 so we can drop the absolute value, integrate from 0 to infinity, and multiply by 2. We also let $w=\frac{1}{2}v^2(1+u^2)$, such that $dw=v(1+u^2)dv$, with the same support as v.
+	Then, $f_U=\frac{1}{\pi (1+u^2)}\int^{\infty}_{0}e^{-w}dw=\frac{1}{\pi(1+u^2)}$
+\end{prob}
+\end{document}

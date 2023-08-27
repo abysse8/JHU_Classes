@@ -1,0 +1,4 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'hw9.blg'
+[88] biber:340> INFO - === Tue May  9, 2023, 13:02:23
+[106] Biber.pm:419> INFO - Reading 'hw9.bcf'

@@ -1,0 +1,366 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.3.28)  28 APR 2023 22:56
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**project2.tex
+(./project2.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+) (/home/lj/git/Classes/preamble.tex (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks18
+\thm@bodyfont=\toks19
+\thm@headfont=\toks20
+\thm@notefont=\toks21
+\thm@headpunct=\toks22
+\thm@preskip=\skip49
+\thm@postskip=\skip50
+\thm@headsep=\skip51
+\dth@everypar=\toks23
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip52
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks24
+\ex@=\dimen139
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen140
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count193
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count194
+\leftroot@=\count195
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count196
+\DOTSCASE@=\count197
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box50
+\strutbox@=\box51
+\big@size=\dimen141
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count198
+\c@MaxMatrixCols=\count199
+\dotsspace@=\muskip16
+\c@parentequation=\count266
+\dspbrk@lvl=\count267
+\tag@help=\toks25
+\row@=\count268
+\column@=\count269
+\maxfields@=\count270
+\andhelp@=\toks26
+\eqnshift@=\dimen142
+\alignsep@=\dimen143
+\tagshift@=\dimen144
+\tagwidth@=\dimen145
+\totwidth@=\dimen146
+\lineht@=\dimen147
+\@envbody=\toks27
+\multlinegap=\skip53
+\multlinetaggap=\skip54
+\mathdisplay@stack=\toks28
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+)
+\c@prob=\count271
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks29
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen148
+\Gin@req@width=\dimen149
+) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count272
+\l__pdf_internal_box=\box52
+) (./project2.aux)
+\openout1 = `project2.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count273
+\scratchdimen=\dimen150
+\scratchbox=\box53
+\nofMPsegments=\count274
+\nofMParguments=\count275
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count276
+\MPscratchDim=\dimen151
+\MPnumerator=\count277
+\makeMPintoPDFobject=\count278
+\everyMPtoPDFconversion=\toks31
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+<encode1.jpg, id=1, 562.1pt x 421.575pt>
+File: encode1.jpg Graphic file (type jpg)
+<use encode1.jpg>
+Package pdftex.def Info: encode1.jpg  used on input line 18.
+(pdftex.def)             Requested size: 172.5pt x 129.37462pt.
+<egmessy.jpg, id=2, 562.1pt x 421.575pt>
+File: egmessy.jpg Graphic file (type jpg)
+<use egmessy.jpg>
+Package pdftex.def Info: egmessy.jpg  used on input line 34.
+(pdftex.def)             Requested size: 345.0pt x 258.74924pt.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./encode1.jpg>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<sequence.jpg, id=16, 562.1pt x 421.575pt>
+File: sequence.jpg Graphic file (type jpg)
+<use sequence.jpg>
+Package pdftex.def Info: sequence.jpg  used on input line 44.
+(pdftex.def)             Requested size: 345.0pt x 258.74924pt.
+[2]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<noisy.jpg, id=21, 552.0625pt x 428.60126pt>
+File: noisy.jpg Graphic file (type jpg)
+<use noisy.jpg>
+Package pdftex.def Info: noisy.jpg  used on input line 58.
+(pdftex.def)             Requested size: 345.0pt x 267.8555pt.
+[3 <./egmessy.jpg>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<accuracy.jpg, id=29, 552.0625pt x 428.60126pt>
+File: accuracy.jpg Graphic file (type jpg)
+<use accuracy.jpg>
+Package pdftex.def Info: accuracy.jpg  used on input line 64.
+(pdftex.def)             Requested size: 345.0pt x 267.8555pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4 <./sequence.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 73--75
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+
+ []
+
+[5 <./noisy.jpg>]
+<normalvsreverb.jpg, id=36, 562.1pt x 421.575pt>
+File: normalvsreverb.jpg Graphic file (type jpg)
+<use normalvsreverb.jpg>
+Package pdftex.def Info: normalvsreverb.jpg  used on input line 79.
+(pdftex.def)             Requested size: 345.0pt x 258.74924pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<part4envelope.jpg, id=37, 562.1pt x 421.575pt>
+File: part4envelope.jpg Graphic file (type jpg)
+<use part4envelope.jpg>
+Package pdftex.def Info: part4envelope.jpg  used on input line 85.
+(pdftex.def)             Requested size: 345.0pt x 258.74924pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<reverbacc.jpg, id=38, 562.1pt x 421.575pt>
+File: reverbacc.jpg Graphic file (type jpg)
+<use reverbacc.jpg>
+Package pdftex.def Info: reverbacc.jpg  used on input line 91.
+(pdftex.def)             Requested size: 345.0pt x 258.74924pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--101
+
+ []
+
+<updatedreveracc.jpg, id=39, 562.1pt x 421.575pt>
+File: updatedreveracc.jpg Graphic file (type jpg)
+<use updatedreveracc.jpg>
+Package pdftex.def Info: updatedreveracc.jpg  used on input line 104.
+(pdftex.def)             Requested size: 345.0pt x 258.74924pt.
+<fixedanalysis.jpg, id=40, 562.1pt x 421.575pt>
+File: fixedanalysis.jpg Graphic file (type jpg)
+<use fixedanalysis.jpg>
+Package pdftex.def Info: fixedanalysis.jpg  used on input line 110.
+(pdftex.def)             Requested size: 345.0pt x 258.74924pt.
+<largeinterdigit.jpg, id=41, 562.1pt x 421.575pt>
+File: largeinterdigit.jpg Graphic file (type jpg)
+<use largeinterdigit.jpg>
+Package pdftex.def Info: largeinterdigit.jpg  used on input line 115.
+(pdftex.def)             Requested size: 345.0pt x 258.74924pt.
+[6 <./accuracy.jpg>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<encode2.jpg, id=45, 562.1pt x 421.575pt>
+File: encode2.jpg Graphic file (type jpg)
+<use encode2.jpg>
+Package pdftex.def Info: encode2.jpg  used on input line 123.
+(pdftex.def)             Requested size: 172.5pt x 129.37462pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<encode3.jpg, id=46, 562.1pt x 421.575pt>
+File: encode3.jpg Graphic file (type jpg)
+<use encode3.jpg>
+Package pdftex.def Info: encode3.jpg  used on input line 130.
+(pdftex.def)             Requested size: 172.5pt x 129.37462pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<encode4.jpg, id=47, 562.1pt x 421.575pt>
+File: encode4.jpg Graphic file (type jpg)
+<use encode4.jpg>
+Package pdftex.def Info: encode4.jpg  used on input line 137.
+(pdftex.def)             Requested size: 172.5pt x 129.37462pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<encode5.jpg, id=48, 562.1pt x 421.575pt>
+File: encode5.jpg Graphic file (type jpg)
+<use encode5.jpg>
+Package pdftex.def Info: encode5.jpg  used on input line 144.
+(pdftex.def)             Requested size: 172.5pt x 129.37462pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<encode6.jpg, id=49, 562.1pt x 421.575pt>
+File: encode6.jpg Graphic file (type jpg)
+<use encode6.jpg>
+Package pdftex.def Info: encode6.jpg  used on input line 151.
+(pdftex.def)             Requested size: 172.5pt x 129.37462pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<encode7.jpg, id=50, 562.1pt x 421.575pt>
+File: encode7.jpg Graphic file (type jpg)
+<use encode7.jpg>
+Package pdftex.def Info: encode7.jpg  used on input line 158.
+(pdftex.def)             Requested size: 172.5pt x 129.37462pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<encode8.jpg, id=51, 562.1pt x 421.575pt>
+File: encode8.jpg Graphic file (type jpg)
+<use encode8.jpg>
+Package pdftex.def Info: encode8.jpg  used on input line 165.
+(pdftex.def)             Requested size: 172.5pt x 129.37462pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<encode9.jpg, id=52, 562.1pt x 421.575pt>
+File: encode9.jpg Graphic file (type jpg)
+<use encode9.jpg>
+Package pdftex.def Info: encode9.jpg  used on input line 171.
+(pdftex.def)             Requested size: 172.5pt x 129.37462pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<encode0.jpg, id=53, 562.1pt x 421.575pt>
+File: encode0.jpg Graphic file (type jpg)
+<use encode0.jpg>
+Package pdftex.def Info: encode0.jpg  used on input line 177.
+(pdftex.def)             Requested size: 172.5pt x 129.37462pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<encodeS.jpg, id=54, 562.1pt x 421.575pt>
+File: encodeS.jpg Graphic file (type jpg)
+<use encodeS.jpg>
+Package pdftex.def Info: encodeS.jpg  used on input line 183.
+(pdftex.def)             Requested size: 172.5pt x 129.37462pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<encodeP.jpg, id=55, 562.1pt x 421.575pt>
+File: encodeP.jpg Graphic file (type jpg)
+<use encodeP.jpg>
+Package pdftex.def Info: encodeP.jpg  used on input line 188.
+(pdftex.def)             Requested size: 172.5pt x 129.37462pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7 <./normalvsreverb.jpg>] [8 <./part4envelope.jpg>] [9 <./reverbacc.jpg>] [10 <./updatedreveracc.jpg>] [11 <./fixedanalysis.jpg>] [12 <./largeinterdigit.jpg> <./encode2.jpg>] [13 <./encode3.jpg> <./encode4.jpg> <./encode5.jpg>] [14 <./encode6.jpg> <./encode7.jpg> <./encode8.jpg>] [15 <./encode9.jpg> <./encode0.jpg> <./encodeS.jpg>] [16 <./encodeP.jpg>] (./project2.aux) ) 
+Here is how much of TeX's memory you used:
+ 2279 strings out of 480247
+ 35351 string characters out of 5896151
+ 327011 words of memory out of 5000000
+ 20206 multiletter control sequences out of 15000+600000
+ 474681 words of font info for 47 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 59i,7n,65p,688b,228s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on project2.pdf (16 pages, 1223758 bytes).
+PDF statistics:
+ 143 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
+

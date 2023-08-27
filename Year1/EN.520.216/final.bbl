@@ -1,0 +1,94 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{environmental}{article}{}
+      \name{author}{1}{}{%
+        {{hash=cefaf4cfa2970b58129546a822242426}{%
+           family={Plepys},
+           familyi={P\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{cefaf4cfa2970b58129546a822242426}
+      \strng{fullhash}{cefaf4cfa2970b58129546a822242426}
+      \strng{bibnamehash}{cefaf4cfa2970b58129546a822242426}
+      \strng{authorbibnamehash}{cefaf4cfa2970b58129546a822242426}
+      \strng{authornamehash}{cefaf4cfa2970b58129546a822242426}
+      \strng{authorfullhash}{cefaf4cfa2970b58129546a822242426}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE International Symposium on Electronics and the Environment}
+      \field{title}{The environmental impacts of electronics. Going beyond the walls of semiconductor fabs}
+      \field{pages}{159\bibrangedash 165}
+      \range{pages}{7}
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/1299707/
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/1299707/
+      \endverb
+    \endentry
+    \entry{photodiodes}{inbook}{}
+      \name{author}{1}{}{%
+        {{hash=e22ee42ae0fca5ef801c6ebef90b123b}{%
+           family={Albert\bibnamedelimb H.\bibnamedelimi Titus},
+           familyi={A\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim T\bibinitperiod},
+           given={Vamsy\bibnamedelimb P.\bibnamedelimi Chodavarapu},
+           giveni={V\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim C\bibinitperiod},
+           suffix={Maurice\bibnamedelimb C-K.\bibnamedelimi Cheung},
+           suffixi={M\bibinitperiod\bibinitdelim C\bibinithyphendelim K\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IntechOpen}%
+      }
+      \strng{namehash}{e22ee42ae0fca5ef801c6ebef90b123b}
+      \strng{fullhash}{e22ee42ae0fca5ef801c6ebef90b123b}
+      \strng{bibnamehash}{e22ee42ae0fca5ef801c6ebef90b123b}
+      \strng{authorbibnamehash}{e22ee42ae0fca5ef801c6ebef90b123b}
+      \strng{authornamehash}{e22ee42ae0fca5ef801c6ebef90b123b}
+      \strng{authorfullhash}{e22ee42ae0fca5ef801c6ebef90b123b}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{chapter}{CMOS Photodetectors}
+      \field{title}{Photodiodes- World Activities in 2011}
+      \field{year}{2011}
+      \verb{doi}
+      \verb 10.5772/1002
+      \endverb
+    \endentry
+    \entry{ieee7001}{article}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE P7001/D2, June 2021}
+      \field{title}{IEEE Draft Standard for Transparency of Autonomous Systems}
+      \field{year}{2021}
+      \field{pages}{1\bibrangedash 73}
+      \range{pages}{73}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

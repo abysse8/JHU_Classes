@@ -1,0 +1,154 @@
+\documentclass[11 pt]{article}
+\input{preamble}
+\usepackage{quiver}
+
+\begin{document}
+    Name: Lj Gonzales
+
+    Assignment: HW 1 
+
+    Due Date: Friday September 8
+    \hfill \break %this creates a new paragraph. The badness warning is annoying but I've never found it to corrupt or cause issues with the functionality of the document so I ignore it.
+    \begin{problem}
+(Writing) Suppose you are writing to an engineering friend of yours, one who
+knows the material in all of the calculus courses and differential equations, and who
+knows you are in this analysis class. In a few short sentences, describe to them
+the following concepts. Be very careful to only use terms and ideas that they can
+understand, but also be as precise as you possibly can.
+\begin{itemize}
+	\item (1) An equivalence relation,
+	\item (2) countable verses uncountable infinity,
+	\item (3) why a function must be a bijection for it to have an inverse, and
+	\item (4) induction.
+\end{itemize}
+    \begin{solution}
+    \begin{itemize}
+	    \item An equivalence relation is a special kind of 'connection' between two objects in mathematics.
+In engineering we might say that a voltage in space is \emph{equal} to another if the amount of decimal points on our voltmeter match up to a lot of decimals.\
+Equivalence makes intuitive sense when it comes to numbers, but what can we do with vectors in n-dimensional space, or $\frac{1}{2}$ and $\frac{2}{4}$, which we know to be equal even though they do not have the same numbers? This leads us to a more generalized definition of equivalence, which says \emph{nothing} about numbers and is described by 3 rules that must hold: reflexivity, symmetry, and transitivity.
+\item We call an infinity countable if we can \emph{construct} an assignment between all the elements of that collection and the natural numbers.
+	This definition allows us to compare between different infinite sets, to approximate an idea of size.
+\item There are two parts to this statement: why must a function be one to one if it has an inverse, and why it must be onto for it to have an inverse.
+	First, think of the inverse as an mapping from the 'output' of a function to its input. If we are given an output and asked from which input it came, you cannot answer reliably if there are two possible inputs that give this output. This is why the function has to be injective.
+	Separately, it has to be onto because if no input maps to some output, then that output's inverse mapping would not be defined. Hence we need the function to be both surjective and injective.
+\item Induction is like dominoes: suppose you want to see all dominoes fall down, but don't have the time to knock each of them down one by one.
+	However, if you can make sure that the first domino falls down, and can prove that toppling one of them makes the next one fall too, then you don't need to check for all the dominoes.
+   \end{itemize}
+\end{solution}
+    
+    \pagebreak %The creator of this template likes to have page breaks between problems to make assigning pages easier on Gradescope and improve readability. This is personal preference - feel free to delete.
+
+    \begin{problem}
+	    Let $f: A \rightarrow B$ and $g: B \rightarrow C$ be functions.
+	\begin{itemize}
+		\item Prove that if $g\circ f$ is injective, then f is injective.
+		\item Prove that if $g\circ f$ is surjective, then g is surjective.
+		\item Find an explicit example where  $g\circ f$ is bijective, but neither f nor g are. (verify these facts about  $f$, $g$, and $f\circ g$ in this case.)
+	\end{itemize}
+    \end{problem}
+
+    \begin{solution}
+	\begin{\itemize}
+	\item We are given $(g\circ f)(x_{1})=(g\circ f)(x_{2})\implies x_{1}=x_{2}$ for all $x_{1}, x_{2} \in A$.\\
+    Note that $(g\circ f)(x_1)=g(f(x_1))$, where $f(x_1)\in B$, where B is both the codomain of f and the domain of g.\\
+    Suppose now that $f(x_1)=f(x_2)$ for two such elements of B. Because g is a function and only has one output for any given input, it must be true that $g(f(x_1))=g(f(x_2))$.\\
+    However, by assumption of injectivity of $g\circ f$, this tells us that $x_1=x_2$.\\
+    Hence, injectivity of  $g\circ f$ means that $f(x_1)=f(x_2)\implies x_1=x_2$. But this is exactly the condition of injectivity of f, as sought.
+
+\item We are given that $g\circ f$ is surjective, or $(g\circ f)(A)=C$, and want to show that g is also surjective, $g(B)=C$. \\
+First notice that $(g\circ f)(A)=g(f(A))$, where $f(A)\subset B$.\\
+Because $f(A)$ is a subset of B, we have $g(f(A))\subset g(B)$. Hence $C\subset g(B)$.
+Note also that by definition of the transformation g, $g(B)\subset C$, with equality if and only if g is surjective.\\
+We then have $C\subset g(B)\subset C$. \\
+This statement can only be true if $g(B)=C$, as sought.
+
+\item Consider the functions $f, g:\mathbb{R}\rightarrow\mathbb{R}$, defined $f(x)=x^{3/2}, g(x)=x^{2}$.\\
+	Both functions are not surjective on their own, as the negative real numbers are not in the range of either.
+	However $(f\circ g)(x)=x^3$ is bijective and has an inverse defined for all real numbers.
+    \end{itemize}
+    \end{solution}
+
+    \pagebreak
+
+    %Copy paste starting from the from the second \begin{problem} command all the way to the second \pagebreak command to create new problem/solution environments. 
+	\begin{problem}
+		Show that for a finite set $A$ of cardinality $n$, the cardinality of its power set $\mathcal{P}(A)$ is $2^{n}$.
+	\end{problem}
+	\begin{solution}
+	We note that any member of the finite set can be uniquely described by an n-digit binary number of the form $a_0a_1\dots a_n$, where the boolean $a_n$ describes whether the nth term in some arbitrary (but consistent) ordering of the set is included in the subset.
+	For example, $\{a,b\}\in\{a,b,c\}$ would be written as $110$ in binary.
+	We use the fact that an n-digit binary number has $2\times2\dots2=2^{n}$ distinct states to finish.
+	\end{solution}
+
+	\pagebreak
+
+	\begin{problem}
+	Prove $\frac{1}{1\cdot2}+\frac{1}{2\cdot3}+\dots+\frac{1}{n(n+1)}=\frac{n}{n+1}$ for all $n\in \mathbb{N}$.
+	\end{problem}
+
+	\begin{solution}
+	We prove $P(n)$ by induction on $n\in\mathbb{N}$.
+	 Note that the case $n=1$ writes: \\
+	\[
+	P(1)=\frac{1}{1\cdot2}=\frac{(1)}{1+1}
+	.\]
+	This is true. Now suppose P(k) were true for all k. Then, 
+	\[
+	\frac{1}{1\cdot2}+\frac{1}{2\cdot3}+\ldots+\frac{k}{k+1}=\frac{k}{k+1}
+	.\]
+	By writing $P(k+1)$ (whose truth value we do not know) in a suggestive manner, we have:
+	\[
+	\sum^{k+1}_{i=0}{\frac{1}{i(i+1)}} = \frac{k+1}{k+2}
+	\]
+	\[
+	\sum^{k}_{i=0}{\frac{1}{i(i+1)}} +\frac{1}{(k+1)(k+2)}=\frac{k+1}{k+2}
+	.\] 
+And seek to prove that the statement is true. We can use our assumption on $P(k)$ to rewrite the sum into a single term, and simplify:
+\begin{gather*}
+	\frac{k}{k+1}+\frac{1}{(k+1)(k+2)} =\frac{k+1}{k+2} \\
+	\frac{1}{(k+1)(k+2)}=\frac{(k+1)(k+1)}{(k+1)(k+2)}-\frac{k(k+2)}{(k+1)(k+2)} \\
+	\frac{1}{(k+1)(k+2)}=\frac{k^{2}+2k+1-k^{2}-2k}{(k+1)(k+2)} \\
+	\frac{1}{(k+1)(k+2)}=\frac{1}{(k+1)(k+2)}
+\end{gather*}
+And arrive at a true statement. 
+We have shown that $P(1)$ is true and $P(k)$ being true implies $P(k+1)$ true. Hence by the principle of weak induction, the proposition is true for all natural numbers.
+\end{solution}
+\pagebreak
+\begin{problem}
+	Give an example of a countably infinite collection of infinite sets $A_1, A_2, \dots$ with $A_j\cap A_k$ being infinite for all j,k, such that $\cap_{j=1}^{\infty}A_{j}$ is nonempty and finite.
+\end{problem}
+\begin{solution}
+	Consider the infinite set of infinite sets $\{A_n : n\in \mathbb{N}\backslash\{0\}\}$, where:
+	\[
+	A_{n}=\{x\in \mathbb{Z}:x=nm, m\in \mathbb{N}\cup\{0\}\}
+	.\] 
+We can check that $A_i\cap A_j$ is infinite for all $i,j \in \mathbb{N}$. In fact, $\{x\in \mathbb{Z}: x=ijm, m\in \mathbb{N}\}$ is at least a subset of this intersection, and it is countably infinite.
+However, we claim that the intersection of all the sets is only the number 0.
+Suppose there did exist a $k\in \mathbb{Z}$ that belonged to the intersection of all the sets. Consider $A_{k+1}$:
+\[
+	A_{k+1}=\{(k+1)n, n=0,1,2,\dots\}
+.\] 
+Unless $k=0$, it is never present in $A_{k+1}$, so the intersection of all sets has cardinality 1.
+
+\end{solution}
+\pagebreak
+\begin{problem}
+Prove \emph{Proposition 0.3.24}. That is, prove that if $\mathcal{R}$ is an equivalence relation on a set $A$, then every $a\in A$ is in exactly one equivalence class. Then prove that $a\tilde_{\mathcal{R}}b$ if and only if $[a]=[b]$.
+\end{problem}
+\begin{solution}
+	Suppose that $a$ belonged to an equivalence class different than itself, say, $[b]$, where $[a]\neq[b]$.
+	We will prove that $[a]\subset[b]\subset[a]$, such that it must be true that $[a]=[b]$; a contradiction on our original assumption.\\
+	Suppose that for some $a\in[a]$, there existed some $[b]\neq[a]$ such that $a\in[b]$. Then, by definition: 
+	\[a\in\{x\in A: b\mathcal{R}x\text{ is true}\}\]
+	Meaning that $b\mathcal{R}a$ must hold.
+	Consider now the set $[a]$, $\{x:a\mathcal{R}x \text{ is true}\}$.
+	Because $\mathcal{R}$ is an equivalence relation, it is transitive, meaning that every $x$ for which $a\mathcal{R}x$ is true must also have $b\mathcal{R}x$ true.\footnote{$b\mathcal{R}a$ and $a\mathcal{R}x\implies b\mathcal{R}x$ by transitivity}.\\
+	We have just shown that every $x\in[a]$ must have $x\in[b]$, in other words $[a]\subset [b]$.\\
+	To finish the argument, we use the symmetry of $\mathcal{R}$ to state that $b\mathcal{R}a\implies a\mathcal{R}b$, and transitivity of $\mathcal{R}$ to say that every $x$ such that $b\mathcal{R}x$ holds (which is every element in $[b]$), also has $a\mathcal{R}x$. Thus, $[a]\subset[b]$.\\
+We have shown that $[b]\subset[a]\subset[b]$, and thus the sets we claimed were different were actually the same.
+\\
+This proves the forward direction of $a\mathcal{R}b \iff [a]=[b]$.
+To prove the reverse direction, simply note that $b\in [a]$, because $b\in [b]=[a]$\footnote{We know this from reflexivity: $b\mathcal{R}b$ must be true, so $b\in[b]$}. Since $b\in[a]$, $a\mathcal{R}b$ must hold.
+\end{itemize}
+\end{solution}
+\end{document}

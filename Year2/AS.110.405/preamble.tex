@@ -1,0 +1,69 @@
+\textwidth=6.5in
+\textheight=8.5in
+\voffset=-54pt
+\oddsidemargin=0in
+\evensidemargin=0in
+\setlength{\parskip}{8pt}
+\setlength{\parindent}{0pt}
+\newcommand{\tc}{\textcolor{blue}}
+\usepackage[normalem]{ulem}
+\usepackage[bottom]{footmisc}
+\usepackage{tikz-cd}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{ifthen}
+\usepackage[inline]{enumitem}
+\setlist{topsep=0pt}
+\usepackage{xcolor}
+\usepackage[pdftex]{graphicx}
+\usepackage{parskip}
+\usepackage{blindtext}
+\usepackage{multicol}
+%operator names
+\DeclareMathOperator{\ker}{ker}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coord}{coord}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\ob}{\mathrm{ob}}
+\DeclareMathOperator{\mor}{\mathrm{mor}}
+\DeclareMathOperator*{\colim}{\mathrm{colim}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\co}{\mathrm{co}}
+\newcommand{\Nat}{\mathrm{Nat}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Map}{\mathrm{Map}}
+\newcommand{\End}{\mathrm{End}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\Sym}{\mathrm{Sym}}
+\newcommand{\ev}{\mathrm{ev}}
+\newcommand{\Stab}{\mathrm{Stab}}
+%blackboard letters
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\kk}{\mathbbe{k}}
+%categories
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\set}{\mathsf{Set}}
+\newcommand{\grp}{\mathsf{Grp}}
+\newcommand{\ab}{\mathsf{Ab}}
+%theorems, defns, etc
+\newtheorem{thm}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem*{defn*}{Definition}
+\newtheorem*{thm*}{Theorem}
+%This makes the problem environment work.
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+%This makes the solution environment work.
+\makeatletter\newenvironment{solution}[1][Solution]{\par\pushQED{\qed}%
+\normalfont 
+\topsep6\p@\@plus6\p@\relax\trivlist\item\relax{\itshape#1\@addpunct{.}}\hspace\labelsep\ignorespaces}{%
+\popQED\endtrivlist\@endpefalse}
+\makeatother

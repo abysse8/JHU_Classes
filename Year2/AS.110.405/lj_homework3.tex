@@ -1,0 +1,135 @@
+\documentclass[11 pt]{article}
+\input{preamble}
+\usepackage{quiver}
+
+\begin{document}
+    Name: Lj Gonzales
+
+    Assignment: HW 3 
+
+    Due Date: Friday September 20
+    \break
+
+\begin{problem}
+	(Writing) Continue talking to that engineering friend of yours, one who knows the material in all of the calculus courses and differential equations, and who knows you are in this analysis class. Be careful to only use terms and ideas that they can understand, but also be as precise as you possibly can.
+	\begin{itemize}
+		\item The Archimedean Property
+		\item the difference between a supremum and a maximum
+	\end{itemize}
+\end{problem}
+\begin{solution}
+	\begin{itemize}
+		\item Some of our most powerful tools in writing proofs are inequalities, and finding (or proving how we can't find) a number that fits a certain condition. There are interesting results, like the fact that between any two rational number there is another rational, come directly from the Archimedean property. \\
+			The Archimedean property states that for any $x,y$ in the real numbers,  $x>0$, there exists a natural number $n$ such that $nx>y$.\\
+			This is not spectacular if $x>y$ to begin with, but this is an interesting way to relate the unboundedness of the natural numbers to real numbers; any ratio of real numbers $\frac{y}{x}$ will never be so large that it is larger than all natural numbers.
+		\item A maximum is more easily understood in terms of finite sets: in fact, a finite set will always have its maximum equal to its supremum. The difference comes when we start dealing with infinite sets.\\
+		It might sound like a technicality, but when we say that an element is the maximum of a set, we expect it to be, well, \emph{in} the set.
+		With infinite sets, the number which is greater than all other numbers might not be in the set: Consider $\{1-\frac{1}{n}\}$ for $n$ in the natural numbers. What's the maximum? You'd be tempted to say 1, but there does not exist a natural number such that $\frac{1}{n}=0$, so 1 is cannot be the maximum. However, anything less than 1 cannot be the maximum, since the sequence gets \emph{arbitrarily} close to 1.
+		The notion of supremum (the least upper bound for a set which may or may not belong to the set) helps solve this problem and do work with infinite sequences.
+	\end{itemize}
+\end{solution} 
+\pagebreak
+\begin{problem}
+	(Writing) Answer to Week 3 5-Minute in-Lecture Drill.
+\end{problem}
+\begin{solution}
+	We are given 3 equations that are simultaneously true for the variables $x,y$, and $z$. We want to use these pieces of information to get standalone expressions for $x, y,$ and $z$ depending only on the constant terms $a,b,c$.\\
+	One way to do this is to look at an expression like  $x+2y+3z=a$ and try to get rid of the $2y$ and $3z$ in a mathematically "legal" way to get $x=10a-2b-7c$, for instance.\\
+	We have two legal moves that will allow us to do this: the first is that if we are given a true statement $f(x,y,z)=a$, e.g $x+2y+3z=a$, then for any constant $c$ we have $cf(x,y,w)=c(a)$ remains true. The second is that we can "add" the left and right hand sides of two true statements and obtain a true statement (because this is like adding 0).\\
+	Also note that coefficients of the variables $x,y,z$, and the constant can only add with other coefficients of the same variable, so visually we can make the choice to ignore the variables and just remember to add componentwise. We show this with arrow 1.
+	The second arrow represents adding the first statement multiplied by $-1$ to statement 2 and 3. The third arrow represents adding statement 2 times -2 to statement 1, and a simplification mistake. The fourth arrow represents adding statement 3 times 7 to statement 1, times -5 to statement 2.
+	Had the process been done correctly, we would have completed the reduction.
+\end{solution}
+\pagebreak
+\begin{problem}
+	Prove the arithmetic-geometric mean inequality. That is, for two positive real numbers $x,y\in\mathcal{R}$, we have \[
+	\sqrt{xy}\leq\frac{x+y}{2}
+	.\] 
+\end{problem}
+\begin{solution}
+	A property of ordered field states that $x\leq y$ implies $xz\leq yz$ for any positive $z$. We know that $x,y>0$ implies that $\frac{x+y}{2}>0$, so we can write \[
+		\sqrt{xy}\big(\frac{x+y}{2}\big)\leq\big(\frac{x+y}{2}\big)^2
+	.\]
+	Without loss of generality assume $\sqrt{xy}$ is nonnegative. If it was negative, then the statement is trivially true since the right hand side is stricly nonnegative. If $\sqrt{xy}$ is positive, we can multiply both sides of the inequality while keeping its polarity \[
+	(\sqrt{xy})^2\leq\sqrt{xy}\big(\frac{x+y}{2}\big).
+\]
+Combining these two pieces of information and noting that $\sqrt{xy}$ is defined to be the number such that $(\sqrt{xy})^2=xy$, we have:
+\begin{center}
+\begin{gathered}	
+	xy\leq\big(\frac{x+y}{2}\big)^2 &
+	4xy\leq x^2+y^2+2xy &
+	0\leq  (x-y)^2
+\end{gathered}
+\end{center}
+We arrive at a true statement by a property of an ordered field, $a^2\geq0$ for all $a$ in the ordered field.
+\end{solution}
+\pagebreak
+\begin{problem}
+	Do the following: 
+	\begin{itemize}
+		\item Prove that given $y\in\mathcal{R}$, we have $sup\{x\in\mathcal{Q}:x<y\}=y$.
+		\item Let $A\subset\mathcal{Q}$ be a set that is bounded above such that whenever $x\in A$ and $t\in \mathcal{Q}$ with $t<x$, then $t\in A$. Further suppose $supA\notin A$. Show that there exists a  $y\in\mathcal{R}$ such that $A=\{x\in\mathcal{Q}:x<y\}$. A set such as A is called a Dedekind cut. (The German mathematician Richard Dedekind used such sets in his construction of the real numbers.)
+		\item Show that there is a bijection between $\mathcal{R}$ and Dedekind cuts.
+	\end{itemize}
+\end{problem}
+\begin{solution}
+\begin{itemize}
+	\item To show that $y$ is the least upper bound of the set, we need to show that it is an upper bound, and that is it lower than or equal to any other upper bound.\\
+	Note that $y$ is an upper bound because it is true that $x<y$ for every $x$ in the set, by definition of the set.
+	We now show that $b\geq y$ for every upper bound $b$ of the set by showing it cannot be true that $b<y$ (in logic notation, $\neg(b<y)\implies b\geq y$) \\
+	Suppose $b\in\mathcal{R}$ is an upper bound such that $b<y$. Because the rationals are dense, there exists a $r\in\mathcal{Q}$ such that $b<r<y$. However, that makes $r$ an element of the set greater than $b$, so $b$ cannot be an upper bound for the set containing $r$.\\
+	It follows that all upper bounds must have $b\geq y$, making $y$ the least upper bound for the set.
+
+\item We will prove this for the case of $y=sup(A)$ by showing that the Dedekind cut with supremum $supA$ contains all the rational numbers less than $supA$.
+	Be given any $q\in\mathcal{Q}$ such that $q<sup(A)$. Because $q\neq sup(A)$, there exists an $a\in A$ such that $q<a$. However, because  $a$ is a rational contained in the Dedekind cut and $q<a$, $q$ is an element of the Dedekind cut.
+	Because we can do this with any rational number less than $supA$, the dedekind is exactly $\{x\in\mathcal{Q}:x<y\}$ for $y=supA$.
+
+\item We claim that there is a bijective function $f$ that maps any real number $y$ to a Dedekind cut with supremum $y$ ("identity"). We first prove that $f$ is injective by showing that Dedekind cuts with different suprema cannot represent the same Dedekind cut.\\
+	Suppose that two Dedekind cuts have the bounds $y_1, y_2$, for $y_1\neq y_2$, as defined by the problem. Without loss of generality, assume $y_1$ is the smaller of the two. Because the rationals are dense, there exists an  $r\in\mathcal{Q}$ such that $y_1<r<y_2$. Since $r <y_2$ and $r$ is rational, it belongs to Dedekind cut 2.\\
+	Now we see that $r$ cannot be an element of Dedekind cut 1 because it cannot be true that $y_1<r$ and $r<y_1$. However, $r$ is a rational less than $y_2$, so by definition it is an element of Dedekind cut 2. Because Dedekind cuts $1$ and $2$ have an element different, they cannot describe the same set. $y_1\neq y_2 \implies f(y_1)\neq f(y_2)$, so we have proven by the contrapositive that $f$ is injective.
+	Proving surjectivity of $f$ is comparatively easy: since Dedekind cuts are uniquely and exhaustively determined by their suprema, any Dedekind cut with suprema $y$ is mapped onto by $f$, in particular, by $f(y)$.
+\end{itemize}
+\end{solution}
+\pagebreak
+\begin{problem}
+	Let $D\subset\mathcal{R}$ be a nonempty set. Suppose $f:D\rightarrow\mathcal{R}$ and $g:D\rightarrow\mathcal{R}$ are functions.
+	\begin{itemize}
+		\item Define $f+g:D\rightarrow\mathcal{R}$ by $(f+g)(x)=f(x)+g(x)$. Show that if $f$ and $g$ are bounded as functions, then $f+g$ is also bounded.
+		\item Prove that if $f+g$ and $g$ are bounded, then $f$ is bounded.
+		\item Find an example where both $f$ and $g$ are unbounded, but $f+g$ is bounded.
+		\item Prove that if $f$ is bounded but $g$ is unbounded, then $f+g$ is unbounded.
+	\end{itemize}
+\end{problem}
+\begin{solution}
+For the following exercise parts, define where applicable that $f$ is bounded above and below by $N_h, N_l$, $g$ bounded by $M_h, M_l$, and $f+g$ by $B_l, B_h$. 
+	\begin{itemize}
+	\item Note that $(f+g)(a)=f(a)+g(a)<N_h+g(a)<N_h+M_h$ for all $a$ in $D$. Here we implicitly use a property of the real numbers stating that for all $x,y,z\in R$, $x<z$ implies $x+y<z+y$.
+	Likewise,  $f(a)+g(a)>N_l+g(a)>N_l+M_l$.
+	It follows that  $(f+g)$ is bounded, in particular, above by $N_h+M_h$ and below by $N_l+M_l$.
+
+	\item Since $\mathcal{R}$ is an ordered field $g(a)>M_l$ implies $-g(a)>-M_l$, by substracting the field elements $-g(a)$ and $-M_l$, which maintains the order of the inequality. We use this to write:\\
+	\begin{center}
+	\begin{gathered}
+		f(a)+g(a)<B_h &
+		f(a)+g(a)-g(a)<B+(-M_l) &
+		f(a)<B_h-M_l
+	\end{gathered}
+	\end{center}
+	for all $a\in D$. This is the definition of $f$ being bounded above, in particular, by $B_h-M_l$. Similarly, we have that $g(a)<M_h$ implies $-g(a)>-M_h$. Thus,\\
+	\begin{center}
+	\begin{gathered}
+		f(a)+g(a)>B_l &
+		f(a)+g(a)-g(a)>B_l+(-M_h) &
+		f(a)>B_l-M_h
+	\end{gathered}
+	\end{center}
+	Thus $f$ is bounded below as well. Thus, $f$ is bounded.
+
+\item Consider $f(x)=x$, $g(x)=-x$ for $x \in D=\mathcal{R}$. We can prove that $f$ is unbounded by contradiction (for example, we prove that $f$ is unbounded by considering $f(N_h+1)=N_h+1>N_h$, such that $N_h$ cannot be an upper bound of $f$. The argument for the other bounds of $f$ and $g$ follow a similar procedure).
+	However, $(f+g)(x)=x+(-x)=0$ for all $x\in\mathcal{R}$. This is bounded, in particular, by 1.
+
+\item We prove this by contradition by assuming that $f$,  $f+g$ are bounded, and get a contradiction on the boundedness of $g$.
+ Note that $f(x)+g(x)<B_h$ and $-f(x)<-N_l$ implies $g(x)<B_h-N_l$. Thus, $g$ is bounded above by $B_h-N_l$.
+	\end{itemize}
+\end{solution}
+\end{document}

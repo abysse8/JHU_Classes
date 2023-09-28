@@ -1,0 +1,85 @@
+\documentclass[11 pt]{article}
+\input{preamble}
+\usepackage{quiver}
+
+\begin{document}
+    Name: Lj Gonzales
+
+    Assignment: HW 1 
+
+    Due Date: Friday September 29
+    \break
+\begin{problem}
+(Writing) Continue talking to that engineering friend of yours, one who knows
+the material in all of the calculus courses and differential equations, and who knows
+you are in this analysis class. In a few short sentences, describe to them the following
+concepts. Be very careful to only use terms and ideas that they can understand, but
+also be as precise as you possibly can.\\
+(1) The uncountability of the real numbers,\\
+(2) what it means that a sequence, as a function from N to R, has a limit.
+\end{problem}
+\begin{solution}
+\begin{itemize}
+	\item Recall that we called a set countably infinite if we could define a bijective function between it and the natural numbers.
+	\item In calculus II we have the idea of a limit to mean what something approaches \emph{as it goes to} something. For example, the limit of
+\end{itemize}
+\end{solution} 
+\pagebreak
+\begin{problem}
+Writing) Answer the Week 4 5-Minute in-Lecture Drill.
+\end{problem}
+\begin{solution}
+\end{solution}
+\pagebreak
+\begin{problem}
+Show the following sequences converge and find their limits:\\
+\begin{center}
+(a) $\Bigl\{\frac{(-1)^n}{2n}\Bigr\}$ (b) $\Bigl\{\frac{2^n}{n!}\Bigr\}$ (c) $\Bigl\{\frac{n-cosn}{n}\Bigr\}$ (Hint: Squeeze it.)
+\end{center}
+\end{problem}
+\begin{solution}
+\end{solution}
+\pagebreak
+\begin{problem}
+Let $\{x_n\}$be a convergent monotone sequence. Suppose there exists a $k\in\mathcal{N}$ such that $\lim_{n\to\infty}x_n=x_k$. Show that $x_n=x_k$ for all $n\geq k$.
+\end{problem}
+\begin{solution}
+\end{solution}
+\pagebreak
+\begin{problem}
+Let $\{x_n\}$ be a sequence. Suppose there are two convergent subsequences $\{x_n_i\}$ and $\{x_m_i\}$, where\\
+\begin{center}
+	$\lim_{i\to\infty}x_n_i=a$ and $\lim_{i\to\infty}x_m_i=b,$
+\end{center}
+and $a\neq b$. Prove that $\{x_n\}$ is not convergent, without using Proposition 2.1.17 in the text.
+\end{problem}
+\begin{solution}
+\end{solution}
+\pagebreak
+\begin{problem}
+	True or false, prove or find a counterexample. If $\{x_n\}$ is a sequence such that $\{x_n^2\}$ converges, then $\{x_n\}$ converges.
+\end{problem}
+\begin{solution}
+	Consider the sequence $\{x_n\}=\{(-1)^n\}$, which we know is not convergent.\\
+	Note that the sequence $\{x_n^2\}$ is then the constant sequence $\{1\}$, which is trivially convergent. This, however, did not imply that $\{x_n\}$ is convergent.
+\end{solution}
+\pagebreak
+\begin{problem}
+	Do the following:
+	\begin{itemize}
+	\item Suppose $\{a_n\}$ is a bounded sequence and $\{b_n\}$ is a sequence converging to 0. Show that $\{a_nb_n\}$ converges to 0.
+	\item Find an example where $\{a_n\}$ is unbounded, $\{b_n\}$ converges to 0, and $\{a_nb_n\}$ is not convergent.
+	\end{itemize}
+\end{problem}
+\begin{solution}
+	\begin{itemize}
+		\item We are given that $|a|<M$ for some positive M.
+		We then have $|a||b|=|ab|\leq M|b|$ for all  $b\in\{b_n\}$, since $|b|$ is itself a nonnegative number.\\
+		On the other hand, we are guaranteed that for every $\frac{\epsilon}{M}$ there exists a $N$ such that for all $n>N$, $|b_n-0|=|b_n|<\frac{\epsilon}{M}$.\\
+		Putting these two pieces of information together, we have that $|ab|\leq M|b|<\epsilon$.
+		We have thus shown that for any  $\epsilon_1 >0$ (in particular, $\epsilon/M$), there exists a $N$ (the very same) for which $n>N\implies|a_nb_n-0|<\epsilon$.
+		By definition, the sequence $\{a_nb_n\}$ must converge to 0
+		\item Consider the sequences $\{a_n\}=\{n^2\}$, $\{b_n\}=\{\frac{1}{n}\}$, $\{a_nb_n\}=\{n\}$. This set is exactly the natural numbers, which are unbounded.
+	\end{itemize}
+\end{solution}
+\end{document}

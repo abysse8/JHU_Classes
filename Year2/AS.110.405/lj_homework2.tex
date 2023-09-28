@@ -1,0 +1,115 @@
+\documentclass[11 pt]{article}
+\input{preamble}
+\usepackage{quiver}
+
+\begin{document}
+    Name: Lj Gonzales
+
+    Assignment: HW 2
+
+    Due Date: Friday September 15
+    \break
+\begin{problem}
+	Continue talking to that engineering friend of yours, one who knows
+the material in all of the calculus courses and differential equations, and who knows
+you are in this analysis class. In a few short sentences, describe to them the following
+concepts. Be very careful to only use terms and ideas that they can understand, but
+also be as precise as you possibly can.
+(1) The least upper bound property,
+(2) why not every field with an ordering is an ordered field
+\end{problem}
+\begin{solution}
+	\begin{itemize}
+		\item There are many things that make a number system desirable for analysis: For example, the existence of multiplicative inverses in $\mathcal{Q}$ is a significant improvement over $\mathcal{N}$, because it allows us to use arguments like the Archimedean property in our logic.
+		It turns out that a property that is really useful, and much of the reason why we use the real numbers, is that of the least upper bound property. When working with infinite sequences of rational numbers, we cannot \emph{in general} say that its least upper bound is rational, even though least upper bounds are necessary to let us work with limits and ultimately, calculus; the real numbers allow us to bridge this inconsistency.
+		\break
+	\item The condition for being a field is actually not very demanding at all: you pretty much only need to define addition and multiplication in a way that is associative and distributive, which is an easy thing to do even with the complex numbers.\\
+	The subtlety comes from the ordering: though we can technically construct an ordering of our choosing, there is no guarantee that that ordering will then abide by the rules of the field. There needs to be a compatibility between the ordering and the field properties
+	\end{itemize}
+\end{solution} 
+\pagebreak
+\begin{problem}
+	Write a precise 1 or 2 sentence definition of what an interval is, as a subset of the real line.  Do it in such a way that it includes all the various types (open/closed, or neither (or both), bounded of not, etc.)  
+\end{problem}
+\begin{solution}
+	An interval as a subset of the real line is a set of real numbers satisfying a condition $\{x:P(x) \text{ is true}\}$ where all the elements are connected. That is, any two elements contained within the interval $x_1, x_2, x_1<x_2$ must be such that every real number greater than $x_1$ and lower than $x_2$ is also an element of the set.
+\end{solution}
+\pagebreak
+\begin{problem}
+Let F be an ordered field. Prove Part (iii) of Proposition 1.1.8: For $x,y,z\in F$ ,
+if $x < 0$ and $y < z$, then $xy > xz$
+\end{problem}
+\begin{solution}
+	Suppose that $y<z$. We know that  $x<0\implies x+(-x)<(-x)\implies(-x)>0$. By the definition of an ordered field we have that for any $a>0, b>0$,  $a,b\in F$, we have that  $xy>0$.\\
+	In our case we have  $(-x)>0$ and $y+(-y)<z+(-y)\implies z-y>0$, so we apply and rearrange to get:
+$(-x)(z-y)>0$, and by distributivity $xy>xz$, as sought.
+\end{solution}
+\pagebreak
+\begin{problem}
+Let F := {0, 1, 2}.
+(a) Prove that there is exactly one way to define addition and multiplication so that
+F is a field if 0 and 1 have their usual meaning of (A4) and (M4).
+(b) Show that F cannot be an ordered field.
+\end{problem}
+\begin{solution}
+	In order to prove that there is only one way to define the field, we write in table form an exhaustive list of all 9 valid operations on the would-be field in the tables below, and will show that there is only one way to design it without leading to contradictions.\\
+	Because commutativity (and associativity) apply to this field, we need not define both $a+b$ ($a\cdot b$) and $b+a$ ($b\cdot a$), since they must be equal.\\
+	Because 0 and 1 have their usual meaning, we undisputedly have $1\cdot a=a$, $0\cdot a=0$ for all $a$. We add this information in \textcolor{red}{red}.\\
+	Notice also that $2\cdot2$ cannot be equal to 0 since that would imply that $2=0$. Likewise, $2\cdot2$ cannot be equal to $2$ since that would imply $2\cdot2\cdot(\frac{1}{2})=2\cdot\frac{1}{2}$. This results in the contradiction $1=2$. It must be then that  $2\cdot2=1$, and this completes the definition of multiplication.\\
+	The axioms of addition state that $0+a=a$ for all $a\in A$. We add this in \textcolor{green}{green}.\\
+	We also cannot have $2+1=2$ since that would imply $2+1+(-2)=2+(-2)$, or $1=0$, which is a contradiction. Note that we're not claiming any knowledge about the value of $(-2)$, only the fact that $2+(-2)=0$ from the axiom. Similar reasoning shows that $2+1=1$ must also be false. Since  $2+1 \in \{0,1,2\}$, it must be 0. We add this in \textcolor{blue}{blue}.
+	Also note that $1+1$ cannot equal $1$, since that would imply  $1=0$ by adding  $(-1)$ (again, without yet having to say anything about the value of $(-1)$).
+	To finish, notice that $1+1=0$ would imply $2+2=2(1)+2(1)=2(1+1)=0$. But then $(-2)=2$, which contradicts our earlier statement that $1+2=0$ such that $(-2)=1$.
+	By elimination since $1+1$ must belong to the field, it must be equal to $2$. Since  $2+2=2(1+1)=2(2)=1$, we have completed our definition of the ordered field.\\
+	\begin{center}
+	\begin{tabular}{c||c|c|c}
+		$\times$ & 0 & 1 & 2\\
+\hline\hline
+		0 &\textcolor{red}{0} &\textcolor{red}{0} &\textcolor{red}{0}\\
+		\hline
+		1 &\textcolor{red}{0}&\textcolor{red}{1}  &\textcolor{red}{2}\\
+		\hline
+		2 &\textcolor{red}{0}&\textcolor{red}{2}  &1\\
+		\hline
+	\end{tabular}
+
+	\begin{center}
+	\begin{tabular}{c||c|c|c}
+		+ & 0 & 1 & 2\\
+		\hline\hline
+		0 &\textcolor{green}{0}&\textcolor{green}{1}&\textcolor{green}{2}\\
+		\hline
+		1 & \textcolor{green}{1} & 2&\textcolor{blue}{0}\\
+		\hline
+		2 & \textcolor{green}{2} & \textcolor{blue}{0} &1\\
+		\hline
+	\end{tabular}
+	\end{center}
+	\break
+The field cannot be an ordered field because we require $0<1$, and adding some set element to both sides should \emph{keep} this true. However, we have $0+2<1+2$ says $2<0$, which is a contradiction of $1>0\implies(2)\cdot1>(2)\cdot0$, since multiplication by a positive number conserves the ordering.
+\end{solution}
+\pagebreak
+\begin{problem}
+	Let D be the ordered set of all possible words (not just English words, all
+strings of letters of arbitrary length) using the Latin alphabet using only lower case
+letters. The order is the lexicographic order as in a dictionary (e.g. $aa < aaa < dog < door$). Let A be the subset of D containing the words whose first letter is ‘a’
+(e.g. $a\in A, abcd\in A$). Show that A has a supremum and find what it is
+\end{problem}
+\begin{solution}
+	The set A must have a supremum because it satisfies the two conditions of being bounded (notably, by b) and is non-empty (in particular, a).
+	In order for $b$ to be the least upper bound, it needs to 1) be an upper bound, and 2) be smaller than any other upper bound.\\
+	The first condition is satisfied by the definition of the lexicographic order: any word beginning with the letter $a$ cannot be an upper bound for $A$. Suppose that such a bound did exist. Append any letter, say z, to that word: clearly this new word belongs to $A$ since it begins with  $a$, yet it is larger. \\
+	The second condition is satisfied by noticing that any word with a lexicographic order lower than $b$ would have to start with the letter $a$. Hence, that word would belong to $A$, and we have just shown that any word beginning with $a$ cannot be an upper bound for $A$. 
+\end{solution}
+\pagebreak
+\begin{problem}
+	Let S be an ordered set. Let $A\subset S$ be nonempty and bounded above. Suppose
+sup A exists and $sup(A)\in A$. Show that A contains a countably infinite subset.
+\end{problem}
+\begin{solution}
+	We are given that $A$ is nonempty. We are then guaranteed the existence of at least one $a_0\in A$. Because $a_0$ belongs to A, $a_0\neq sup(A)$ by assumption. Thus, it is not the largest element in A (if this was not the case, $a_0$ would be the supremum). Meaning, there exists an $a_1\in A$ such that $a_1>a_0$. \\
+	Again, $a_1\neq sup(A)$ since $sup(A)$ is not an element of $A$ by assumption. There must then exist another $a_2>a_1>a_0$ such that  $a_2\in A$. \\
+	We can iterate this argument repeatedly over the natural numbers, yielding the countably infinite subset: $\{a_n:n\in\mathcal{N}\}$. Note that because the $a_n$ are in strictly increasing succession, they are distinct, so the set truly has cardinality $\aleph_0$.
+	We have therefore found a subset of A containing a countably infinite amount of elements, as sought.
+\end{solution}
+\end{document}

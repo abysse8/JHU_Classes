@@ -1,0 +1,148 @@
+\documentclass[11 pt]{article}
+        % adjust text size, margins
+    \textwidth=7in
+    \textheight=9.6in
+    \voffset=-54pt
+    \oddsidemargin=-.25in
+    \evensidemargin=0in
+    \setlength{\parskip}{8pt}
+    \setlength{\parindent}{0pt}
+
+        % change hyperref options
+    \PassOptionsToPackage{hyphens}{url}
+    \usepackage[bookmarks,colorlinks,linkcolor=blue,citecolor=blue,pdfstartview=FitH,urlcolor=blue]{hyperref}
+    \hypersetup{pdfpagemode=UseNone}
+
+        % basic package to add color to text
+    \usepackage{xcolor}
+    
+        % makes new line = new paragraph
+    \usepackage{parskip}
+\usepackage{graphicx} % Required for inserting images
+
+\title{How to Latex - Analysis Fall 2023}
+\author{Katelyn Kociancic and Camille Shantz }
+\date{August 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Welcome and First Steps}
+
+\subsection*{Introduction}
+
+Hello everyone! Latex is a versatile and handy method for writing math clearly and elegantly. In this guide, we'll give you the tools you need to get familiar with the language and start using Latex.
+
+\subsection*{How to Use This Document}
+
+For many of you, this might be your first experience using Latex. We recommend reading through this document in PDF form (in particular the Quick and Dirty Setup Guide section, which gives a lot of practical tips for getting started and using the resources available in this course). 
+
+After you've had the chance to read through it, be sure to \textit{\textbf{look at the code in this document!}} While you'll learn some things just by reading the content, looking at the code will show you how to do a lot of helpful formatting things where it's easier to show and not tell. We've also included some comments throughout the document and in our templates to explain some of the coding things that are going on. One of the best ways to learn about Latex is to learn from the strategies that others use, and this document is a great place to start with the basics.
+
+\subsection*{Overleaf}
+While there are other compilers available (and many will debate the benefits of each one), we recommend that you use \href{https://www.overleaf.com/project}{Overleaf} to create and edit documents in Latex. Accounts are free and easy to set up!
+%\href command above is great for embedding links!
+\section{Creating Documents and Setting Up Preambles}
+\subsection{Creating a Project Using a Template}
+For this course, we're providing a few useful templates for those of you who want to use Latex to format your problem sets, portfolio work, and other assignments. If you want to use these templates, the .zip file containing them is posted on Canvas under the module Latex Help. 
+
+\color{black}
+%It wouldn't be me making this document if I didn't include a color command - you can use them to change the color of text! Google a list of available colors - my favorite is teal.
+
+
+
+\section{Quick and Dirty Setup Guide}
+
+There are lots of detailed guides online for using overleaf in beautifully complicated ways. However, if you'd like a speedy rundown so you can use overleaf to write your homework assignment without spending hours learning how to use it, this section is for you.
+
+\subsection{Creating a Project using the .zip File on Canvas}
+
+There are a few ways to get Latex code from other people: you can copy paste (which is fine, but can cause frustrating formatting issues) or you can upload a .zip file if it's provided. To learn how to copy-paste, see the next section; here, we'll look at how to use the .zip files.
+
+\begin{enumerate}
+    \item Download the .zip file in the Latex module in Overleaf. It contains a few templates for the semester as well as this instruction guide and a few logistical files (preamble.tex and quiver.sty).
+    \item In overleaf, hit the new project button in the top left.
+    \item In the menu that pops up, hit upload project. Then, select the .zip file downloaded from Canvas.
+    \item You now have many of the Latex documents for the course (along with this guide and all commands used in it) available in both PDF and Latex code form!
+    \item \textit{\textbf{Tip: don't work in the homework and portfolio templates directly! Make a copy for each assignment you have to do. This way, you'll always have the blank versions to refer back to.}}%You'll notice I used the bold and italic commands here. Keyboard shortcuts still work! Feel frees to use control/command b, u and i as well as any others that come up.
+\end{enumerate}
+
+\subsection{Creating a Document Using Templates}
+
+\begin{enumerate}
+    \item Open the csv file with the latex code for the assignment you want to fill out.
+    \item Copy the latex code.
+    \item Start a new project, a blank file, in Overleaf. 
+    
+    \textit{Tip: you can make just one project for the semester with all your assignments so you don't have to add the behind the scenes stuff every time! Just make a new file using the button in the top left corner of the screen.}
+    \item Paste the latex code.
+    \item Make sure you have the preamble.tex and quiver.sty files included in your project! Not having this will cause your document not to compile.
+    \item When you recompile it, the pdf should be exactly like the blank assignment pdf on Canvas. If it doesn't or there's a recompilation error, or the whole right side of your screen goes bananas, then double check you didn't miss a line from the csv file, that there's a stray dollar sign or parentheses, then try again. If all else fails, make sure you have both a /start\{document\} and an /end\{document\}. 
+    
+    \textit{NOTE: switch to a forward slash to make these commands work! It's difficult to format commands as text - use the ones in the code as a guide.}
+\end{enumerate}
+
+\pagebreak
+
+
+\subsection{Writing Math in Latex}
+
+Once you've got this document set up with the homework questions, it's time to start writing in your solutions. Most "math" writing is done between dollar signs - if you want the numbers to look math-y, then put them in between dollar signs. If you want to know how to "write" a certain math symbol in latex, you can either find that symbol in your pdf already and just see what command created it, or you can do a quick "latex command xyz overleaf" google search and a dictionary will pop up for you to use! Below are a few examples of different ways to show math as well as some common commands that might pop up to get you started.
+
+\begin{itemize}
+    \item This example shows math embedded in text. You may sometimes want to format your math within writing, which can be done using single dollar signs: $\exists$  $x\in A$ such that the distance $d$ between $x$ and $y \in A$ is less than $\varepsilon$.
+    \item Sometimes you want to make an equation or mathematical thought stand out by putting it on its own line. Do this using the begin\{equation\} command. Bonus: This numbers your equations automatically, making them easy to refer back to clearly!
+    \begin{equation}
+        \exists \; x_1, x_2 \in A; \exists \; y_1, y_2 \in B 
+    \end{equation}
+    % \; makes a space in an equation; do \: or \, to make it smaller
+    Given some function $f$ from $A$ to $B$, we know that
+    \begin{equation}
+        f(x_1) = y_1, \; f(x_2) = y_2
+    \end{equation}
+\end{itemize}
+\pagebreak %This moves below content to the next page. It makes the formatting a bit cleaner.
+\section{The Nitty Gritty: Some extra stuff that might be helpful}
+\subsection{Anatomy of an Overleaf Project}
+Each overleaf project can contain multiple files, images, etc that all come together to make a nicely formatted pdf (or several!). Some people prefer to use different code files for the codes that format their document (often called a preamble) and the code that actually has the content on their document. You don't need to do this if you don't want to. If you want to use an extra program like \href{https://q.uiver.app/}{Quiver} to make nice diagrams, those would also be in their own file. You can create more files and upload images on the far left hand side of your project view. In the middle, you'll see the code for the file you've currently highlighted. This is where you write your content and any other commands you want. On the far right, you can see a "recompilation" of your project, basically what your file looks like as a pdf. Working in Latex mostly entails working on individual documents (see below subsections), but you do occasionally need to connect different files to each other. This is often in the preamble, but you also need to do something similar when importing image files. This is not expected to be required often in our course, however!
+
+With this overview, there's a few components that we should take a closer look at.
+
+\subsection{The Preamble}
+
+An individual Latex document has two main parts. The first is the body of the document, which is where you type the content. This encompasses everything between the begin\{document\} and end\{document\} commands. The second and just as important part is often called the preamble, which is all the set-up code that you see before the begin\{document\} command. For this course, we made a preamble.tex document which contains most things that you'll need to format your assignments. We then imported it to the templates so that you can:
+\begin{itemize}
+    \item Use the problem/solution environments (thank you to Professor Maru Sarazola for making these!)
+    \item Have consistent text size formatting.
+    \item Change text colors and format paragraphs using the parskip and xcolor packages.
+\end{itemize}
+
+But there's lots of other things that Latex can do, and you can expand its capabilities by using different packages. 
+
+\subsubsection{Packages}
+
+Packages are bundles of code that other people have written to be able to do different things. To use them, you need to import them with the usepackage command (see preambles for examples). Each package comes with commands that you use to access its capabilities (for example, the xcolor package enables the color\{\textit{put a color of your choice here}\} command. There are far too many for us to create a comprehensive guide in this document, but the below steps will help you use any packages you want to a bit more easily.
+\begin{enumerate}
+    \item Mostly you'll be importing new packages based on what you want to be able to do. Find which package you need by refering to past latex document preambles (if you have them) or by googling.
+    \item When you've picked a package/method for doing whatever it is you want to do, get a sense for the commands included in that package. Getting familiar with different commands will help you a lot later!
+    \item Remember to import the package into the preamble using the usepackage command! Check out the top of this document or the preamble.text file to see it in action.
+\end{enumerate}
+
+\pagebreak
+
+\section{Additional resources/Final Thoughts}
+This document will hopefully serve as a solid start, but it by no means contains the entirety of what you might want to know about Latex! Below is a list of our favorite places to look when we get stuck on a Latex issue:
+\begin{itemize}
+    \item I always start by googling whatever it is I need to do with the word latex afterwards. Example: If I wanted to know how to format a table, I would look up "insert table latex". 
+    \item The above first step often takes you to Overleaf or sometimes stack exchange. These are both good places to look!
+    \item If you're hoping to have a more in depth intro, I recommend \href{https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes}{Overleaf's 30 minute guide}. It has a lot of helpful tips from the absolute basics up to some more extensive formatting things. 
+    \item Here are some helpful outside resources that can help you generate different math structures without having to do all of the irritating typing and formatting that oftentimes goes with it:
+    \begin{itemize}
+        \item Tables: \href{https://www.tablesgenerator.com/}{Tables Generator} (Overleaf recommended!) 
+        \item Commutative diagrams (more of an algebra thing, but I love this website so I need to share): \href{https://q.uiver.app/}{Quiver}
+        \item If you find a really cool/helpful tool in your own Latex experience, remember to share! It likely helps solve a problem that many of your peers are experiencing as well, and the teaching staff may not be aware of it!
+    \end{itemize} %As shown here, you can embed lists within other lists! It works for enumerate as well.
+\end{itemize}
+
+\end{document}

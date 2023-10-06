@@ -1,0 +1,91 @@
+\documentclass[11 pt]{article}
+\input{preamble}
+\usepackage{quiver}
+
+\begin{document}
+    Name: Lj Gonzales
+
+    Assignment: HW 5 
+
+    Due Date: Friday October 6
+    \break
+\begin{problem}
+	(Writing) Continue talking to that engineering friend of yours, one who knows
+the material in all of the calculus courses and differential equations, and who knows
+you are in this analysis class. In a few short sentences, describe to them the following
+concepts. Be very careful to only use terms and ideas that they can understand, but
+also be as precise as you possibly can.
+\begin{itemize}
+	\item The limit inferior of a sequence of real numbers, and
+	\item the Bolzano-Weierstrass Theorem in $\mathcal{R}$
+\end{itemize}
+\end{problem}
+\begin{solution}
+	\begin{itemize}
+	\item	So far we have only worked with one tool to analyze limits: given any sequence and some number, we can check whether that sequence converges or doesn't converge to that number. This is cool in its own right, but we'll often only need to know whether a sequence converges at all rather than to some value. The limit inferior and its dual make more sense when thought as tools towards this new definition of convergence: instead of proving with epsilons and deltas that a sequence converges to some value, we can now say that it converges in general if its limit superior and inferior are equal.\\
+		The way to prove this derives from the action of 'squeezing' between two sequences whom we know bound the set elementwise. We used the same logic to find the limit of $\{\frac{1}{n\sqrt{n}}\}$ in some previous exercise, by bounding it between $\{0\}$ and $\{\frac{1}{n}\}$. But how can we find such sandwich sequences for arbitrary $n$?
+		There's a few options, one of them is to make the lower sandwich sequence a constant equal to the infima, and likewise for the upper sequence. 
+		This is not a useful option for the new definition we're trying to build: there are probably much easier ways to show that a sequence converges if it's constant.\\
+	One better option is to make the nth term of the sequence equal to the supremum of the n-tail: here we can still apply the sandwich theorem but it gives some flexibility to work with the sequence: this is the definition of the limit inferior.
+	\item  
+	\end{itemize}
+\end{solution} 
+\pagebreak
+\begin{problem}
+	Answer to Week 5 5-minute in-Lecture Drill
+\end{problem}
+\begin{solution}
+	For clarity, we will look at an example where, ..., we will \emph{build} a sequence that intentionally looks like it would converge to two different values, and explain why it cannot converge.
+	We build the sequence $\{s_n\}$ as follows: the even terms in the sequence $\{s_2n}$ will follow the harmonic sequence $\{\frac{1}{n}\}$ for all $n\in\mathcal{N}$, which converges to 0 in the asymptote from above. The odd terms of the sequence, $\{s_2n+1\}$ are defined by $\{1-\frac{1}{n}\}$ for $n\in\mathcal{N}$, which converges to 1 from below.\\
+	Notice how the definition of the two component sequences converging is exactly what stops the full sequence from being able to converge. We can choose c1 c2 to span a solution iff the wronskian is not equal to 0.
+\end{solution}
+\pagebreak
+\begin{problem}
+\end{problem}
+\begin{solution}
+\end{solution}
+\pagebreak
+\begin{problem}
+\end{problem}
+\begin{solution}
+\end{solution}
+\pagebreak
+\begin{problem}
+\end{problem}
+\begin{solution}
+\end{solution}
+\pagebreak
+\begin{problem}
+	Do the following:
+	\begin{itemize}
+		\item Let $\{x_n\}$ be a sequence such that there exists a positive $C<1$ and for all n,
+		\[
+		|x_{n+1}-x_n|\leq C|x_n-x_{n-1}|
+		.\] 
+	Prove that $\{x_n\}$ is Cauchy. Hint: You can freely use the formula (for $C\neq 1$)
+	\[	
+	1+C+C^2+\dots +C^n = \sum_{i=1}^{n}C^n =\frac{1-C^{n+1}}{1-C}
+	.\] 
+	\item True or false, prove or find a counterexample. If $\{x_n\}$ is a Cauchy sequence, then there exists an M such that for all $n\geq M$, we have $|x_{n+1}-x_{n}|\leq |x_n-x_{n-1}|$ 
+	\end{itemize}
+\end{problem}
+\begin{solution}
+	Considering the given statement for $n=1$, we have $|x_2-x_1|\leq C|x_1-x_0|$. For  $n=2$, we have  $|x_3-x_2|\leq C|x_2-x_1|$. Because  $C<1$, we have $|x_3-x_2|<C^2|x_2-x_1|$. The reader should see the inductive argument: we can repeat arbitrarily many times to get to an arbitrarily small fraction of the first distance.
+	\[
+	|x_{n+1}-x_n|\leq C^n|x_2-x_1|
+	.\] 
+	We now note two things: The Cauchy difference element $|x_{i+1}-x_i|$ is stricly smaller than $|x_{N+1}-x_N|$ for all $i>N$, since it is multiplied by a coefficient less than 1. 
+	Also, we can make the right hand side arbitarily close (in our language, $\epsilon$ close) to 0 by choosing a large enough $N$. We write this formally:
+	For all $\epsilon>0$ there exists a $N=max(1,\lceil\ln(C^{-1})\ln{\frac{\epsilon}{|x_2-x_1|}}\rceil)$, where we defined $\lceil a \rceil := \text{ceiling(a)}$ for any $a\in\mathcal{R}$ as per its usual definition, such that for all $n>N$,  $|x_{n+1}-x_n|<\epsilon$. This satisfies the condition of $x_n$ being Cauchy.\\
+	It is helpful to understand the iterative argument and the term $N$ as a maximum with a division into cases.\\
+	If we are given $\epsilon\geq|x_2-x_1|$, we trivially choose $N=1$ : the definition of the sequence assures that for all $n$ (in particular, all $n>N$),  $|x _{n+1}-x_n|\leq C^n|x_{2}-x_1|<|x_2-x_1|<\epsilon$. Here we use the fact that $C^n$ is strictly less than 1 for all n.\\
+	Otherwise if $0<\epsilon<|x_2-x_1|$, we choose $N$ to be the closest integer greater than $\log_C(\frac{\epsilon}{|x_2-x_1|})$.
+	Because $C^n<C^N$ for all  $n>N$, we have, using again the definition of the sequence:
+	\[
+	|x_{n+1}-x_n|\leq C^{n}|x_2-x_1|< C^N|x_2-x_1|=\epsilon
+	.\] for all $n>N$. Again, this is the definition of what it means to be Cauchy.
+\end{solution}
+\begin{solution}
+	Consider the sequence $x_n=(-1)^n$. Every consecutive term has magnitude 1 and opposite sign, such that $|x_{n+1}-x_n|=2\leq2=|x_{n}-x_{n-1}|$ for all $n$ is satisfied
+\end{solution}
+\end{document}

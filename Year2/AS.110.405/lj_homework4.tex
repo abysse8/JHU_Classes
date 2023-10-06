@@ -5,7 +5,7 @@
 \begin{document}
     Name: Lj Gonzales
 
-    Assignment: HW 1 
+    Assignment: HW 4 
 
     Due Date: Friday September 29
     \break
@@ -20,15 +20,21 @@ also be as precise as you possibly can.\\
 \end{problem}
 \begin{solution}
 \begin{itemize}
-	\item Recall that we called a set countably infinite if we could define a bijective function between it and the natural numbers.
-	\item In calculus II we have the idea of a limit to mean what something approaches \emph{as it goes to} something. For example, the limit of
+	\item Recall that we called a set countably infinite if we could construct a coupling between its elements and the natural numbers. This definition is intentionally vague because we want to say something that applies to simple assignments (like the identity function) but also more creative ones, like the "rotation" argument we used to show that $\mathcal{N}\times\mathcal{N}$ is countably infinite. We are dealing here with a result that somehow manages to say something about \emph{all} possible constructions, which is why its proof is a staple in real analysis.\\
+	In a way, the uncountability of the real numbers gives us an upper bound on what can be analyzed in mathematics and engineering: for example, the fact that no computer or brain can ever perfectly represent an arbitrary analog signal from discrete samples is a consequence of the uncountability of the real numbers.
+	\item In calculus II we have the idea of a limit to mean what something approaches \emph{as it goes to} something. We talk about the limiting behavior of a function as its argument approaches a certain value. We are particularly interested in a limiting behavior if it "hones in" on a specific value rather than be unpredictable or undefined, since that gives us something to talk about. If a sequence has this 'converging' behavior on a specific, unique number, we say that it has a limit; in particular, that number.\\
+	Technically we also defined a sequence to have a limit if that limit is positive or negative infinity, even though it does not converge to a real number in this case. Again, this is mostly because convergence to infinity still allows us to say things about the sequence. Think about how much better behaved the limit of $\{n\}$ as $n$ goes to infinity compared to say,  $\{\text{rand}(n)\}$, the random function. We can say much more about where the first one is going, at what rate, etc... so we need the language to reflect that.
 \end{itemize}
 \end{solution} 
 \pagebreak
 \begin{problem}
-Writing) Answer the Week 4 5-Minute in-Lecture Drill.
+	(Writing) Answer the Week 4 5-Minute in-Lecture Drill.
 \end{problem}
 \begin{solution}
+	Infinitesimals is the tool that allowed Isaac Newton to formalize the notion of the derivative; in a way, it is the foundation of most work that engineers do.\\
+	In modern mathematics we study limiting behavior in terms of \emph{arbitrary closeness}. Velocity is the ratio of a moving object's change of position in space in an arbitrarily small change in time. \\
+	Today we say \emph{arbitrarily small}, but in Newton's understanding of the derivative, there actually existed a "smallest" unit of time and space, which he writes as the infinitesimals $\Delta x$ and $\Delta t$.\\
+	It turns out that a lot of the properties we'd like in a number system collapse if we allow this infinitesimal to exist, but evidence from physics suggests that "real" space has an infinitesimal unit of distance. Some branches of mathematics work with the surreals and hyperreals, which try to bridge this gap between the physical world and the mathematical language we so often use to describe it.
 \end{solution}
 \pagebreak
 \begin{problem}
@@ -38,12 +44,26 @@ Show the following sequences converge and find their limits:\\
 \end{center}
 \end{problem}
 \begin{solution}
+	\begin{itemize}
+	\item Since $(-1)^n=1$ for n even, $-1$ for n odd, we have that $\frac{-1}{2n}\leq\frac{(-1)^n}{2n}\leq\frac{1}{2n}$.\\
+		We have shown that the multiplication rule allows us to write\\
+		$\lim_{n\to \infty}\frac{-1}{2n}=\lim_{n \to \infty}\frac{-1}{2}\cdot\lim_{n\to\infty}\frac{1}{n}= (\frac{-1}{2})(0)=0$. By the same token, $\lim_{n \to \infty}\frac{1}{2n}=0$. Since the sequence of interest is elementwise squeezed by sequences converging to 0, it converges to 0.
+	\item We claim that $0<\frac{2^n}{n!}<\frac{1}{n}$ for all $n$ greater than 5. Since the 5-tail converges by squeezing the sequences $\{0\}$ and $\{\frac{1}{n}\}$ to 0, the sequence overall must converge to 0.
+	We prove that $2^n<\frac{n!}{n}=(n-1)!$ for all $n>5$ by induction. The primitive case  $2^6=64<(5!)=120$ holds.
+	 Suppose now that $2^k<(k-1)!$ for all $k>5$. Then, $2^{k+1}=2*2^k<k!=k(k-1)!$. But from our assumption this means $2<k$, a true statement for $k>5$. Thus, the squeezing inequality holds.
+ \item We have that $-1\leq cos(n)\leq1$, such that $\frac{n-1}{n}=1-\frac{1}{n}\leq\frac{n-cos(n)}{n}\leq\frac{n+1}{n}=1+\frac{1}{n}$. The limits of the sequences $\{1+\frac{1}{n}\}$ and $\{1-\frac{1}{n}\}$ is identically 1 by the sum and scalar multiplication of limits, so the function is squeezed.
+	\end{itemize}
 \end{solution}
 \pagebreak
 \begin{problem}
 Let $\{x_n\}$be a convergent monotone sequence. Suppose there exists a $k\in\mathcal{N}$ such that $\lim_{n\to\infty}x_n=x_k$. Show that $x_n=x_k$ for all $n\geq k$.
 \end{problem}
 \begin{solution}
+We first treat the case that $\{x_n\}$ is monotone increasing.
+We are given that there exists a $x_k\in\{x_n\}$ such that for some $c$ defined to be the limit of the sequence, $x_k=c$.
+	In particular, $|x_k-c|<\epsilon$ for all positive  $\epsilon$. Since  $\{x_n\}$ is monotone increasing, $x_n>x_k$ for all $n>k$, and $c-x_n<c-x_k$. Thus\\
+	$-\epsilon<0<c-x_n<c-x_k<\epsilon$\footnote{Here we use the fact that the sequence is monotone increasing so $|x_n-c|=c-x_n$ for all $n$.} Thus  $0<c-x_n<\epsilon$ for all $n>k$, which  means that $x_n=c$ for all $n>k$, as sought.
+	We can find any monotone decreasing sequence to be a monotone increasing sequence, elementwise multiplied by $-1$. Thus we have not lost generality.
 \end{solution}
 \pagebreak
 \begin{problem}
@@ -54,6 +74,11 @@ Let $\{x_n\}$ be a sequence. Suppose there are two convergent subsequences $\{x_
 and $a\neq b$. Prove that $\{x_n\}$ is not convergent, without using Proposition 2.1.17 in the text.
 \end{problem}
 \begin{solution}
+	The proof is as follows: we show that the limit cannot converge to some $c\neq a$, since we cannot find a N such that all $n>N$ satisfy $|x_n-c|<\frac{|a-c|}{2}$. The particular $n$ that contradicts this will come from the convergent subsequence $\{x_n_i\}$.\\
+	If $c=a$, we repeat the procedure by showing that the limit cannot converge to any $c\neq b$, in particular, $a$. This is an exhaustive treatment of cases.\\
+	The statement for $c\neq a$ is proved by first noting that we are given some $N_1$ such that for infinitely many $n>N_1$, $|a-x_n|<\frac{|a-c|}{2}$ by the definition of the subsequence converging. This is not true for all $n>N_1$, but we are guaranteed infinitely many since $\{x_n_i\}$ is infinite.
+	Likewise, if $lim_{n \to \infty}x_n=c$, then there exists a $N_2$ such that for all $n>N_2$, $|x_n-c|<\frac{|a-c|}{2}$. If we choose $N=\text{max}(N_1, N_2)$, there is a $n$ that satisfies both.
+	By the triangle inequality, $|a-c|=|a-x_n+x_n-c|\leq|a-x_n|+|x_n-c|<|a-c|$. This can only be the case if  $a=c$, contradicting our assumption.
 \end{solution}
 \pagebreak
 \begin{problem}

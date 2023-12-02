@@ -1,0 +1,78 @@
+\documentclass[11 pt]{article}
+\input{preamble}
+\usepackage{quiver}
+
+\begin{document}
+    Name: Lj Gonzales
+
+    Assignment: HW 12
+
+    Due Date: Friday December 1
+    \break
+\begin{problem}
+\end{problem}
+\begin{solution}
+\end{solution} 
+\pagebreak
+\begin{problem}
+	Let $I=[0,1]$. Do the following:
+	 \begin{itemize}
+		 \item Let $f_n(x)=\frac{x^n}{n}$ on I. Show that $\{f_n(x)\}$ converges uniformly to a differentiable function $f$ on $I$ by finding $f$. Then show that $f'(1)\neq \lim_{n\to\infty}f_n'(1)$.
+	         \item For $g$ a Riemann integrable (hence bounded) function on I, find $\lim_{n\to\infty}\int_{0}^{1}\frac{g(x)}{n}dx$.
+	\end{itemize}
+\end{problem}
+\begin{solution}
+	We claim that $\{f_n(x)\}\to 0$. To see this, see that 
+	 \[
+	|f_n(x)-0|=|\frac{x^n}{n}|\leq|\frac{1}{n}|
+	.\] 
+	If $x$ is in  $[0,1]$. Now for any $\epsilon>0$, we can choose any $N\in\mathbb{N}$ such that $N>\frac{1}{\epsilon}$. Then, for all $n>N$, we have
+	 \[
+	|f_n(x)-f(x)|<\epsilon
+	.\] 
+	and since $x$ was chosen arbitrarily in $[0,1]$, the convergence is uniform. We then see that $\lim_{n\to\infty}f_n'(x)=x^{n-1}$, which, evaluated at $x=1$, gives a value of 1. This is not equal to $(0)'|_{x=1}=0$, as sought.
+\end{solution}
+\begin{solution}
+	We will try to estimate the expression $|\lim_{n\to\infty}\int_{0}^{1}\frac{g(x)}{n}dx|$. If we can bound this above by 0 (since it is trivially bounded below by 0), we can use a sandwich argument to conclude that $\lim_{n\to\infty}\int_{0}^{1}\frac{g(x)}{n}dx=0$.\\
+	Note that $g(x)$ is bounded, in other words, $|g(x)|<M$ for some real $M$. We use the triangle inequality for integrals and theorem 6.2.4, which states that  $\lim_{n\to\infty}\int_{a}^{b}f_n = \int^{b}_{a}f$ if $\{f_n\}$ converges to $f$ uniformly. See the first part of the exercise for a proof.
+	 \[
+	|\lim_{n\to\infty}\int_{0}^{1}\frac{g(x)}{n}dx|\leq\lim_{n\to\infty}\int_{0}^{1}\frac{M}{|n|}dx=M\lim_{n\to\infty}\int_{0}^{1}\frac{1}{n}dx=0
+	.\] 
+Because its absolute value is sandwiched between 0 and 0 we have $\lim_{n\to\infty}\int_{0}^{1}\frac{g(x)}{n}dx$=0, as sought.
+\end{solution}
+\pagebreak
+\begin{problem}
+	Find an example of a sequence of continuous functions on $(0,1)$ that converges pointwise to a continuous function on $(0,1)$, but the convergence is not uniform.
+\end{problem}
+\begin{solution}
+	Consider the sequence of functions defined by $f_n(x)=\frac{1}{x+\frac{1}{n}}$. The sequence converges to $f(x)=\frac{1}{x}$.\\
+	The sequence converges pointwise. To see this, we write \[
+	|\frac{1}{x+\frac{1}{n}}-\frac{1}{x}|=|\frac{x-x-\frac{1}{n}}{x(x+\frac{1}{n})}|=\frac{1}{n}|\frac{1}{x(x+\frac{1}{n})}|
+	.\] 
+	By choosing $N>\max(\frac{2x^{2}}{\epsilon},\frac{1}{x})$, we can further estimate this:
+	\[
+	<\frac{1}{n}|\frac{1}{x(x+x)}|=\frac{1}{n}|\frac{1}{2x^2}|<\epsilon
+	.\] 
+	Hence, the function converges pointwise. However as we have seen in class, it does not converge uniformly.
+\end{solution}
+\pagebreak
+\begin{problem}
+	Suppose $f_n:[a,b]\to\mathbb{R}$ is a sequence of continuous functions that converges pointwise to a continuous $f:[a,b]\to\mathbb{R}$. Suppose that for every $x\in[a,b]$, the sequence  $\{|f_n(x)-f(x)|\}$ is monotone. Show that the sequence $\{f_n\}$ converges uniformly.
+\end{problem}
+\begin{solution}
+	Be given $\epsilon>0$, and consider the function $g:x\in[a,b]\to\mathbb{N}$ $|f_n(x)-f(x)|<\epsilon$ is satisfied for all $n\geq N$. We are guaranteed such an  $x$ by the definition of pointwise convergence.\\
+	Consider now the function $|f_N(x)-f(x)|$ over the closed bounded interval $x\in[a,b]$. It is continuous, because $f_N, f$ are. By the Extreme Value Theorem, it must attain its maximum on some $x_0\in[a,b]$. If $|f_N(x_0)-f(x_0)|\geq\epsilon$, we can repeat step 1 of this procedure with $x=x_0$ to get an  $N_2$ such that for all  $n>N_2$,  $|f_{N_2}(x_0)-f(x_0)|<\epsilon$.
+	Because the sequence $\{|f_n(x)-f(x)|\}$ is monotonically decreasing for all $x$
+\end{solution}
+\pagebreak
+\begin{problem}
+	Find a sequence of Lipschitz continuous functions on $[0,1]$ whose uniform limit is  $\sqrt{x}$, which is a non-Lipschitz function.
+\end{problem}
+\begin{solution}
+	Consider the sequence given by
+	\[
+	f_n(x) = \sqrt{x+\frac{1}{n}}
+.\]
+Since $\sqrt{x}$ fails Lipschitz continuity when its argument is less than or equal to 0, all elements of the sequence are Lipschitz continuous everywhere on $[0,1]$. In the limit however, we get the same problem studied in class where the slope is undefined at 0.
+\end{solution}
+\end{document}

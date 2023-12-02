@@ -1,0 +1,107 @@
+\documentclass[11 pt]{article}
+\input{preamble}
+\usepackage{quiver}
+
+\begin{document}
+    Name: Lj Gonzales
+
+    Assignment: HW 10
+
+    Due Date: Friday November 10
+    \break
+\begin{problem}
+	(Writing) Continuing your discussions with that engineering friend of yours, describe to them the following concepts. Be very careful to only use terms and ideas that they can understand, but also be as precise as you possibly can.
+	\begin{itemize}
+		\item What it means for a function to be Riemann integrable, and
+		\item What the lower and upper Darboux Integrals are, and what it means when they are equal.
+	\end{itemize}
+\end{problem}
+\begin{solution}
+	We approach this question in the opposite order, since we defined the Riemann Integrability criterion only in terms of upper and lower Darboux integrals.\\
+	A Darboux integral of a function is an estimation of its area. Recall that for some functions, computing the area under the curve given some start and end point is straightforward (think of constant functions, or  $f(x)=x$ on some bounded interval, and consider formulas we have for the area of a rectangle or triangle).\\
+	For arbitrary functions, we may not have a formula, but we propose that we can always estimate the area of a function by breaking it into many rectangles. In particular, we are interested in partitioning the domain of the function into mutually exclusive and adjacent intervals, and finding upper and lower rectangle estimates of its area (A sketch here is helpful).\\
+	We call these estimates (sums of rectangles with heights equal to the minimum/maximum value the function takes on each sub-interval) the lower and upper Darboux sum of the function for the given partition. Since the lower and upper Darboux sums are bounded above and below respectively (in particular, by any one of the other), we can talk about their supremum and infimum.\\
+	When defined, the lower and upper Darboux integrals are bounded above and below, respectively. In particular, by each other. This means that we can talk about the supremum of a lower Darboux integral and the infimum of an upper Darboux integral. We call these lower and upper Darboux Integrals for short. When they are equal for some function, we call it Riemann integrable.	
+\end{solution} 
+\pagebreak
+\begin{problem}
+	(Writing) Submit your abstract and an outline of your final project paper.
+\end{problem}
+\begin{abstract}
+Differential equations (equations involving an unknown function and at least one of its derivatives) are a fundamental framework to model the more complex systems of science and engineering. Solving such equations may be difficult or impossible, and even if we find an expression that solves the equation, there is no a priori guarantee that there does not exist a different expression that also satisfies the differential equation, and that other solution might be the one that actually characterizes our system. 
+
+We present Picard’s Theorem of Existence and Uniqueness for solutions of first-order differential equations, which provides sufficient and very reasonable conditions on the form of the differential equation for solutions to exist and be unique.
+
+Unlike our previous work dealing with specific functions and doing analysis on their derivatives, integrals, and long-term behavior, here we want a language that applies to all types of (differentiable) functions that might solve the differential equation; we need to go a level of abstraction beyond functions and consider the convergence of sequences in functional space.
+
+We present the method of Picard Iterations on an integral version of the solution as a mathematically rigorous way to prove the theorem.
+\end{abstract}
+
+Definitions
+	-Initial Value Problem: briefly explain what a differential equation is along with an initial condition
+
+	- Uniform convergence in the sense of sequences of functions: a sequence of functions {yj(x)} converges to a function y(x) on some interval I if for any eps >0 there exists an n0 such that for all n>n0, |yn(x)-y(x)|<eps for all x in I. Note the last part is different from our studies so far.
+	-Give an example of an IVP that does not fit the necessary conditions for Picard’s theorem, and that actually turns out to have multiple solution.
+Main result
+	Picard’s Method of Successive Approximations/Iterations:
+-Start with showing that we can express an IVP y'=f(x,y), y(x0)=y0  in terms of its integral equation y(x)=y0+x0xf[t,y(t)]dt. (See G.F Simmons)
+-Show this form allows us to guess an approximation of y(t) and successively improve it.
+-Best to show the example for the simple equation y'=y, y(0)=1 and show that Picard Iterations gets us to the power series expansion of ex, as expected.
+	Series of Functions & Convergence
+-Link sequences of functions to Picard Iterations by showing that the approximations y0(x), y1(x), ..., yn(x) forms a sequence {yn(x)} of functions. If the solution is to have a unique solution, we need this sequence to converge.
+- There is also a series version, where yn(x) is the partial sum of  y0(x)+i=1n[yi(x)-yi-1(x)].
+	(i) Proving that series converges to some y(x)
+Show that iterates satisfy||fn-fk||C||fn-1-fk-1|| for some C<1. Recall an exercise we did for a past problem set to show convergence.
+	(ii) Proving that y(x) is a continuous solution to the integral equation
+On 11/08 we showed a result in class that says that uniform convergence impli s that the thing we converge to is continuous
+	(iii) Proving y(x) is the only continuous solution to the integral equation
+	Assume g(x) is another solution and arrive at the conclusion that g=y by estimating the quantity |y(x)-g(x)| to zero.
+\pagebreak
+\begin{problem}
+	Let $f:[0,1]\to\mathbb{R}$ be a bounded function. Let $P_n=\{x_0,x_1,\dots,x_n\}$ be a uniform partition of $[0,1]$ (that is, $x_j=\frac{j}{n}$). Is $\{L(P_n,f)\}_{n=1}^{\infty}$ always monotone? Yes/No. Prove or find a counterexample.
+\end{problem}
+\begin{solution}
+	Consider the slightly clinical \[
+	f(x) = \begin{cases}
+	1 & x<\frac{1}{2}+0.1 \\
+	0 & x\geq\frac{1}{2}+0.1
+	\end{cases}
+.\]
+	Here the lower sum for the partition $\{0,\frac{1}{2},1\}$ is equivalently $(\frac{1}{2}-0)(1)+(1-\frac{1}{2})(0)=\frac{1}{2}$. However, the lower sum for the partition $\{0,\frac{1}{3},\frac{2}{3}, 1\}$ can be shown to equal $\frac{1}{3}$.\\
+	Without computation, we know that the lower sum for $\{\frac{j}{4}\}$ is greater than or equal to $\frac{1}{2}$ because it contains every point in the first partition.\\
+	Thus, the sequence $\{L(P_n,f)\}_{n=0}^{\infty}$ for our $f$ contains the non-monotone subsequence $\{\frac{1}{2},\frac{1}{3},\frac{1}{2}\}$, and thus is not monotone itself.
+\end{solution}
+\pagebreak
+\begin{problem}
+	Let $f:[a,b]\to\mathbb{R}$ be a continuous function such that $\int_{a}^{b}f=0$. Do the following:
+	\begin{itemize}
+		\item Show that there exists a $c\in(a,b)$ such that $f(c)=0$.
+		\item Show that if $f(x)\geq 0$, for all $x\in[a,b]$, then $f(x)=0$, for all $x\in[a,b]$
+	\end{itemize}
+\end{problem}
+\begin{solution}
+	We prove the first part by contradiction: make the counterclaim that there does \emph{not} exist a $c\in(a,b)$ such that $f(c)=0$.\\
+	We will prove if this is true, then either $f(x)>0$ or $f(x)<0$ for all $x$ on the interval, and prove this with our own contradiction.
+	Suppose there did exist two distinct points on $[a,b]$, call them $c_1,c_3$, such that $(c_1,c_3)\subset[a,b]$, and their images $f(c_1)$ and $f(c_3)$, respectively, have different signs. Bolzano's Intermediate Value Theorem says this implies the existence of a $c_2\in(c_1,c_3)$ such that $f(c_2)=0$. But that would disporve the claim. So without loss of generality, assume $f(x)>0$ for all $x$: a similar argument will hold if $f(x)<0$ for all $x$.
+	We can then take a lower bound on the value of the integral:
+	\[
+		\int_{a}^{b}f\geq \mathcal{U}(\{a,b\},f)= \sup_{x\in[a,b]}\{f(x)\}(b-a)>0
+	.\] 
+	As sought. There is actually an asterix on the last inequality. Technically, $f(x)>0$ for all $x\in S$  (for some set $S$) does not mean that $\sup_{x\in S}\{f(x)\}>0$. Here we appeal to the Extreme Value Theorem.\\
+	Thus, the first counterclaim made is contradicted, and thus there must exist a $c\in(a,b)$ such that $f(c)=0$.
+\end{solution}
+\begin{solution}
+	We have already shown in the process of answering the first part: it cannot be that $f(x)>0$ for all $x\in[a,b]$. Thus, $f(x)\geq 0$ can only be true if $f(x)=0$.
+\end{solution}
+\pagebreak
+\begin{problem}
+	Prove the Mean Value Theorem for integrals: If $f:[a,b]\to\mathbb{R}$ is continuous, then there exists a $c\in[a,b]$ such that $\int_{a}^{b}f=f(c)(b-a)$
+\end{problem}
+\begin{solution}
+	We solve this problem by appealing to the Mean Value theorem for integrals with appropriate modifications.\\
+	Define $F:[a,b]\to\mathbb{R}$ by $F(x)=\int_{a}^{x}f$. We are guaranteed that this is well defined for our given domain because $f$ is continuous on the interval $[a,b]$, thus, it is integrable there.\\
+	The Fundamental theorem of calculus guarantees that $F$ is differentiable, in particular, with $F'=f$. Also, differentiability of $F$ implies continuity, so the conditions of the Mean value Theorem for differentiation works:\\
+	In particular, there exists a $c\in(a,b)$ such that $F(a)-F(b)=F'(c)(b-a)$.\\
+	Using the Fundamental Theorem of calculus once again, we have $\int_{a}^{b}f=F(b)-F(a)$, and $F'(x)=f(x)$ for all $x\in[a,b]$, in particular,  $F'(c)=f(c)$. As sought.
+\end{solution}
+\end{document}

@@ -1,0 +1,132 @@
+
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{dsfont}
+\usepackage{graphicx}%
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{color}
+\usepackage[ruled]{algorithm2e}
+\usepackage{ifthen}
+\usepackage{algorithmic}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{result}{Theorem}
+\newtheorem{assumption}{Assumption}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{property}{Property}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{claim}{Claim}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\def\scr#1{{\cal #1}} 
+\def\eq#1{\begin{equation}#1\end{equation}}
+\newcommand{\R}{{\rm I\!R}}
+\newcommand{\bbb}{\mathbb}
+
+\newcommand{\diag}{{\rm diag}}
+
+\def\rep#1{(\ref{#1})}
+\newcommand{\1}{\mathbf{1}}
+\newcommand{\0}{\mathbf{0}}
+
+%\newcommand{\matt}[1]{\left[ \matrix{#1} \right]}
+
+\usepackage{hyperref}
+
+
+\def\qed{ \rule{.08in}{.08in}}
+
+
+
+% Keep the following format of a report
+
+\topmargin -.5in
+\textwidth 6.5in    
+\textheight 8.75in 
+\evensidemargin 0in
+\oddsidemargin 0in    
+
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+
+\usepackage{amsmath,array}
+\newcommand*{\vertbar}{\rule[-1ex]{0.5pt}{2.5ex}}
+\newcommand*{\horzbar}{\rule[.5ex]{2.5ex}{0.5pt}}
+
+\begin{document}
+
+\begin{center}{\bf Picard Iterations}\end{center}
+\begin{center}{LJ Gonzales, Eric Tang}\end{center}
+
+\begin{abstract}
+Differential equations (equations involving an unknown function and at least one of its derivatives) are a fundamental framework to model the more complex systems of science and engineering. Solving such equations may be difficult or impossible, and even if we find an expression that solves the equation, there is no a priori guarantee that there does not exist a different expression that also satisfies the differential equation, and that other solution might be the one that actually characterizes our system. 
+
+We present Picard’s Theorem of Existence and Uniqueness for solutions of first-order differential equations, which provides sufficient and very reasonable conditions on the form of the differential equation for solutions to exist and be unique.
+
+Unlike our previous work dealing with specific functions and doing analysis on their derivatives, integrals, and long-term behavior, here we want a language that applies to all types of (differentiable) functions that might solve the differential equation; we need to go a level of abstraction beyond functions and consider the convergence of sequences in functional space.
+
+We present the method of Picard Iterations on an integral version of the solution as a mathematically rigorous way to prove the theorem.
+\end{abstract}
+
+\section{Introduction}
+
+\subsection{Statement of Picard's Theorem}
+\section{Definitions}
+\subsection{Initial Value Problem}
+We consider an initial value problem for a first order linear equation to be of the form 
+    \[y'(x)=f(x,y), \text{ with initial condition } y(x_0)=y_0\in\mathbb{R}.\]
+We call a \emph{solution} to an IVP a function $y(x)$ that is differentiable where it is defined
+\subsection{Continuity and Lipschitz Continuity}
+\subsection{Picard Iterations}
+\subsection{Examples}
+We now present two examples to illustrate the importance of Picard's theorem. Now that we have defined an IVP, we can show an example of one which violates the necessary conditions of Picard's theorem, and for which there indeed are multiple solutions.\\
+Consider the IVP \[
+y'=y^{2/3}, y(0)=0
+.\]
+For instance, $y$ may quantify the size of a bacteria population as a function of time and the ODE may come from known behavior of its rate of growth.\\
+Notice that this initial value problem violates Picard's theorem condition of Lipschitz continuity at  $y=0$. In particular,  $\frac{\partial f}{\partial y}=\frac{2}{3}y^{\frac{-1}{3}}$ is unbounded as $y\to 0$.\\
+Indeed, this initial value problem has multiple solutions. Two of them are:
+\begin{align}
+	y_1(t)=0\\
+	y_2(t) = \begin{cases}
+		0 & t\leq 0 \\
+		\big(\frac{2x}{3}\big)^{\frac{3}{2}} & t>0
+		\end{cases}
+\end{align}
+It is easy to see how not validating existence and uniqueness could be disastrous in practical studies of differential equations. Without further motivation, let us use Picard Iterations to solve our first IVP.\\
+Be given the initial value problem \[
+y'=cy, y(0)=y_0
+.\] 
+We find the first Picard iterate by inputting the initial condition and finding the first derivative in terms of it:
+\[
+y_1(t)=y_0+\int_{0}^{t}cy_0dx=y_0+cy_0t
+.\] 
+We can repeat this to find a yet better approximation: \[
+y_2(t)=y_0+\int_{0}^{t}c(y_0+cy_0x)dx=y_0+cy_0x+\frac{1}{2}c^2y_0x^2
+.\] 
+We notice the pattern: \[
+y_n(t)=y_0\sum_{n}\frac{(ct)^n}{n!}
+.\] 
+And notice that the limit to infinity is of the same form as the Taylor series expansion of the exponential function, thus \[
+\lim_{n\to\infty}y_n(t)=y_0e^{ct}
+.\]
+Here we need not check the convergence of this series because we can use our knowledge that there is a bijection between a function and its Taylor expansion.\\
+For more complicated IVP's however, we may not be able to immediately write down the function because its Taylor Expansion may not be recognizable.\\
+This is the point of existence and uniqueness theorem. Picard iterates are not in general useful for obtaining solutions ot ODE's. However, if we are able to establish that the sequence $\{y_n\}$ converges to some $y$,
+\section{Integral equation and Operator Interpretation}
+\section{Function sequences Uniform Convergence}
+% I think instead of the proof that was showed in the book we should use the Banach Fixed Point Theorem interpretation like in the ucberkeley
+\subsection{Uniform CO}
+
+\end{document}

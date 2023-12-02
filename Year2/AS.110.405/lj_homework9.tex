@@ -1,0 +1,104 @@
+\documentclass[11 pt]{article}
+\input{preamble}
+\usepackage{quiver}
+
+\begin{document}
+    Name: Lj Gonzales
+
+    Assignment: HW 9
+
+    Due Date: Friday November 3
+    \break
+\begin{problem}
+	(Writing) Continuing your discussions with that engineering friend of yours, describe to them the following concepts. Be very careful to only use terms and ideas that they can understand but also be as precise as you possibly can.
+	\begin{itemize}
+		\item What is means for a function to be differentiable on a closed, bounded interval, and
+		\item Why the derivative of a differentiable function need not be continuous
+	\end{itemize}
+\end{problem}
+\begin{solution}
+	\begin{itemize}
+		\item We have our usual definition of differentiability for an open interval: the slope element around a point c, $\frac{f(x)-f(c)}{x-c}$, as $x$ gets arbitrarily close to c, is well defined for all $c$ in the interval. Note that there are a few ways for this limit not to be defined: we have seen the case of infinite oscillations where the limit could simply not converge to a specific value, as well as the case of a "corner" where the limit from the right converges to a different value than the limit from the left.\\
+			If we write any closed bounded interval  $[a,b]$ as $\{a\}\cup(a,b)\cup\{b\}$, it should be clear that the definition  we would expect for a function to be differentiable on $[a,b]$ is for it to be differentiable on the open interval $(a,b)$, but also separately at the end points $a$ and $b$. We seemingly run into a problem because we cannot verify both right and left hand limits for such extreme points.\\
+			We then change our definition slightly, allowing for only the 'computable' left or right hand limits to be defined at those points (avoiding infinite oscillations around the endpoints, for example, but not the second case).
+		\item It is important to recall that for the large majority of cases in the real world and for most functions we will ever have to worry about, the derivative of a function will be continuous. In fact, it is impossible for a differentiable function to have most kinds of discontinuities (for instance, a jump discontinuity in the derivative implies a corner, which means the original function was never differentiable in the first place. Likewise with a removable discontinuity).\\
+			However we can cook up some very pathological functions to come up with counterexamples of this. One such example is the function \[
+		f(x) = \begin{cases}
+			x^2\sin(\frac{1}{x}) & x\neq 0 \\
+			0 & x=0
+			\end{cases}
+		.\] 
+		For every nonzero point in its domain, we can write its derivative using the tricks we have used so far in class. Stating the derivative at $x=0$ is a harder task: notice that this function is squeezed between $x^2$ and  $-x^2$ at all points of its domain, so we would expect it visually to have a derivative of 0 at $x=0$. However, this is not the case: the  $\sin(\frac{1}{x})$ component means that the derivative keeps oscillating, with its magnitude bouncing increasingly quickly between negative and positive infinity as we get closer to 0. This is a good example where our intuition about derivatives can fail.
+	\end{itemize}
+\end{solution} 
+\pagebreak
+\begin{problem}
+	(Writing) Answer to Week 9 5-minute in-lecture drill
+\end{problem}
+\begin{solution}
+	Abstract- Differential equations (equations involving an unknown function and at least one of its derivatives) are a fundamental framework to model the more complex and dynamic systems of science and engineering. Solving such equations may be difficult or impossible, and there is no a priori guarantee that any solution we find to solve the equation is actually the solution under which the system is constrained.
+	We present Picard’s Theorem of Existence and Uniqueness for differential equations, which provides sufficient conditions for us to relieve these doubts we might have about our solutions.
+	Unlike our previous work dealing with specific functions and doing analysis on their derivatives, integrals, and long-term behavior, here we want a language that applies to all types of (differentiable) functions that might solve the differential equation; we need to go a level of abstraction beyond functions and consider sequences and series of functions and look at their convergence.
+We will see that the method of Picard Iterations on an integral equation will be a mathematically rigorous way to prove the theorem.
+\end{solution}
+\pagebreak
+\begin{problem}
+	Assume the inequality $|x-\sin(x)|\leq x^2$. Do the following:
+	\begin{itemize}
+		\item Prove that $\sin(x)$ is differentiable at 0 and find the derivative at 0.
+		\item Prove that $\sin(x)$ is differentiable everywhere and that its derivative is $\cos(x)$.
+	\end{itemize}
+\end{problem}
+\begin{solution}
+	We claim that the derivative of $\sin(x)$ evaluated at 0 is 1, and prove it with our usual epsilon delta definition.\\
+	We claim that the derivative element $\frac{f(x)-f(0)}{x-0}=\frac{\sin(x)}{x}$ limits to 1. To prove this, notice that $|\frac{\sin(x)}{x}-1|=\frac{1}{|x|}|\sin(x)-x|\leq\frac{1}{|x|}x^2=|x|$, using the given identity.\\
+	Given any $\epsilon>0$,  if we suppose further that we restrict the values of $x$ around 0 such that $|x-0|<\epsilon$ (choosing $\delta=\epsilon$), we have that $|\frac{\sin(x)}{x}-1|\leq|x|<\epsilon$. As sought.
+\end{solution}
+\begin{solution}
+	We want to show that $\lim_{x\to c}\frac{\sin(x)-\sin(c)}{x-c}=cos(c)$.\\
+	We first use a trignonometric identity to write $\sin(x)-\sin(c)=2\sin(\frac{x-c}{2})\cos(\frac{x+c}{2})$. We then assume that both $\lim_{x\to c}\frac{\sin(\frac{x-c}{2})}{\frac{x-c}{2}}$ and $\lim_{x\to c}\cos(\frac{x+c}{2})$ exist, such that we can write the limit of products as the product of limits.\\
+	Note that this first limit is identically equal to 1 by part a), and the second limit exists because $\cos(x)$ exists and is continuous for all $x$, such that our problem boils down to showing that $\lim_{x\to c}\cos(\frac{x+c}{2})=cos(c)$.\\
+	We do so with our usual epsilon delta definition. Note that $|\cos(\frac{x+c}{2})-\cos(c)|=|-2\sin(\frac{\frac{x+c}{2}-c}{2})\sin(\frac{\frac{x+c}{2}+c}{2})|=2|\sin(\frac{x-c}{4})||\sin(\frac{x+3c}{4})|$. At this point we use the fact that $|\sin(x)|\leq 1$ and $|\sin(x)|\leq|x|$ to write \[
+	|\cos(\frac{x+c}{2})-\cos(c)|\leq 2|\sin(\frac{x-c}{4})|\leq\frac{|x-c|}{2}<\frac{\delta}{2}
+	.\] 
+	By choosing $\delta=2\epsilon$ the result is proven.
+\end{solution}
+\pagebreak
+\begin{problem}
+	Suppose $f:(-1,1)\to\mathbb{R}$ is a function such that $f(x)=xh(x)$ for a bounded function $h$.
+	\begin{itemize}
+		\item Show that $g(x):=(f(x))²$ is differentiable at the origin and $g'(0)=0$.
+		\item Find an example of a continuous function $f:(-1,1)\to\mathbb{R}$ with $f(0)=0$, but such that $g(x):=(f(x))^2$ is not differentiable at the origin.
+	\end{itemize}
+\end{problem}
+\begin{solution}
+	We claim that $\lim_{x\to 0}\frac{g(x)-g(0)}{x}=g'(0)=0$.\\
+	We identically have $|\frac{(x)-g(0)}{x}|=|\frac{x^2h^2(x)-0}{x}|=|x||h^2(x)|$. Now if $h$ is bounded, such that $|h(x)|\leq M$ for all $x$ in the domain of $h$, for some $M\in\mathbb{R}$, then $|h^2(x)|=|h(x)||h(x)|\leqM^2$. In other words $h^2$must also be bounded. \\
+	We finish the proof because $|\frac{g(x)-g(0)}{x-0}|=|x||h^2(x)|\leq |x|M^2$. By restricting $x$ around 0 such that $|x|<\frac{\epsilon}{M^2}$, this is strictly less than $\epsilon$ for any given $\epsilon>0$.
+\end{solution}
+\begin{solution}
+	Consider $f:(-1,1)\to\mathbb{R}$ defined by  \[
+	f(x) = 
+	\begin{cases}
+		\sqrt{x} & x\geq0 \\
+		\sqrt{-x} & x<0
+	\end{cases}
+	.\] 
+	Certainly $f$ is continuous within its pieces, and $\lim_{x\to 0^{-}}f=\lim _{x\to 0^{+}}f=0$, so $f$ is continuous at 0. However $g(x)=f(x)^2$ is the absolute value function on the domain $(-1,1)$, which is not differentiable at $x=0$.
+\end{solution}
+\pagebreak
+\begin{problem}
+	Suppose $f:\mathbb{R}\to\mathbb{R}$ is a differentiable function. Show that $f$ is Lipschitz continuous iff $f'$ is a bounded function.
+\end{problem}
+\begin{solution}
+		To prove the forward direction, suppose that $f$ is differentiable and Lipschitz continuous. In particular, the quantity $f'(a)= \lim_{x\to a}\frac{f(x)-f(a)}{x-a}$ is well defined for all $a\in\mathbb{R}$.\\
+		Taking the absolute value of this quantity, we have $|f'(a)|=\lim_{x\to a}|\frac{f(x)-f(a)}{x-a}|$. Recall that we can pass the absolute value inside the limit because it is everywhere continuous.\\
+		From the definition of Lipschitz continuity we have that for all  $x,y\in\mathbb{R}$, $|f(x)-f(y)|\leq K|x-y|$ for some K. Further, for $x\neq y$, we have that $\frac{|f(x)-f(y)|}{|x-y|}\leq K$.\\
+		This applies, in particular, to all $x$ satisfying $0<|x-a|<\delta$ in our expression for the derivative at a. Hence, $|f'(a)|=\lim_{x\to a}|\frac{f(x)-f(a)}{x-a}|\leq \lim_{x\to a}K=K$. Thus, $f'$ is bounded: in particular, by K.\\
+
+		Proving the reverse direction is less straightforward since it requires taking local information (the derivative at a point) to say something about non-local points of the function (arbitrary $x,y\in\mathbb{R}$). The mean value theorem will help us with this. Given any $x,y\in\mathbb{R}$ and $f$ is differentiable and continuous on $\mathbb{R}$ (in particular, continuous on $[x,y]$ and differentiable on $(x,y)$), we know that there exists a $c\in(x,y)$ such that $f(x)-f(y)=f'(c)(x-y)$.\\
+		Suppose now per assumption that f' is bounded, that is, $|f'(x)|\leq M$ for all $x\in\mathbb{R}$, for some M. Taking the absolute value on both sides of our previous equality keeps it valid, such that $|f(x)-f(y)|=|f'(c)||x-y|\leq M|x-y|$.\\
+		Thus $f$ is M-Lipschitz continuous, since it satisfies this condition for all $x,y$ in its domain.
+
+\end{solution}
+\end{document}

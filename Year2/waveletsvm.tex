@@ -1,0 +1,66 @@
+\begin{document}
+	Vanishing moments\\
+Suppose we have a polynomail that we want to be fully represented within the thumbnail.
+	If we have K vanshing moments, then we can do this with a polnomial of degree at most k-1.
+	What is the bare minimum in our design that we can get away wth? Suppose we want to trade off the degree k-1.\\
+	We want at least one vanishing moment at $k=1$. Then a polynomial of degree 0  (a constant) will be passed fully (DC).
+	$\Phi(w)=\frac{1}{\sqrt{2}}\Phi(\frac{w}{2})$ in Fourier $\phi(t)=\sqrt{2}\sum h_0[n]\phi(2t-n)$ \\
+	$\Psi(w)=\frac{1}{\sqrt{2}}H_1(w)\Phi(\frac{w}{2})$ in Fourier $\psi$
+	We want dot product of shifted phi's to be 0 in time domain. 
+	We don't assume anything about perfect reconstruction, perfect filter bank.
+	Knowing that the dot product of the phi and psi's are correct, we want to find the conditions that need to be applied on $h_0, h_1$.
+	We predict that some of the necessary conditions are going to be orthogonality and at least one vanishing moment.\\
+	Want to prove that there is at least one vanishing moment. i.e,  $k\geq 1$. What is our definition of vanishing moment? Recall that it does not explicitly involve $H_1$.
+	 $H_0(z)=(1=z^{-1})T(z)$ for some $T(z)$.
+	Proof: we want \[
+		<\sqrt{2}\sum h_0[k]\phi(2t-k), \sqrt{2}\sum h_0[m]\phi(2t-2n-m)>=\delta[n]
+	.\] 
+	By Cauchy's formula (?), we have \[
+		=2\sum_{k}\sum_{n}h_0[k]h_0[m]<\phi(2t-k), \phi(2t-2n-m)>
+		=2\sum_{k}\sum_{m}h_0[k]h_0[m]\frac{1}{2}\delta[k-2n-m]
+		=\sum_{k}\sum_{m}h_0[m]h_0[m+2n]=\delta[n]
+	.\] 
+	Because each of the terms inside of the phi's are integers, we can apply our desired identity on them.\\
+	What about \[
+	<\phi(2t), \phi(2t)>
+	.\]  have to apply a change of variables on its definition \[
+	\int_{-\infty}^{\infty}|\phi(2t)|^2dt=\frac{1}{2}
+	.\] 
+It turns out that if we don't start with an othogonal filter bank, all bets are off. However this proof did not rely on the assumption that we have vanishing moments.
+We have \[
+	\sum_{m}h_0[n]h_0[m+2n]=\delta[n]
+.\] from previously. We can sum over n
+\[
+	\sum_{n}sum_{m}h_0[n]h_0[m+2n]=\sum_{n}\delta[n]=1
+.\] 
+We define $K_e=\sum_{m}h_0[2m]$ i.e the sum of all even index coefficients.
+Likewise define $K_o=\sum_{m}h_0[2m+1$]$\\
+Now we use the fact at at least one vanishing moment means that \[
+	H_0(-1)=\sum_{m}h_0[m](-1)^{-m}=0
+.\] 
+This means that $K_e-K_o=0$ therefore  $K_e=K_o$.
+Notice that  \[
+	h_0[m]=K_e+K_o=
+.\] 
+(Recall we had a test question where this was equal to $\sqrt(2)$ but this assumed that we already had a vanishing moment. SO this isn't it)\\
+But now we have our definition of $\Phi(w)$ to help us instead. At $w=0$ from our previous definition,
+ \[
+	 \Phi(0)=\frac{1}{\sqrt{2}}H_0(0)\Phi(0)
+.\] Thus $H(0)=\sqrt{2}$ \\
+So in the end we have $\sum_{m}h_0[m]=K_e+K_o=\sqrt{2}$, and we need another equation (why? I don't know tbh).\\
+\[
+	\sum_{m}\sum_{n}h_0[m]h_0[m+2n]\\
+	=\sum_{m}\big(\sum_{n}h_0[2m]h_0[2m+2n]+h_0[2m+1]h_0[2m+1+2n]\big)\\
+
+.\] 
+We can take out $h_0[2m]$ because it doesn't depend on  $n$.
+Notice that in  $\sum_{n}h_0[2m+2n]=K_e$ because it doesn't matter since we're starting from an even index and summing over all other even indexes.\\
+\[
+	=K_e\sum_{m}h_0[2m]+K_o\sum_{m}h_0[2m+1]
+	=K_e^2+K_o^2=1
+.\] 
+Our given is that $K_e+K_o=\sqrt{2}$.
+We can solve this system of equations and arrive at the result that $K_e=K_o$, which is what we ought to prove.\\
+Based on our earlier argument, we have thus proved that the assumption of orthogonal decomposition  (the 3 dot product formulas) imply that we need an orthogonal filter bank with $h_0$ and  $h_1$, and that we need at least one vanishing moment.\\
+Next time we will go back to the discrete domain because it is more practical for real applications.
+\end{document}

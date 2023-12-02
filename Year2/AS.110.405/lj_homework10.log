@@ -1,0 +1,755 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.6)  10 NOV 2023 22:10
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**./lj_homework10.tex
+(lj_homework10.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-04-20>
+(/home/lj/.miktex/texmfs/install/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/home/lj/.miktex/texmfs/install/tex/latex/base/size11.clo
+File: size11.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+) (preamble.tex
+(/home/lj/.miktex/texmfs/install/tex/latex/ulem/ulem.sty
+\UL@box=\box51
+\UL@hyphenbox=\box52
+\UL@skip=\skip50
+\UL@hook=\toks16
+\UL@height=\dimen141
+\UL@pe=\count193
+\UL@pixel=\dimen142
+\ULC@box=\box53
+Package: ulem 2019/11/18
+\ULdepth=\dimen143
+)
+(/home/lj/.miktex/texmfs/install/tex/latex/footmisc/footmisc.sty
+Package: footmisc 2023/07/05 v6.0f a miscellany of footnote facilities
+\FN@temptoken=\toks17
+\footnotemargin=\dimen144
+\@outputbox@depth=\dimen145
+Package footmisc Info: Declaring symbol style bringhurst on input line 696.
+Package footmisc Info: Declaring symbol style chicago on input line 704.
+Package footmisc Info: Declaring symbol style wiley on input line 713.
+Package footmisc Info: Declaring symbol style lamport-robust on input line 724.
+
+Package footmisc Info: Declaring symbol style lamport* on input line 744.
+Package footmisc Info: Declaring symbol style lamport*-robust on input line 765
+.
+)
+(/home/lj/.miktex/texmfs/install/tex/latex/tikz-cd/tikz-cd.sty
+Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
+
+(/home/lj/.miktex/texmfs/install/tex/latex/pgf/frontendlayer/tikz.sty
+(/home/lj/.miktex/texmfs/install/tex/latex/pgf/basiclayer/pgf.sty
+(/home/lj/.miktex/texmfs/install/tex/latex/pgf/utilities/pgfrcs.sty
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks18
+\pgfutil@tempdima=\dimen146
+\pgfutil@tempdimb=\dimen147
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box54
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+
+(/home/lj/.miktex/texmfs/install/tex/latex/pgf/basiclayer/pgfcore.sty
+(/home/lj/.miktex/texmfs/install/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/home/lj/.miktex/texmfs/install/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+(/home/lj/.miktex/texmfs/install/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(/home/lj/.miktex/texmfs/install/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/home/lj/.miktex/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(/home/lj/.miktex/texmfs/install/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen148
+\Gin@req@width=\dimen149
+)
+(/home/lj/.miktex/texmfs/install/tex/latex/pgf/systemlayer/pgfsys.sty
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks20
+\pgfkeys@temptoks=\toks21
+
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeyslibraryfilter
+ed.code.tex
+\pgfkeys@tmptoks=\toks22
+))
+\pgf@x=\dimen150
+\pgf@y=\dimen151
+\pgf@xa=\dimen152
+\pgf@ya=\dimen153
+\pgf@xb=\dimen154
+\pgf@yb=\dimen155
+\pgf@xc=\dimen156
+\pgf@yc=\dimen157
+\pgf@xd=\dimen158
+\pgf@yd=\dimen159
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count194
+\c@pgf@countb=\count195
+\c@pgf@countc=\count196
+\c@pgf@countd=\count197
+\t@pgf@toka=\toks23
+\t@pgf@tokb=\toks24
+\t@pgf@tokc=\toks25
+\pgf@sys@id@count=\count198
+
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys-common-pdf.
+def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsyssoftpath.cod
+e.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count199
+\pgfsyssoftpath@bigbuffer@items=\count266
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsysprotocol.cod
+e.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/home/lj/.miktex/texmfs/install/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+
+(/home/lj/.miktex/texmfs/install/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+
+(/home/lj/.miktex/texmfs/install/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/math/pgfmath.code.tex
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen160
+\pgfmath@count=\count267
+\pgfmath@box=\box55
+\pgfmath@toks=\toks26
+\pgfmath@stack@operand=\toks27
+\pgfmath@stack@operation=\toks28
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.code.tex
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.basic.co
+de.tex)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.trigonom
+etric.code.tex)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.random.c
+ode.tex)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.comparis
+on.code.tex)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.base.cod
+e.tex)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.round.co
+de.tex)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.misc.cod
+e.tex)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.integera
+rithmetics.code.tex)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count268
+))
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/math/pgfint.code.tex)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepoints.code.
+tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen161
+\pgf@picmaxx=\dimen162
+\pgf@picminy=\dimen163
+\pgf@picmaxy=\dimen164
+\pgf@pathminx=\dimen165
+\pgf@pathmaxx=\dimen166
+\pgf@pathminy=\dimen167
+\pgf@pathmaxy=\dimen168
+\pgf@xx=\dimen169
+\pgf@xy=\dimen170
+\pgf@yx=\dimen171
+\pgf@yy=\dimen172
+\pgf@zx=\dimen173
+\pgf@zy=\dimen174
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepathconstruc
+t.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen175
+\pgf@path@lasty=\dimen176
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepathusage.co
+de.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen177
+\pgf@shorten@start@additional=\dimen178
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorescopes.code.
+tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box56
+\pgf@hbox=\box57
+\pgf@layerbox@main=\box58
+\pgf@picture@serial@count=\count269
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoregraphicstate
+.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen179
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoretransformati
+ons.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen180
+\pgf@pt@y=\dimen181
+\pgf@pt@temp=\dimen182
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorequick.code.t
+ex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreobjects.code
+.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepathprocessi
+ng.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorearrows.code.
+tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen183
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreshade.code.t
+ex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen184
+\pgf@sys@shading@range@num=\count270
+\pgf@shadingcount=\count271
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreimage.code.t
+ex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreexternal.cod
+e.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box59
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorelayers.code.
+tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoretransparency
+.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepatterns.cod
+e.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduleshapes.code.t
+ex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box60
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/lj/.miktex/texmfs/install/tex/latex/pgf/compatibility/pgfcomp-version-0-
+65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen185
+\pgf@nodesepend=\dimen186
+)
+(/home/lj/.miktex/texmfs/install/tex/latex/pgf/compatibility/pgfcomp-version-1-
+18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (/home/lj/.miktex/texmfs/install/tex/latex/pgf/utilities/pgffor.sty
+(/home/lj/.miktex/texmfs/install/tex/latex/pgf/utilities/pgfkeys.sty
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/home/lj/.miktex/texmfs/install/tex/latex/pgf/math/pgfmath.sty
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/math/pgfmath.code.tex))
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen187
+\pgffor@skip=\dimen188
+\pgffor@stack=\toks29
+\pgffor@toks=\toks30
+))
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/tikz.code.t
+ex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/libraries/pgflibraryplothandle
+rs.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count272
+\pgfplotmarksize=\dimen189
+)
+\tikz@lastx=\dimen190
+\tikz@lasty=\dimen191
+\tikz@lastxsaved=\dimen192
+\tikz@lastysaved=\dimen193
+\tikz@lastmovetox=\dimen194
+\tikz@lastmovetoy=\dimen195
+\tikzleveldistance=\dimen196
+\tikzsiblingdistance=\dimen197
+\tikz@figbox=\box61
+\tikz@figbox@bg=\box62
+\tikz@tempbox=\box63
+\tikz@tempbox@bg=\box64
+\tikztreelevel=\count273
+\tikznumberofchildren=\count274
+\tikznumberofcurrentchild=\count275
+\tikz@fig@count=\count276
+
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmodulematrix.code.t
+ex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count277
+\pgfmatrixcurrentcolumn=\count278
+\pgf@matrix@numberofcolumns=\count279
+)
+\tikz@expandcount=\count280
+
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/t
+ikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/home/lj/.miktex/texmfs/install/tex/latex/tikz-cd/tikzlibrarycd.code.tex
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/t
+ikzlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/t
+ikzlibraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/libraries/pgflibraryarrows.met
+a.code.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen198
+\pgfarrowlength=\dimen199
+\pgfarrowwidth=\dimen256
+\pgfarrowlinewidth=\dimen257
+))) (/home/lj/.miktex/texmfs/install/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+(/home/lj/.miktex/texmfs/install/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/home/lj/.miktex/texmfs/install/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks31
+\ex@=\dimen258
+))
+(/home/lj/.miktex/texmfs/install/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen259
+)
+(/home/lj/.miktex/texmfs/install/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count281
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count282
+\leftroot@=\count283
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count284
+\DOTSCASE@=\count285
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box65
+\strutbox@=\box66
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen260
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count286
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count287
+\dotsspace@=\muskip16
+\c@parentequation=\count288
+\dspbrk@lvl=\count289
+\tag@help=\toks32
+\row@=\count290
+\column@=\count291
+\maxfields@=\count292
+\andhelp@=\toks33
+\eqnshift@=\dimen261
+\alignsep@=\dimen262
+\tagshift@=\dimen263
+\tagwidth@=\dimen264
+\totwidth@=\dimen265
+\lineht@=\dimen266
+\@envbody=\toks34
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks35
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(/home/lj/.miktex/texmfs/install/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/home/lj/.miktex/texmfs/install/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/home/lj/.miktex/texmfs/install/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks36
+\thm@bodyfont=\toks37
+\thm@headfont=\toks38
+\thm@notefont=\toks39
+\thm@headpunct=\toks40
+\thm@preskip=\skip54
+\thm@postskip=\skip55
+\thm@headsep=\skip56
+\dth@everypar=\toks41
+)
+(/home/lj/.miktex/texmfs/install/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+(/home/lj/.miktex/texmfs/install/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip57
+\enit@outerparindent=\dimen267
+\enit@toks=\toks42
+\enit@inbox=\box67
+\enit@count@id=\count293
+\enitdp@description=\count294
+)
+(/home/lj/.miktex/texmfs/install/tex/latex/parskip/parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+
+(/home/lj/.miktex/texmfs/install/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(/home/lj/.miktex/texmfs/install/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(/home/lj/.miktex/texmfs/install/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+(/home/lj/.miktex/texmfs/install/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count295
+))
+(/home/lj/.miktex/texmfs/install/tex/latex/blindtext/blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+
+(/home/lj/.miktex/texmfs/install/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+\c@blindtext=\count296
+\c@Blindtext=\count297
+\c@blind@countparstart=\count298
+\blind@countxx=\count299
+\blindtext@numBlindtext=\count300
+\blind@countyy=\count301
+\c@blindlist=\count302
+\c@blindlistlevel=\count303
+\c@blindlist@level=\count304
+\blind@listitem=\count305
+\c@blind@listcount=\count306
+\c@blind@levelcount=\count307
+\blind@mathformula=\count308
+\blind@Mathformula=\count309
+\c@blind@randomcount=\count310
+\c@blind@randommax=\count311
+\c@blind@pangramcount=\count312
+\c@blind@pangrammax=\count313
+)
+(/home/lj/.miktex/texmfs/install/tex/latex/tools/multicol.sty
+Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
+\c@tracingmulticols=\count314
+\mult@box=\box68
+\multicol@leftmargin=\dimen268
+\c@unbalance=\count315
+\c@collectmore=\count316
+\doublecol@number=\count317
+\multicoltolerance=\count318
+\multicolpretolerance=\count319
+\full@width=\dimen269
+\page@free=\dimen270
+\premulticols=\dimen271
+\postmulticols=\dimen272
+\multicolsep=\skip58
+\multicolbaselineskip=\skip59
+\partial@page=\box69
+\last@line=\box70
+\maxbalancingoverflow=\dimen273
+\mult@rightbox=\box71
+\mult@grightbox=\box72
+\mult@firstbox=\box73
+\mult@gfirstbox=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\@tempa=\box109
+\@tempa=\box110
+\c@minrows=\count320
+\c@columnbadness=\count321
+\c@finalcolumnbadness=\count322
+\last@try=\dimen274
+\multicolovershoot=\dimen275
+\multicolundershoot=\dimen276
+\mult@nat@firstbox=\box111
+\colbreak@box=\box112
+\mc@col@check@num=\count323
+)
+\c@thm=\count324
+\c@problem=\count325
+) (quiver.sty
+Package: quiver 2021/01/11 quiver
+
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/t
+ikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/t
+ikzlibrarydecorations.pathmorphing.code.tex
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libraries/t
+ikzlibrarydecorations.code.tex
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduledecorations.c
+ode.tex
+\pgfdecoratedcompleteddistance=\dimen277
+\pgfdecoratedremainingdistance=\dimen278
+\pgfdecoratedinputsegmentcompleteddistance=\dimen279
+\pgfdecoratedinputsegmentremainingdistance=\dimen280
+\pgf@decorate@distancetomove=\dimen281
+\pgf@decorate@repeatstate=\count326
+\pgfdecorationsegmentamplitude=\dimen282
+\pgfdecorationsegmentlength=\dimen283
+)
+\tikz@lib@dec@box=\box113
+)
+(/home/lj/.miktex/texmfs/install/tex/generic/pgf/libraries/decorations/pgflibra
+rydecorations.pathmorphing.code.tex)))
+(/home/lj/.miktex/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count327
+\l__pdf_internal_box=\box114
+)
+(lj_homework10.aux)
+\openout1 = `lj_homework10.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+
+(/home/lj/.miktex/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count328
+\scratchdimen=\dimen284
+\scratchbox=\box115
+\nofMPsegments=\count329
+\nofMParguments=\count330
+\everyMPshowfont=\toks43
+\MPscratchCnt=\count331
+\MPscratchDim=\dimen285
+\MPnumerator=\count332
+\makeMPintoPDFobject=\count333
+\everyMPtoPDFconversion=\toks44
+) (/home/lj/.miktex/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/home/lj/.miktex/texmfs/install/tex/latex/00miktex/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Underfull \hbox (badness 10000) in paragraph at lines 10--12
+[]\OT1/cmr/m/n/10.95 Due Date: Friday November 10 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--12
+
+ []
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 21.
+
+(/home/lj/.miktex/texmfs/install/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 21.
+
+
+(/home/lj/.miktex/texmfs/install/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Overfull \hbox (5.45694pt too wide) in paragraph at lines 20--25
+[]\OT1/cmr/m/it/10.95 Solution. \OT1/cmr/m/n/10.95 We approach this question in
+ the opposite order, since we defined the Riemann Integrability
+ []
+
+[1
+
+{/home/lj/.miktex/texmfs/data/fonts/map/pdftex/pdftex.map}]
+Overfull \hbox (9.55135pt too wide) in paragraph at lines 33--34
+[]\OT1/cmr/m/n/10 We present Picard's Theorem of Existence and Uniqueness for s
+olutions of first-order differential
+ []
+
+
+Overfull \hbox (5.46814pt too wide) in paragraph at lines 35--36
+[]\OT1/cmr/m/n/10 Unlike our previous work dealing with specific functions and 
+doing analysis on their derivatives,
+ []
+
+
+Overfull \hbox (14.91258pt too wide) in paragraph at lines 35--36
+\OT1/cmr/m/n/10 integrals, and long-term behavior, here we want a language that
+ applies to all types of (differentiable)
+ []
+
+lj_homework10.tex:50: Misplaced alignment tab character &.
+l.50 	Series of Functions &
+                            Convergence
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+[2] [3] [4] [5] (lj_homework10.aux) ) 
+Here is how much of TeX's memory you used:
+ 16320 strings out of 478250
+ 339588 string characters out of 5839152
+ 1859074 words of memory out of 5000000
+ 36236 multiletter control sequences out of 15000+600000
+ 518344 words of font info for 55 fonts, out of 8000000 for 9000
+ 0 hyphenation exceptions out of 8191
+ 121i,7n,121p,554b,218s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/lj/.miktex/texmfs/data/fonts/pk/lj
+four/jknappen/ec/dpi600/tcrm1095.pk></home/lj/.miktex/texmfs/install/fonts/type
+1/public/amsfonts/cm/cmbx10.pfb></home/lj/.miktex/texmfs/install/fonts/type1/pu
+blic/amsfonts/cm/cmex10.pfb></home/lj/.miktex/texmfs/install/fonts/type1/public
+/amsfonts/cm/cmmi10.pfb></home/lj/.miktex/texmfs/install/fonts/type1/public/ams
+fonts/cm/cmmi8.pfb></home/lj/.miktex/texmfs/install/fonts/type1/public/amsfonts
+/cm/cmr10.pfb></home/lj/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/c
+mr8.pfb></home/lj/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb></home/lj/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb><
+/home/lj/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmti10.pfb></hom
+e/lj/.miktex/texmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on lj_homework10.pdf (5 pages, 127124 bytes).
+PDF statistics:
+ 76 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+

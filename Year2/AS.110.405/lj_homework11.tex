@@ -1,0 +1,155 @@
+\documentclass[11 pt]{article}
+\input{preamble}
+\usepackage{quiver}
+
+\begin{document}
+    Name: Lj Gonzales
+
+    Assignment: HW 11
+
+    Due Date: Friday November 17
+    \break
+\begin{problem}
+	(Writing) Submit your draft of your Final Project paper
+\end{problem}
+\begin{solution}
+
+\begin{center}{\bf Picard Iterations}\end{center}
+\begin{center}{LJ Gonzales, Eric Tang}\end{center}
+
+\begin{abstract}
+Differential equations (equations involving an unknown function and at least one of its derivatives) are a fundamental framework to model the more complex systems of science and engineering. Solving such equations may be difficult or impossible, and even if we find an expression that solves the equation, there is no a priori guarantee that there does not exist a different expression that also satisfies the differential equation, and that other solution might be the one that actually characterizes our system. 
+
+We present Picard’s Theorem of Existence and Uniqueness for solutions of first-order differential equations, which provides sufficient and very reasonable conditions on the form of the differential equation for solutions to exist and be unique.
+
+Unlike our previous work dealing with specific functions and doing analysis on their derivatives, integrals, and long-term behavior, here we want a language that applies to all types of (differentiable) functions that might solve the differential equation; we need to go a level of abstraction beyond functions and consider the convergence of sequences in functional space.
+
+We present the method of Picard Iterations on an integral version of the solution as a mathematically rigorous way to prove the theorem.
+\end{abstract}
+
+\section{Introduction}
+
+\subsection{Statement of Picard's Theorem}
+
+Suppose in a rectangle $$R=\{(t, y)\mid t, y\in\mathbb R \text{ with } \alpha_0<t\alpha_1, \beta_0<y<\beta_1\}$$ that there is a continuous function $f(y, t)$ whose partial differential with respect to y, denoted $\frac{\partial f}{\partial y} (t, y),$ is also continuous. Then, for any pair of equations given by $$y(t)=f(y, p) \text{ and } y(t_0)=y_0)$$  for some $t_0, y_0\in R,$ there exists a unique solution given by $y=\phi(t)$ for all $t\in(\alpha_2, \alpha_3)$ where $\alpha_0\leq\alpha_2<\alpha_3\leq\alpha_1.$
+\section{Proof}
+
+\subsection{Existence}
+\section{Definitions}
+\subsection{Initial Value Problem}
+We consider an initial value problem for a first order linear equation to be of the form 
+    \[y'(x)=f(x,y), \text{ with initial condition } y(x_0)=y_0\in\mathbb{R}.\]
+We call a \emph{solution} to an IVP a function $y(x)$ that is differentiable where it is defined.
+\textbf{Example- } We present a first example to highlight the importance of Picard's theorem in solving differential equations: we will consider an IVP that does not satisfy the conditions of Picard's theorem, and show it does indeed have multiple solutions.
+Such an IVP is \[
+y'=y^{2/3}, y(0)=0
+.\]
+An engineering example might be that $y$ quantifies a rate of reaction of some substance as a function of time and the ODE may come from known behavior of its evolution.\\
+Notice that this initial value problem violates Picard's theorem condition of Lipschitz continuity at  $y=0$. In particular,  $\frac{\partial f}{\partial y}=\frac{2}{3}y^{\frac{-1}{3}}$ is unbounded as $y\to 0$.\\
+Indeed, this initial value problem has multiple solutions. Two of them are:
+\begin{align}
+	y_1(t) & =0\\
+	y_2(t) & = \begin{cases}
+		0 & t\leq 0 \\
+		\big(\frac{2x}{3}\big)^{\frac{3}{2}} & t>0
+		\end{cases}
+\end{align}
+It is easy to see how not validating existence and uniqueness could be disastrous in practical studies of differential equations. We could have noticed no rate of reaction from all past time up to $t=0$ and conclude that the reaction was stable for all time, but it could very well, without further guarantee, that the reaction spontaneously begins to increase without bound.
+\subsection{Continuity and Lipschitz Continuity}
+\subsection{Picard Iterations}
+\textbf{Example- } Let us present the machinery of Picard Iterations. In this example we will use it to find the solution of an IVP to recall the concept of functional convergence.\\
+Be given the initial value problem \[
+y'=cy, y(0)=y_0
+.\] 
+We find the first Picard iterate by inputting the initial condition and finding the first derivative in terms of it:
+\[
+y_1(t)=y_0+\int_{0}^{t}cy_0dx=y_0+cy_0t
+.\] 
+We can repeat this to find a yet better approximation: \[
+y_2(t)=y_0+\int_{0}^{t}c(y_0+cy_0x)dx=y_0+cy_0x+\frac{1}{2}c^2y_0x^2
+.\] 
+We notice the pattern that allows us to write the $n$th term in closed form: \[
+y_n(t)=y_0\sum_{n}\frac{(ct)^n}{n!}
+.\] 
+And notice that the limit to infinity is of the same form as the Taylor series expansion of the exponential function, thus \[
+\lim_{n\to\infty}y_n(t)=y_0e^{ct}
+.\]
+Here we need not check the convergence of this series because we can use our knowledge that there is a bijection between a function and its Taylor expansion.\\
+For more complicated IVP's however, we may not be able to immediately write down the function because its Taylor Expansion may not be recognizable.\\
+This is the point of existence and uniqueness theorem. Picard iterates are not in general useful for obtaining solutions ot ODE's. However, if we are able to establish that the sequence $\{y_n\}$ converges to some $y$,
+\section{Integral equation and Operator Interpretation}
+\section{Function sequences Uniform Convergence}
+I think instead of the proof that was showed in the book we should use the Banach Fixed Point Theorem interpretation like in the ucberkeley
+\subsection{Uniform Continuity}
+
+\end{solution} 
+\pagebreak
+\begin{problem}
+	Prove the Anti-Product Rule, also called Integration-by-Parts: that is, suppose $F$ and $G$ are continuously differentiable functions on  $[a,b]$. Show \[
+	\int_{a}^{b}F(x)G'(x)dx=F(b)G(b)-F(a)G(a)-\int_{a}^{b}F'(x)G(x)dx
+	.\] 
+\end{problem}
+\begin{solution}
+	Define $H(x)=F(x)G(x)$. It is a product of differentiable functions, so it is differentiable, with derivative equal to $F'(x)G(x)+F(x)G'(x)$.
+	Apply the fundamental theorem of calculus, we have the result.
+\end{solution}
+\pagebreak
+\begin{problem}
+	Suppose $F$ and $G$ are continuously differentiable functions defined on $[a,b]$ such that $F'(x)=G'(x)$ for all $x\in[a,b]$. Use the Fundamental Theorem of Calculus to prove that  $F$ and $G$ differ by a constant. That is, show that there exists a $C\in\mathbb{R}$ such that $F(x)=G(x)+C$.
+\end{problem}
+\begin{solution}
+	If we call $h(x):=F'(x)=G'(x)$, then $h$ is discontinuous on at most a finite amount of points, so it is integrable.
+	This satisfies the condition of the Fundamental Theorem of Calculus. <this implies: \[
+	\int_{a}^{x}h=F(x)-F(a)=G(x)-G(a)
+	.\] 
+	And thus, letting $C=F(a)-G(a)\in\mathbb{R}$, we have the result
+\end{solution}
+\pagebreak
+\begin{problem}
+	Suppose $f:[a,b]\to\mathbb{R}$ is increasing. (Then, by Proposition 5.2.11, it is Riemann Integrable). Suppose $f$ has discontinuity at $c\in(a,b)$. Show that $F(x)=\int_{a}^{x}f$ is not differentiable at c.
+\end{problem}
+\begin{solution}
+	Suppose $f$ were differentiable at $c$. That is,\[
+	F'(c)= \lim_{x\to c}\frac{\int_{a}^{x}f-\int_{a}^{c}f}{(x-c)}
+	.\]   
+	Exists. We work on this expression with right and left-handed limits to show that it is in fact not well defined.
+\begin{align}
+	\lim_{h\to 0}\frac{\int_{c}^{c+h}f}{h} & =\lim_{h\to 0^{+}}\frac{\int_{c}^{c+h}f}{h} =\lim_{h\to 0^{+}}\frac{f(c+h)h}{h}\\
+	. 					& =\lim_{h\to0^{-}}\frac{\int_{c+h}^{c}f}{h} = \lim_{h\to 0^{-}}\frac{f(c+h)h}{h}\\
+\end{align}
+This would imply that \[
+\lim_{h\to 0^{+}}f(c+h)=\lim_{h\to 0^{-}}f(c+h)
+.\] 
+and furthermore, both exist. However this means that $f$ is continuous at $c$, which violates our stipulation.
+\end{solution}
+\pagebreak
+\begin{problem}
+	Do the following:
+	\begin{itemize}
+		\item Find the pointwise limit of $f_n(x)=\frac{e^{x/n}}{n}$, for $x\in\mathbb{R}$.
+		\item Determine whether or not the limit if uniform on $\mathbb{R}$.
+		\item Determine whether or not the limit is uniform when restricted to $[0,1]$.
+	\end{itemize}
+\end{problem}
+\begin{solution}
+	Recall that we say a sequence $\{f_n\}_{n\in\mathbb{N}}$ limits pointwise to some $f(x):\mathbb{R}\to\mathbb{R}$ if for any $x\in R$, for all $\epsilon>0$ there exists a $N\in\mathbb{N}$ such that for all $n>N$,  \[
+	|f_n(x)-f(x)|<\epsilon
+	.\] 
+	We have $f_n(x)=\frac{e^{\frac{x}{n}}}{n}$, and claim that $f(x)$ is identically the 0 function.\\
+	Thus, \[	
+	|f_n(x)-f(x)|=|\frac{e^{\frac{x}{n}}}{n}|\leq|\frac{e^{\frac{x}{1}}}{n}|=|\frac{e^x}{n}|.\]
+	By choosing $N$ to be some natural number such that $N>\frac{e^x}{\epsilon}$, we have the result: $|f_n(x)-f(x)|<\epsilon$ for any $\epsilon>0$.
+\end{solution}
+\begin{solution}
+	The sequence is not uniformly continuous to its limit $f(x)$ on $\mathbb{R}$ (The possibility of it being uniformly continuous to some other $f$ is excluded, since we already showed that it is pointwise continuous to $f(x)=0$). We will show that for any $\epsilon>0$, for any $N\in\mathbb{N}$ there exists a $n>N$ such that for some $x\in\mathbb{R}$, \[
+	|f_n(x)|>\epsilon
+	.\] 
+	Be given $\epsilon>0$ and any $N\in\mathbb{N}$. We choose $n=N+1$ and  $x=(N+1)\ln(2(N+1)\epsilon)$. Clearly $n>N$, yet  \[
+	|f_n(x)-0|=|\frac{e^{\frac{x}{N+1}}}{N+1}|=2|\epsilon|>\epsilon
+	.\] 
+	Thus $f_n$ cannot be uniformly convergent.
+\end{solution}
+\begin{solution}
+	We know from a theorem studied in class that a continuous function on a closed bounded interval is uniformly continuous. Each of $\frac{e^{x/n}}{n}$ is pointwise (and thus) continous, so the limit is also uniform.
+\end{solution}
+\end{document}

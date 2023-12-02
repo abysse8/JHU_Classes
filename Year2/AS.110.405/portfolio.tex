@@ -1,0 +1,318 @@
+\documentclass[11 pt]{article}
+        % adjust text size, margins
+    \textwidth=7in
+    \textheight=9.6in
+    \voffset=-54pt
+    \oddsidemargin=-.25in
+    \evensidemargin=0in
+    \setlength{\parskip}{8pt}
+    \setlength{\parindent}{0pt}
+
+        % change hyperref options
+    \PassOptionsToPackage{hyphens}{url}
+    \usepackage[bookmarks,colorlinks,linkcolor=blue,citecolor=blue,pdfstartview=FitH,urlcolor=blue]{hyperref}
+    \hypersetup{pdfpagemode=UseNone}
+
+    
+    \input{preamble}
+    \usepackage{quiver}
+
+\title{Analysis I Portfolio - Fall 2023} %Title of assignment
+\author{LJ Gonzales} %Put your name here
+\date{} %Writing this as an empty command prevents the date from being printed under your name. Omitting will lead to current date printing.
+
+\begin{document}
+\maketitle
+
+\section{Cover Letter}
+
+At the end of the semester, you'll be working on a cover letter for your portfolio that's meant as an opportunity for you to synthesize the different mathematical concepts that you'll be covering in your portfolio. This is a great place to put it!
+
+\pagebreak
+%start copying here for Portfolio Assignment Template
+\section{Portfolio assignment Template}
+
+%Use the "Portfolio assignment Template" section as a template for each individual portfolio assignment. 
+\begin{multicols*}{2} %multicols how-to https://www.overleaf.com/learn/latex/Multiple_columns
+    \subsection{Background information}
+Does your reader know enough to understand the problem at hand? If not, use this section as a place to (BRIEFLY) mention any relevant background concepts or theorems. Remember to explain them at the level of the audience given! 
+
+\subsection{Task}
+Use this section to describe what you're expected to do for the portfolio assignment in question. Remember, this is meant to be self-contained, which means that anyone with the appropriate mathematical background should be able to pick up this portfolio and know what's going on. By the end of this section, your reader should have a sense of the problem or idea that you're planning to address.
+
+\subsection{Strategy}
+Use this section to briefly outline how you're planning to address the task that you've explained above. If you're proving a specific theorem, this may be a great place to give a brief outline before going into the nitty-gritty details. 
+
+\columnbreak
+\subsection{Solution}
+This is where you get into everything and completely address all the nuances needed to address the task you outlined. Even though you'll be talking about details here, make sure that the assignment still follows the outline you've set up. I've formatted this so that the detail of the solution is on the right with the other sections quickly and easily available on the left. This allows your reader to reference between sections easily. 
+
+Don't forget that it is encouraged for you to refer back to past results in the portfolio! If you already proved it once, it's perfectly acceptable to say something along the lines of "As we proved in (Assignment/reference here), result here". This will help with brevity and general readibility!
+\end{multicols*}
+\pagebreak
+
+\part{Definitions}
+\section{PSet 1 Exercise 1.4}
+Audience: Students who have complete the calculus sequence and linear algebra, but have never taken a proof-based higher math course.\\
+Consider your idea of the concept both form the standpoint of its relationship with the
+Natural numbers, as well as a comprehensive organizational framework used to prove a family of
+statements parameterized by a positive whole number. You can be familiar here (the students can be
+friends of yours), but you must also be accurate and succinct
+\begin{multicols*}{2} 
+\subsection{Background information}
+\subsection{Task}
+\subsection{Strategy}
+\columnbreak
+\subsection{Solution}
+\end{multicols*}
+\pagebreak
+
+\section{PSet 3 Exercise 1.1}
+Audience: your classmates.\\
+Consider trying to explain both the relevance of what the Archimedean Property means
+to ordered fields like the real line, as well as what the consequences are. The lack of an infinitesimal in the real line has huge consequences for its structure as we see it. Keep this in mind as you write your paragraph.
+\begin{multicols*}{2} 
+\subsection{Background information}
+\subsection{Task}
+\subsection{Strategy}
+\columnbreak
+\subsection{Solution}
+\end{multicols*}
+\pagebreak
+
+\section{PSet 5 Exercise 1.1}
+Audience: Students who have completed the calculus sequence and linear algebra, but have never taken a proof-based higher-math course.\\
+Please give a good overview and detailed explanation of just what a limit inferior is of a sequence. They will know sequences and have ideas about a limit's existence. But the fact that subsequences can have limits and that the limit inferior will exist for a bounded sequence and what its impact is, will need some description.
+\begin{multicols*}{2} 
+\subsection{Background information}
+\subsection{Task}
+\subsection{Strategy}
+\columnbreak
+\subsection{Solution}
+\end{multicols*}
+\pagebreak
+
+\section{PSet 6 Exercise 1.1}
+Audience: math majors who took this course last year.\\
+Please give a good overview and detailed explanation of just what is a Cauchy Series. Remind your audience of what a series is, and give a good notion of where the name for this particular type of series come from.
+\begin{multicols*}{2} 
+\subsection{Background information}
+We are asked to explain the concept of a Cauchy series, by way of a series.
+\subsection{Task}
+\subsection{Strategy}
+\columnbreak
+\subsection{Solution}
+	We have previously explored the idea of a sequence in signal processing theoretic: a sequence $\{x_n\}={x_1,x_2,\dots,}$ is a set of measurements of a real quantity $x$ taken at discrete (natural number) instances.\\
+	We have also explained what it means for such a sequence to be Cauchy: the difference between measurements $i$ and $j$, $|x_i-x_j|$, gets arbitrarily close to 0 if $i$ and $j$ are sufficiently far down in the sequence.\\
+	Convince yourself that a series is a special kind of sequence; in particular, one that can be expressed as the partial sum of measurements of a variable: $\{y_1, y_2,\dots\}=\{x_1, x_1+x_2,\dots,\sum^{k}x_k,\dots\}$. Here, instead of considering the value of individual measurements, we are looking at the sum of all past measurements. This might a priori not look very useful, but it becomes key in computing integrals later on in our journey.\\
+	With this view, it should be clear that the Cauchy definition applied to series is the exact interpolation of what we had for "regular" sequences:
+	We want the difference between any two measurements $i$ and $j$, $|y_i-y_j|$, to get arbitrarily close by choosing $i,j$ large enough.\\
+	However, if we look at our definition of the series' elements with respect to the variable from whence they came, we can actually rewrite this term as \[
+		|y_i-y_j|=|\sum_{n=1}^{i}x_n-\sum_{n=1}^{j}x_n|=|\sum_{n=j}^{i}x_n|
+	.\] 
+	This tells us exactly how to define the Cauchy criterion for series. Notice that it also gives us a preemptive insight into how we might use the original variable $x$ to say something about its series, which wil come in handy for further analysis.
+\end{multicols*}
+\
+
+
+\part{Set Theory}
+\section{PSet 1 Exercise 3}
+Audience: Students who have completed the calculus sequence and linear algebra, but have never taken a proof-based higher math course.\\
+This important set theory problem is combinatorial in nature, and may depend heavily on
+clever notation. Your audience will understand set notation via their previous math training. But finding
+a clear and clever way to display the result will be very helpful
+\begin{multicols*}{2} 
+\subsection{Background information}
+\subsection{Task}
+\subsection{Strategy}
+\columnbreak
+\subsection{Solution}
+\end{multicols*}
+\pagebreak
+\section{PSet 2 Exercise 6}
+Audience: math majors who took this course last year.\\
+The fact that a supremum of a set is not in the set has implications and this is one of
+them. Your audience will know/remember all the constituent parts of this problem, and your
+explanation is just to convince them of the result.
+\begin{multicols*}{2} 
+\subsection{Background information}
+\subsection{Task}
+\subsection{Strategy}
+\columnbreak
+\subsection{Solution}
+\end{multicols*}
+\pagebreak
+
+\part{Algebraic Structures}
+\section{PSet 2 Exercise 4}
+Audience: Math majors who took this course last year.\\
+Consider reminding your audience briefly of what a field is and what an ordered field is,
+how an ordering works, and why every attempt at making assignments under addition and
+multiplication will fail the field axioms except for one. And the only successful assignments that make F a
+field does not allow an ordering compatible with the field.
+\begin{multicols*}{2} 
+\subsection{Background information}
+\subsection{Task}
+\subsection{Strategy}
+\columnbreak
+\subsection{Solution}
+\end{multicols*}
+\pagebreak
+\section{}
+\begin{multicols*}{2} 
+\subsection{Background information}
+\subsection{Task}
+\subsection{Strategy}
+\columnbreak
+\subsection{Solution}
+\end{multicols*}
+\pagebreak
+
+\part{Theory}
+\section{PSet 3 Exercise 4}
+Audience: Your classmates.
+Dedekind cuts are one way to actually construct the real line, allowing for the filling in of the gaps between the rationals, where the irrationals live. Give merit to this idea by using this problem as a means to define the reals, beyond just consisting of rationals and irrationals.
+\begin{multicols*}{2}
+\subsection{Background information}
+\subsection{Task}
+\subsection{Strategy}
+\columnbreak
+\subsection{Solution}
+\end{multicols*}
+\pagebreak
+
+\section{PSet 5 Exercise 4}
+Audience: Students who have completed the calculus sequence and linear algebra, but have never taken a proof-based higher math course.\\
+This theorem underlies most everything that will come in Analysis. It will form a basis element of your understanding of how sets work as domains of functions. A lot of your intuition in the future will rely indirectly on this concept. Explaining this to a calculus student should keep this in mind.
+\begin{multicols*}{2} 
+\subsection{Background information}
+\subsection{Task}
+\subsection{Strategy}
+\columnbreak
+\subsection{Solution}
+\end{multicols*}
+\pagebreak
+
+\section{PSet 7 Exercise 7}
+Audience: Your classmates.\\
+This kind of contains all of the continuity information that we have developed in the course, whether the point is a cluster point or not.
+\begin{multicols*}{2} 
+\subsection{Background information}
+Problem Statement: Let $f:S\to\mathbb{R}$ be a function and $c$, such that for every sequence $\{x_n\}\subset S$, with $\lim x_n=c$, the sequence $\{f(x_n)\}$ converges. We want to show that $f$ is continuous at $c$.
+Stated in this form, our attempts at solving the problem seem hopeless: how could we possibly check the truth of this statement for every single sequence converging to $c$?\\
+It is the converse direction that gives the theorem its power: if we can verify that a function is continuous at $c$, then we can say something about the image of all sequences limiting to $c$ under $f$. It turns out that this intuition also gives us a guide to actually prove the statement: we will use the contrapositive.
+\subsection{Task}
+\subsection{Strategy}
+As stated before, we will prove this difficult statement by its comparatively simple contrapositive: If $f$ is not continuous at $c$, there exists a sequence $\{x_n\}$ such that $\lim x_n=c$, yet the sequence $\{f(x_n)\}$ does not converge.
+\columnbreak
+\subsection{Solution}
+\end{multicols*}
+\pagebreak
+
+\section{PSet 8 Exercise 6}
+Audience: Researchers from the Applied Physics Lab.\\
+Lipschitz continuity again related (in a way) to the derivative of a function (if the function indeed has a derivative). How might this work geometrically (read: visually via its graph)?
+\begin{multicols*}{2} 
+\subsection{Background information}
+\subsection{Task}
+\subsection{Strategy}
+\columnbreak
+\subsection{Solution}
+\end{multicols*}
+\pagebreak
+
+
+\part{Analysis}
+\section{PSet 4 Exercise 5}
+Audience: Researchers from the Applied Physics Lab: STEM-educated, but might not know the math details or jargon.
+There is nothing really fancy about this result. It is a basic fact about analysis. But it highlights the limit laws for sequences, and forces the writer to address a question that is not foreordained as a result. This one could go either way. Maybe that should also be a part of your
+discussion of the problem?
+\begin{multicols*}{2}
+\subsection{Background information}
+Problem Statement: Let $\{x_n\}$ be a sequence. Suppose there are two convergent subsequences $\{x_{ni}\}$ and $\{x_{mi}\}$, where \[
+\lim_{i\to\infty}x_{ni}=a \text{ and } \lim_{i\to\infty}x_{mi}=b
+.\] 
+with $a\neq b$. Prove that  $\{x_n\}$ is not convergent.\\
+This proposition is important because it confirms that our idea of convergence is well defined. In effect, if $\lim\{x_n\}$ exists, we can treat it as a legitimate mathematical object that we can then use for further analysis.\\
+Consider what would happen if this was not true: we can think of $\{x_{ni}\}$ as a set of measurements on the variable $x$, and  $\{x_{mi}\}$ a different set of measurements, possibly taken at different points in $x$ 's evolution. Convergence means that the long-term behavior of the variable is well defined, so naturally we should expect different sets of measurements to have the same long-term behavior as long as they are repeated to infinity. Proving this will be the crux of the proof.
+\subsection{Task}
+\subsection{Strategy}
+\columnbreak
+\subsection{Solution}
+\end{multicols*}
+\pagebreak
+
+\part{Examples}
+\section{PSet 4 Exercise 4}
+Audience: researchers from the Applied Physics Lab: STEM-educated, but might not know the math details or jargon.\\
+Aside from just proving the result and giving a good ida of why the result makes sense, you have the opportunity to use the example you constructed in your Week 5 5-minute in-lecture drill. So prove the result for your audience and showcase it with your example.
+\begin{multicols*}{2}
+\subsection{Background information}
+Problem statement: Let $\{x_n\}$ be a convergent monotone sequence. Suppose there exists a $k\in\mathbb{N}$ such that \[
+\lim_{n\to\infty}x_n=x_k
+.\] We want to show that $x_n=x_k$ for all $n\geq k$.\\
+We will repeat the "measurement on a variable" interpretation we presented in Problem 5 of this problem set to make intuitive sense of this proposition. The fact that the sequence limits to some $c=x_k$ means that we get arbitrarily close to $c$ as the timestamp of the measurement tends to infinity.\\
+However, the further information that the measurements are strictly monotone (nondecreasing or nonincreasing) constrains the \emph{manner} in which we get "arbitrarily close":\\
+Without the monotone assumption, it is fully possible that the measurements circle around $c$ while getting arbitrarily close. If the sequence is monotone, the sequence must have a one-sided angle of attack towards its limit: it can never backtrack.\\
+This theorem is essentially using the fact that a monotone series can never backtrack to say that if at any point, a measurement in the sequence is equal to the limit, then it is impossible for any further element to be less than the limit or greater than it: One of those will come from the definition of monotonicity, the other from the definition of arbitrarily closeness.
+\subsection{Task}
+\subsection{Strategy}
+\columnbreak
+\subsection{Solution}
+\end{multicols*}
+\pagebreak
+
+\section{PSet 6 Exercise 3}
+Audience: Math majors who took this course last year.\\
+Use the calculations to educate your audience about the structure of series, how and why a series may converge, and why we can find its sum in this case.
+\begin{multicols*}{2} 
+\subsection{Background information}
+Problem statement: Suppose the $k$th partial sum of  \[
+	\sum_{n=1}^{\infty}x_n
+.\] is $\frac{k}{k+1}$. Find the series (that is, find $x_n$). Further, prove that the series converges and then find the limit.\\
+This problem is of a computational nature, so we dive right into it.
+\subsection{Task}
+\subsection{Strategy}
+\columnbreak
+\subsection{Solution}
+\end{multicols*}
+\pagebreak
+
+\section{PSet 7 Exercise 1.2}
+Audience: Your classmates.
+Please give a good, detailed explanation of just what the popcorn function is about. Maybe discuss why it is continuous at palces and not at other places. What might this say about the notion of continuity.
+\begin{multicols*}{2} 
+\subsection{Background information}
+Problem Statement: We are asked to explain the Thomae function, or popcorn function.\\
+The popcorn function is a tool to strengthen and stretch the intuition muscles we need to use in searching for things to prove as mathematicians. Presenting it as anything else then as a carefully designed contrarian to our intuition is good only to scare off prospective students in mathematics. So, we avoid doing so.
+\subsection{Task}
+\subsection{Strategy}
+\columnbreak
+\subsection{Solution}
+The Thomae function is defined as: \[
+f(x) = \begin{cases}
+	\frac{1}{q} & $x$ a rational $\frac{p}{q}$ in lowest form \\
+	0 & $x$ irrational or $x=0$
+	\end{cases}
+.\] 
+We follow with one example of something we \emph{might} want to say about all functions in analysis (because it applies to most functions that we're familiar with and that we've used so far), where theThomae function swoops in saying "well, actually!". This is a frustrating but necessary aspect of what it takes to make sure that mathematics stays completely airtight.\\
+We \emph{might} want to say that continuity implies differentiability for all functions (we might even want to relax this and say this is the case for at least all \emph{bounded} functions. The Thomae function is bounded by 1, so this will still work as a counterexample).
+However, the Thomae function satisfies our definition of continuity at $x=0$. Given any $\epsilon>0$, restrict $x$ such that $|x|<epsilon$. For any such $x$, the object $|f(x)-f(0)|=|f(x)-0|$ is either equal to $|0-0|=0$ if $x$ is irrational or 0, and equal to $|\frac{1}{q}-0|=|\frac{1}{q}|$ if $x$ is a rational in the least form $\frac{p}{q}$.\\
+In the first case, we trivially have $|f(x)-f(0)|<\epsilon$ for all $\epsilon>0$. In the second case, we use our valid restriction $|x|=\frac{|p|}{|q|}<\epsilon$ to write $|\frac{1}{q}|<|\frac{p}{q}|<\epsilon$. Either way, continuity is obtained. We fail to find such a result to prove differentiability.
+\end{multicols*}
+\pagebreak
+
+\section{PSet 8 Exercise 5}
+Audience: Researchers from the Applied Physics Lab.\\
+Bijections between sets that have different properties (here one is closed and the other is open) can be quite tricky. Again, what might this say about the notion of continuity?
+\begin{multicols*}{2} 
+\subsection{Background information}
+\subsection{Task}
+\subsection{Strategy}
+\columnbreak
+\subsection{Solution}
+\end{multicols*}
+\pagebreak
+
+
+\end{document}
